@@ -54,7 +54,7 @@
             <p class="project-subtitle">Intelligent Internship Aggregation System</p>
             <p class="project-description-detailed">
               Engineered automated data pipeline processing 200+ jobs daily using four-tier
-              extraction with HTTP, Selenium, and email parsing achieving 85% success rate. Designed
+              extraction (HTTP, Selenium, email parsing) achieving 85% success rate. Designed
               quality validation system with 7-point scoring algorithm featuring location
               normalization across 50+ cities, automated H1B detection, and multi-criteria
               eligibility filtering for 1000+ entries, reducing manual review by 70%.
@@ -101,6 +101,15 @@
             </div>
             <h3 class="project-title-large">Thyroid Disease Classification System</h3>
             <p class="project-subtitle">Explainable AI Medical Diagnosis Platform</p>
+
+            <div class="neural-container">
+              <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+              <div class="neural-accuracy">
+                <span class="accuracy-label">Model Accuracy:</span>
+                <span id="accuracyValue" class="accuracy-value">0%</span>
+              </div>
+            </div>
+
             <p class="project-description-detailed">
               Developed XGBoost classification model achieving 97.6% accuracy across 7,200 patients
               for 3 thyroid conditions (hypothyroid, hyperthyroid, euthyroid), reducing diagnostic
