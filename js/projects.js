@@ -14,7 +14,9 @@ function observeNeuralNetwork() {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !neuralInitialized) {
           neuralInitialized = true;
-          initNeuralNetwork();
+          setTimeout(() => {
+            initNeuralNetwork();
+          }, 200);
           observer.unobserve(entry.target);
         }
       });
@@ -100,7 +102,7 @@ function initNeuralNetwork() {
     });
 
     frameCount++;
-    if (frameCount % 3 === 0 && activationIndex < connections.length) {
+    if (frameCount % 2 === 0 && activationIndex < connections.length) {
       connections[activationIndex].active = true;
       connections[activationIndex].from.active = true;
       connections[activationIndex].to.active = true;
@@ -127,15 +129,16 @@ function initScrollReveal() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 200);
         }
       });
     },
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll('.project-card-detailed').forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.1}s`;
+  document.querySelectorAll('.project-card-detailed').forEach((card) => {
     observer.observe(card);
   });
 }

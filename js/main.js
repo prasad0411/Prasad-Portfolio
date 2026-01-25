@@ -8,7 +8,9 @@ let mouseY = -1000;
 
 document.addEventListener('DOMContentLoaded', () => {
   smoothScroll();
-  initMatrixRain();
+  setTimeout(() => {
+    initMatrixRain();
+  }, 200);
   initStatsCounter();
   initScrollReveal();
   initSkillBars();
@@ -79,7 +81,7 @@ function initSkillBars() {
             progress.style.setProperty('--target-width', width + '%');
             setTimeout(() => {
               progress.classList.add('animate');
-            }, 100);
+            }, 300);
           }
         }
       });
@@ -98,8 +100,10 @@ function initStatsCounter() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const target = parseInt(entry.target.dataset.target);
-          animateNumber(entry.target, 0, target, 2000);
+          setTimeout(() => {
+            const target = parseInt(entry.target.dataset.target);
+            animateNumber(entry.target, 0, target, 2000);
+          }, 200);
           observer.unobserve(entry.target);
         }
       });
@@ -130,7 +134,9 @@ function initScrollReveal() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 200);
         }
       });
     },
