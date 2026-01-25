@@ -6,7 +6,7 @@
     <meta name="author" content="Prasad Kanade" />
     <meta
       name="description"
-      content="Software Engineer with 2+ years experience in microservices, database optimization, and cloud technologies. Published ML researcher and technical mentor."
+      content="Software Engineer with 2+ years experience in microservices, database optimization, and cloud technologies"
     />
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="css/main.css" />
@@ -14,9 +14,17 @@
     <title>Prasad Kanade</title>
   </head>
   <body>
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
     <nav class="navbar">
       <div class="container">
-        <a href="index.html" class="logo">Prasad Kanade</a>
+        <a
+          href="https://github.com/prasad0411"
+          class="logo"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Prasad Kanade</a
+        >
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#timeline">Journey</a></li>
@@ -32,22 +40,11 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content-centered">
-          <div class="status-badge">🟢 Open to Summer 2026 SDE Internships</div>
           <h1 class="hero-title">Prasad Kanade</h1>
-          <p class="hero-subtitle rotating-text">
-            <span class="role active">Software Engineer</span>
-            <span class="role">Database Optimizer</span>
-            <span class="role">System Architect</span>
-            <span class="role">Technical Mentor</span>
-          </p>
-          <p class="hero-description">
-            Architected enterprise microservices processing 500M+ daily transactions with 99.9% SLA
-            compliance
-          </p>
-          <div class="quick-stats">
-            <span class="stat-badge">222 Contributions</span>
-            <span class="stat-badge">97% ML Accuracy</span>
-            <span class="stat-badge">10M+ Users</span>
+          <p class="hero-subtitle">Software Engineer | Full-Stack Developer | AI/ML Researcher</p>
+          <div class="code-container">
+            <code id="liveCode" class="live-code"></code>
+            <span class="cursor-blink">|</span>
           </div>
           <div class="hero-buttons">
             <a href="projects.html" class="btn btn-primary">View Projects</a>
@@ -63,15 +60,15 @@
         <div class="about-content">
           <p>
             Master's student in Computer Science at Northeastern University with 2+ years of
-            professional experience building scalable microservices and optimizing database
-            performance for enterprise telecom platforms serving 10 million subscribers across
-            Japan.
+            professional experience engineering production microservices for enterprise telecom
+            platforms serving 10 million subscribers. Specialized in database optimization,
+            distributed systems, and cloud-native architectures.
           </p>
           <p>
-            Published researcher in AI/ML achieving 97% accuracy in medical diagnosis systems.
-            Passionate about cloud-native architectures, distributed systems, and mentoring the next
-            generation of software engineers. Currently building distributed job queues and
-            LLM-powered code review systems.
+            Published AI/ML researcher achieving 97.6% accuracy in medical classification systems
+            using XGBoost and explainable AI techniques. Passionate about building scalable systems
+            and mentoring the next generation of software engineers through technical training and
+            academic guidance.
           </p>
         </div>
       </div>
@@ -81,100 +78,99 @@
       <div class="container">
         <h2 class="section-title">Professional Journey</h2>
         <div class="timeline-container">
-          <div class="timeline-item" data-year="2020">
+          <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <div class="timeline-year">2020 - 2023</div>
+              <div class="timeline-year">Oct 2020 - Nov 2023</div>
               <h3 class="timeline-title">Bachelor of Technology</h3>
-              <p class="timeline-company">Maharashtra Institute of Technology, India</p>
+              <p class="timeline-company">Maharashtra Institute of Technology, Pune, India</p>
               <p class="timeline-description">
-                Computer Science & Engineering. Specialized in Data Structures, Distributed
-                Computing, and Artificial Intelligence. Published research on thyroid disease
-                prediction achieving 97% accuracy.
+                Computer Science & Engineering. Coursework: Data Structures, Computer Networks,
+                Operating Systems, Artificial Intelligence, Distributed Computing.
               </p>
               <div class="timeline-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Research</span>
+                <span class="tag">DSA</span>
+                <span class="tag">AI</span>
+                <span class="tag">Distributed Systems</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2021">
+          <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <div class="timeline-year">Mar - Oct 2021</div>
+              <div class="timeline-year">Mar 2021 - Oct 2021</div>
               <h3 class="timeline-title">Flutter Developer Intern</h3>
               <p class="timeline-company">Simba Developers Organization</p>
               <p class="timeline-description">
-                Architected distributed microservices using Node.js and Express. Reduced app load
-                time by 44% through state management optimization. Integrated WebSocket modules
-                achieving sub-50ms latency for real-time communication.
+                Architected distributed microservices using Node.js and Express for authentication
+                and payment modules. Reduced app load time from 3.2s to 1.8s through Flutter state
+                management optimization using Riverpod and Bloc.
               </p>
               <div class="timeline-tags">
                 <span class="tag">Flutter</span>
                 <span class="tag">Node.js</span>
-                <span class="tag">WebSocket</span>
+                <span class="tag">Microservices</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2022">
+          <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <div class="timeline-year">Jul - Dec 2022</div>
+              <div class="timeline-year">Jul 2022 - Dec 2022</div>
               <h3 class="timeline-title">Software Developer Intern</h3>
               <p class="timeline-company">ISKCON Organization</p>
               <p class="timeline-description">
-                Built and deployed containerized applications using Docker. Implemented CI/CD
-                pipelines standardizing deployments. Deployed cloud-native apps on AWS EC2, reducing
-                deployment time by 78% and achieving 93% uptime.
+                Automated infrastructure monitoring with Bash scripts and cron jobs, implementing
+                alerting systems that saved 4 hours weekly while reducing unplanned downtime by 25%.
+                Deployed cloud-native apps on AWS EC2, reducing deployment time by 78% and achieving
+                93% uptime.
               </p>
               <div class="timeline-tags">
-                <span class="tag">Docker</span>
                 <span class="tag">AWS</span>
-                <span class="tag">CI/CD</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Bash</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2023">
+          <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
               <div class="timeline-year">Dec 2023 - May 2025</div>
               <h3 class="timeline-title">Software Engineering Associate</h3>
               <p class="timeline-company">Amdocs Corporation</p>
               <p class="timeline-description">
-                Led backend development for JCOM telecom platform serving 10+ million subscribers.
-                Optimized Oracle database queries achieving 60% performance improvement. Trained 8
-                junior engineers on API security and microservices architecture, improving
-                onboarding efficiency by 25%.
+                Engineered 8+ production microservices for JCOM telecom platform serving 10M+
+                subscribers. Optimized Oracle database queries achieving 60% performance improvement
+                through composite indexing. Implemented comprehensive testing using JUnit and
+                Mockito, achieving 80% coverage while reducing data-related production issues by
+                30%.
               </p>
               <div class="timeline-tags">
                 <span class="tag">Java</span>
                 <span class="tag">Spring Boot</span>
                 <span class="tag">Oracle</span>
-                <span class="tag">Leadership</span>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item" data-year="2025">
+          <div class="timeline-item">
             <div class="timeline-marker active"></div>
             <div class="timeline-content">
               <div class="timeline-year">Sept 2025 - Present</div>
               <h3 class="timeline-title">MS in Computer Science</h3>
               <p class="timeline-company">Northeastern University, Boston</p>
               <p class="timeline-description">
-                Pursuing graduate studies in algorithms, distributed systems, and web development.
-                Serving as Global Student Mentor guiding incoming master's students on course
-                planning and career development. Building advanced systems projects and contributing
-                to open-source.
+                Pursuing graduate studies. Coursework: Programming Design Paradigm, Algorithms, Web
+                Development, Database Management Systems. Serving as Global Student Mentor providing
+                guidance on course planning and career development.
               </p>
               <div class="timeline-tags">
                 <span class="tag">Algorithms</span>
-                <span class="tag">Distributed Systems</span>
-                <span class="tag">Mentorship</span>
+                <span class="tag">Web Dev</span>
+                <span class="tag">DBMS</span>
               </div>
             </div>
           </div>
@@ -191,18 +187,18 @@
             <h3 class="leadership-title">Technical Training Lead</h3>
             <p class="leadership-company">Amdocs Corporation</p>
             <p class="leadership-description">
-              Designed and delivered comprehensive technical training program for 8 junior engineers
-              covering API security, JWT authentication, and microservices architecture. Created
-              reusable training modules and documentation that reduced onboarding time by 40% and
-              improved code quality standards across the team.
+              Designed and delivered comprehensive technical training program covering API security,
+              JWT authentication, and microservices architecture. Created reusable training modules
+              that reduced onboarding time by 40% and improved code quality standards across the
+              engineering team.
             </p>
             <div class="leadership-stats">
               <div class="leadership-stat">
-                <span class="stat-value">8</span>
+                <span class="stat-value">8+</span>
                 <span class="stat-label">Engineers Trained</span>
               </div>
               <div class="leadership-stat">
-                <span class="stat-value">25%</span>
+                <span class="stat-value">40%</span>
                 <span class="stat-label">Faster Onboarding</span>
               </div>
             </div>
@@ -213,18 +209,18 @@
             <h3 class="leadership-title">Global Student Mentor</h3>
             <p class="leadership-company">Northeastern University</p>
             <p class="leadership-description">
-              Mentoring incoming Computer Science master's students through the GSM program.
-              Providing guidance on course selection, career development, technical interview
-              preparation, and navigating graduate school. Conducted one-on-one sessions helping
-              students secure competitive internships at top tech companies.
+              Mentoring incoming Computer Science master's students through course selection, career
+              development, and technical interview preparation. Conducting one-on-one sessions
+              helping students navigate graduate school and secure competitive internships at top
+              tech companies.
             </p>
             <div class="leadership-stats">
               <div class="leadership-stat">
-                <span class="stat-value">7</span>
-                <span class="stat-label">Active Mentees</span>
+                <span class="stat-value">10+</span>
+                <span class="stat-label">Students Guided</span>
               </div>
               <div class="leadership-stat">
-                <span class="stat-value">10+</span>
+                <span class="stat-value">15+</span>
                 <span class="stat-label">Hours/Month</span>
               </div>
             </div>
@@ -232,22 +228,22 @@
 
           <div class="leadership-card">
             <div class="leadership-icon">🏆</div>
-            <h3 class="leadership-title">Cross-Functional Leadership</h3>
+            <h3 class="leadership-title">Cross-Functional Collaboration</h3>
             <p class="leadership-company">Enterprise Projects</p>
             <p class="leadership-description">
-              Led technical discussions with product managers and business stakeholders at Amdocs.
-              Presented architectural proposals to senior management for system modernization
-              initiatives. Collaborated across 3-person backend team to deliver features on
-              bi-weekly sprint cycles while maintaining 99.9% uptime SLA.
+              Led technical discussions with product managers and business stakeholders.
+              Collaborated across agile teams to deliver 25+ features on bi-weekly sprint cycles.
+              Presented technical proposals and architectural decisions to senior management for
+              system modernization initiatives.
             </p>
             <div class="leadership-stats">
               <div class="leadership-stat">
-                <span class="stat-value">3</span>
-                <span class="stat-label">Team Members</span>
+                <span class="stat-value">25+</span>
+                <span class="stat-label">Features Delivered</span>
               </div>
               <div class="leadership-stat">
-                <span class="stat-value">99.9%</span>
-                <span class="stat-label">Uptime SLA</span>
+                <span class="stat-value">12</span>
+                <span class="stat-label">Sprint Cycles</span>
               </div>
             </div>
           </div>
@@ -270,7 +266,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -279,7 +275,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -288,7 +284,7 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -297,7 +293,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -306,7 +302,49 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 80%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-title">AI/ML & Data Science</h3>
+            <div class="skill-bars">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">XGBoost / scikit-learn</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">TensorFlow / PyTorch</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SHAP / Model Explainability</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Pandas / NumPy</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%" data-width="90"></div>
                 </div>
               </div>
             </div>
@@ -321,7 +359,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -330,25 +368,25 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
-                  <span class="skill-name">Node.js / Express</span>
+                  <span class="skill-name">Node.js / Express.js</span>
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">Flutter</span>
-                  <span class="skill-level">Intermediate</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 70%"></div>
+                  <div class="skill-progress" style="width: 80%" data-width="80"></div>
                 </div>
               </div>
             </div>
@@ -363,7 +401,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -372,25 +410,25 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 80%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">Kubernetes</span>
-                  <span class="skill-level">Intermediate</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 65%"></div>
+                  <div class="skill-progress" style="width: 80%" data-width="80"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
-                  <span class="skill-name">CI/CD (GitHub Actions)</span>
+                  <span class="skill-name">CI/CD Pipelines</span>
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
             </div>
@@ -405,7 +443,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -414,7 +452,7 @@
                   <span class="skill-level">Expert</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -423,7 +461,7 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
               <div class="skill-item">
@@ -432,7 +470,49 @@
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 80%"></div>
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-title">Tools & Technologies</h3>
+            <div class="skill-bars">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git / GitHub</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">REST APIs / Microservices</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SOAP / Apache CXF</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Linux / Shell Scripting</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%" data-width="85"></div>
                 </div>
               </div>
             </div>
@@ -444,26 +524,62 @@
     <section id="stats" class="stats">
       <div class="container">
         <h2 class="section-title">Quantified Impact</h2>
+
+        <div class="comparison-slider-container">
+          <h3 class="subsection-title">Database Optimization Achievement</h3>
+          <div class="slider-wrapper">
+            <div class="comparison-slider">
+              <div class="slider-side before">
+                <h4 class="slider-title">Before Optimization</h4>
+                <div class="slider-metric">
+                  <span class="metric-value">Query Time</span>
+                  <span class="metric-number">3.2s</span>
+                </div>
+                <div class="slider-metric">
+                  <span class="metric-value">Weekly Delay</span>
+                  <span class="metric-number">15 hours</span>
+                </div>
+              </div>
+              <div class="slider-divider" id="sliderDivider">
+                <div class="slider-handle">⟷</div>
+              </div>
+              <div class="slider-side after">
+                <h4 class="slider-title">After Optimization</h4>
+                <div class="slider-metric">
+                  <span class="metric-value">Query Time</span>
+                  <span class="metric-number">1.1s</span>
+                </div>
+                <div class="slider-metric">
+                  <span class="metric-value">Weekly Delay</span>
+                  <span class="metric-number">0 hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="stats-grid-enhanced">
           <div class="stat-card-enhanced">
             <div class="stat-number-large" data-target="97">0</div>
             <div class="stat-label-large">ML Accuracy %</div>
-            <div class="stat-context">12% above industry baseline on 85K patient records</div>
+            <div class="stat-context">
+              XGBoost classification on 7,200 patients across 3 thyroid conditions
+            </div>
           </div>
           <div class="stat-card-enhanced">
             <div class="stat-number-large" data-target="10">0</div>
-            <div class="stat-label-large">Million Users Served</div>
-            <div class="stat-context">JCOM telecom platform with 99.9% uptime</div>
+            <div class="stat-label-large">Million Users</div>
+            <div class="stat-context">JCOM telecom platform with 99.9% uptime SLA</div>
           </div>
           <div class="stat-card-enhanced">
             <div class="stat-number-large" data-target="60">0</div>
             <div class="stat-label-large">Performance Gain %</div>
-            <div class="stat-context">Saved 15 hours/week through query optimization</div>
+            <div class="stat-context">Oracle query optimization through composite indexing</div>
           </div>
           <div class="stat-card-enhanced">
-            <div class="stat-number-large" data-target="500">0</div>
-            <div class="stat-label-large">K Concurrent Users</div>
-            <div class="stat-context">Web3 platform with 180ms API response</div>
+            <div class="stat-number-large" data-target="80">0</div>
+            <div class="stat-label-large">Code Coverage %</div>
+            <div class="stat-context">Comprehensive testing with JUnit and Mockito</div>
           </div>
         </div>
       </div>
@@ -493,10 +609,11 @@
               href="https://github.com/prasad0411/AllMyQuestions"
               class="repo-card"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <h4 class="repo-name">AllMyQuestions</h4>
               <p class="repo-description">
-                Active DSA preparation in Java. Organized by data structures & algorithms.
+                Active DSA preparation in Java. Organized by data structures and algorithms.
               </p>
               <div class="repo-meta">
                 <span class="repo-lang">Java</span>
@@ -507,10 +624,11 @@
               href="https://github.com/prasad0411/JobsScrapingAutomation"
               class="repo-card"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <h4 class="repo-name">JobScrapingAutomation</h4>
               <p class="repo-description">
-                Automated internship aggregation processing 1,300+ daily postings.
+                Automated internship aggregation processing 200+ daily postings.
               </p>
               <div class="repo-meta">
                 <span class="repo-lang">Python</span>
