@@ -1,7 +1,29 @@
+let neuralInitialized = false;
+
 document.addEventListener('DOMContentLoaded', () => {
-  initNeuralNetwork();
   initScrollReveal();
+  observeNeuralNetwork();
 });
+
+function observeNeuralNetwork() {
+  const canvas = document.getElementById('neuralCanvas');
+  if (!canvas) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !neuralInitialized) {
+          neuralInitialized = true;
+          initNeuralNetwork();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(canvas);
+}
 
 function initNeuralNetwork() {
   const canvas = document.getElementById('neuralCanvas');
@@ -49,6 +71,9 @@ function initNeuralNetwork() {
   let currentAccuracy = 0;
   let activationIndex = 0;
   let frameCount = 0;
+  const targetAccuracy = 97.6;
+  const totalFrames = connections.length * 2;
+  const accuracyPerFrame = targetAccuracy / totalFrames;
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
@@ -80,14 +105,18 @@ function initNeuralNetwork() {
       connections[activationIndex].from.active = true;
       connections[activationIndex].to.active = true;
       activationIndex++;
-
-      if (currentAccuracy < 97.6) {
-        currentAccuracy += 0.4;
-        accuracyEl.textContent = `${Math.min(currentAccuracy, 97.6).toFixed(1)}%`;
-      }
     }
 
-    requestAnimationFrame(animate);
+    if (currentAccuracy < targetAccuracy) {
+      currentAccuracy += accuracyPerFrame;
+      accuracyEl.textContent = `${Math.min(currentAccuracy, targetAccuracy).toFixed(1)}%`;
+    } else {
+      accuracyEl.textContent = `${targetAccuracy}%`;
+    }
+
+    if (activationIndex < connections.length || currentAccuracy < targetAccuracy) {
+      requestAnimationFrame(animate);
+    }
   }
 
   animate();
