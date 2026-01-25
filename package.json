@@ -1,0 +1,16 @@
+{
+  "name": "prasad-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive portfolio for Prasad Kanade",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "author": "Prasad Kanade",
+  "license": "Northeastern University",
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0"
+  }
+}

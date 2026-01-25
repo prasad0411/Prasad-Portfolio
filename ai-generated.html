@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Prasad Kanade" />
+    <meta name="description" content="Technical guide on building microservices with Spring Boot" />
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <title>Building Microservices with Spring Boot</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#stats">Impact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <article class="blog-post">
+      <div class="container">
+        <header class="post-header">
+          <h1 class="post-title">Building Scalable Microservices with Spring Boot</h1>
+          <p class="post-meta">A comprehensive guide to modern microservices architecture</p>
+        </header>
+
+        <section class="post-content">
+          <h2 class="section-heading">Introduction</h2>
+          <p>
+            Microservices architecture has become the de facto standard for building scalable,
+            maintainable enterprise applications. Spring Boot, with its opinionated approach to
+            configuration and embedded server capabilities, provides an excellent foundation for
+            developing microservices that are both robust and easy to deploy.
+          </p>
+
+          <h2 class="section-heading">Core Principles of Microservices</h2>
+          <p>
+            When designing microservices with Spring Boot, several key principles guide the
+            architecture. Each service should be independently deployable, maintain its own
+            database, and communicate through well-defined APIs. This separation of concerns enables
+            teams to develop, test, and deploy services independently, significantly improving
+            development velocity.
+          </p>
+
+          <h2 class="section-heading">Setting Up Spring Boot Microservices</h2>
+          <p>
+            Begin by creating a Spring Boot application using Spring Initializr with dependencies
+            for Spring Web, Spring Data JPA, and Spring Cloud. The application structure should
+            follow a layered architecture with clear separation between controllers, services, and
+            repositories. Implementing RESTful endpoints using Spring's annotations provides a clean
+            and maintainable API surface.
+          </p>
+
+          <h2 class="section-heading">Service Discovery and Load Balancing</h2>
+          <p>
+            Service discovery is critical in a microservices ecosystem. Spring Cloud Netflix Eureka
+            provides a robust service registry where each microservice registers itself upon
+            startup. Clients can then discover and communicate with services dynamically, without
+            hardcoded URLs. Ribbon integration enables client-side load balancing, distributing
+            requests across multiple service instances automatically.
+          </p>
+
+          <h2 class="section-heading">API Gateway Pattern</h2>
+          <p>
+            Implementing an API Gateway using Spring Cloud Gateway centralizes cross-cutting
+            concerns like authentication, rate limiting, and request routing. The gateway acts as a
+            single entry point for all client requests, routing them to appropriate microservices
+            while handling security and monitoring concerns. This pattern simplifies client
+            interactions and provides a unified API surface.
+          </p>
+
+          <h2 class="section-heading">Database Per Service</h2>
+          <p>
+            Each microservice should own its data store, avoiding shared databases that create tight
+            coupling. Spring Data JPA simplifies database interactions, allowing services to use
+            different database technologies based on their specific requirements. This approach
+            enables independent scaling and reduces the risk of cascading failures across services.
+          </p>
+
+          <h2 class="section-heading">Inter-Service Communication</h2>
+          <p>
+            Microservices communicate through synchronous REST calls or asynchronous messaging.
+            Spring's RestTemplate and WebClient provide straightforward HTTP communication, while
+            Spring Cloud Stream enables event-driven architectures using message brokers like
+            RabbitMQ or Kafka. Choosing the right communication pattern depends on consistency
+            requirements and latency tolerance.
+          </p>
+
+          <h2 class="section-heading">Circuit Breaker Pattern</h2>
+          <p>
+            Implementing circuit breakers using Resilience4j prevents cascading failures when
+            dependent services become unavailable. The circuit breaker monitors service calls and
+            opens when failure thresholds are exceeded, returning fallback responses instead of
+            attempting failed calls. This pattern significantly improves system resilience and user
+            experience during partial outages.
+          </p>
+
+          <h2 class="section-heading">Configuration Management</h2>
+          <p>
+            Spring Cloud Config provides centralized configuration management, storing
+            configurations in a Git repository. Microservices fetch their configurations at startup
+            and can refresh them dynamically without redeployment. This approach simplifies
+            environment-specific configuration and enables zero-downtime configuration updates
+            across the entire microservices ecosystem.
+          </p>
+
+          <h2 class="section-heading">Monitoring and Observability</h2>
+          <p>
+            Comprehensive monitoring is essential for microservices. Spring Boot Actuator exposes
+            health, metrics, and operational endpoints. Integration with Prometheus and Grafana
+            provides real-time metrics visualization, while distributed tracing using Spring Cloud
+            Sleuth and Zipkin enables request flow analysis across multiple services. These tools
+            are crucial for debugging and performance optimization.
+          </p>
+
+          <h2 class="section-heading">Security Considerations</h2>
+          <p>
+            Implementing OAuth 2.0 with Spring Security provides robust authentication and
+            authorization. JWT tokens enable stateless authentication across microservices, while
+            Spring Security's method-level security annotations protect sensitive operations.
+            Service-to-service communication should use mTLS for encryption and mutual
+            authentication, ensuring secure inter-service communication.
+          </p>
+
+          <h2 class="section-heading">Containerization and Deployment</h2>
+          <p>
+            Docker containers provide consistent deployment environments for Spring Boot
+            microservices. Creating optimized Docker images using multi-stage builds reduces image
+            size and improves deployment speed. Kubernetes orchestration enables automated scaling,
+            rolling updates, and self-healing capabilities, making it ideal for production
+            microservices deployments.
+          </p>
+
+          <h2 class="section-heading">Testing Strategies</h2>
+          <p>
+            Comprehensive testing includes unit tests using JUnit and Mockito, integration tests
+            with TestContainers for database interactions, and contract testing using Spring Cloud
+            Contract. Each microservice should have its own test suite, enabling independent
+            verification without requiring the entire system to be running.
+          </p>
+
+          <h2 class="section-heading">Performance Optimization</h2>
+          <p>
+            Optimizing Spring Boot microservices involves careful consideration of JVM settings,
+            connection pooling, caching strategies, and async processing. Spring's @Async annotation
+            enables non-blocking operations, while caching with Redis reduces database load.
+            Profiling tools like JProfiler help identify bottlenecks and optimize resource
+            utilization.
+          </p>
+
+          <h2 class="section-heading">Conclusion</h2>
+          <p>
+            Building microservices with Spring Boot requires careful architectural decisions and
+            adherence to best practices. The Spring ecosystem provides comprehensive tools for
+            addressing common microservices challenges, from service discovery to distributed
+            tracing. By following these patterns and leveraging Spring's capabilities, teams can
+            build scalable, resilient systems that meet modern application demands.
+          </p>
+        </section>
+
+        <footer class="post-footer">
+          <div class="ai-disclosure">
+            <h3 class="disclosure-title">AI-Generated Content Disclosure</h3>
+            <p class="disclosure-text">
+              This article was generated using <strong>Claude 3.5 Sonnet (Anthropic)</strong> on
+              January 24, 2026. The content was created to demonstrate AI-assisted technical writing
+              capabilities as part of a web development portfolio project.
+            </p>
+            <p class="disclosure-text">
+              <strong>Prompt:</strong> "Write a comprehensive technical article about building
+              microservices with Spring Boot, covering architecture patterns, service discovery, API
+              gateways, communication strategies, security, and deployment."
+            </p>
+            <p class="disclosure-text"><strong>Model:</strong> Claude 3.5 Sonnet</p>
+            <p class="disclosure-text">
+              <strong>Usage:</strong> Content generation with human review for technical accuracy
+            </p>
+          </div>
+        </footer>
+      </div>
+    </article>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Prasad Kanade. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
