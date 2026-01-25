@@ -18,13 +18,7 @@
 
     <nav class="navbar">
       <div class="container">
-        <a
-          href="https://github.com/prasad0411"
-          class="logo"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Prasad Kanade</a
-        >
+        <a href="index.html" class="logo">Prasad Kanade</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#timeline">Journey</a></li>
@@ -42,13 +36,18 @@
         <div class="hero-content">
           <h1 class="hero-title">Prasad Kanade</h1>
           <p class="hero-subtitle">Software Engineer | Database Optimizer | AI/ML Researcher</p>
-          <p class="hero-description">
-            Engineered production microservices serving 10M+ subscribers. Optimized database queries
-            achieving 60% performance gains. Published AI/ML researcher with 97.6% model accuracy.
+          <p class="hero-quote">
+            "There are 10 types of people in the world: those who understand binary, and those who
+            don't."
           </p>
           <div class="hero-buttons">
             <a href="projects.html" class="btn btn-primary">View Projects</a>
-            <a href="assets/resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+            <a
+              href="assets/resume.pdf"
+              class="btn btn-secondary"
+              download="Prasad_Kanade_Resume.pdf"
+              >Download Resume</a
+            >
           </div>
         </div>
         <div class="hero-image">
@@ -560,7 +559,7 @@
         <div class="github-stats">
           <div class="github-stat">
             <div class="github-number">222</div>
-            <div class="github-label">Contributions (2025)</div>
+            <div class="github-label">Contributions (2025-2026)</div>
           </div>
           <div class="github-stat">
             <div class="github-number">9</div>
@@ -616,14 +615,14 @@
           Open to opportunities, collaborations, and interesting conversations
         </p>
         <div class="contact-links">
-          <a href="mailto:kanade.pra@northeastern.edu" class="contact-link">
+          <div class="contact-link" onclick="copyEmail()">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
               />
             </svg>
             <span>Email</span>
-          </a>
+          </div>
           <a
             href="https://www.linkedin.com/in/prasad-kanade-/"
             class="contact-link"
@@ -651,6 +650,7 @@
             <span>GitHub</span>
           </a>
         </div>
+        <div id="emailNotification" class="email-notification"></div>
       </div>
     </section>
 
@@ -661,5 +661,18 @@
     </footer>
 
     <script type="module" src="js/main.js"></script>
+    <script>
+      function copyEmail() {
+        const email = 'kanade.pra@northeastern.edu';
+        navigator.clipboard.writeText(email).then(() => {
+          const notification = document.getElementById('emailNotification');
+          notification.textContent = '✓ Email copied: ' + email;
+          notification.style.display = 'block';
+          setTimeout(() => {
+            notification.style.display = 'none';
+          }, 3000);
+        });
+      }
+    </script>
   </body>
 </html>
