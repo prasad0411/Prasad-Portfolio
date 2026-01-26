@@ -135,7 +135,7 @@ Prasad-Portfolio/
 │   ├── Github.png
 │   ├── AI Generated Page.png
 │   ├── wireframe-homepage.jpg
-│   ├── wireframe-projects.jpg
+│   ├── wireframe-projects.jpg 
 │   └── wireframe-ai-page.jpg
 ├── package.json
 ├── .prettierrc
