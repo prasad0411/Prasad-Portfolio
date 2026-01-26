@@ -3,7 +3,7 @@
 **Author**: Prasad Kanade  
 **Course**: CS 5610 Web Development - Spring 2026  
 **Institution**: Northeastern University  
-**Deployed Site**: https://prasad0411.github.io/prasad-portfolio/
+**Deployed Site**: https://prasad0411.github.io/Prasad-Portfolio/
 
 ## Project Objective
 
