@@ -12,12 +12,15 @@ A professional portfolio website showcasing software engineering experience, AI/
 ## Screenshots
 
 ### Homepage
+
 ![Portfolio Homepage](docs/Home%20Page.png)
 
 ### Projects Page
+
 ![Projects Page](docs/Projects.png)
 
 ### AI Generated Article
+
 ![AI Generated Page](docs/AI%20Generated%20Page.png)
 
 ### Design Wireframes
@@ -48,6 +51,7 @@ A professional portfolio website showcasing software engineering experience, AI/
 - GitHub Pages for deployment
 
 ## Project Structure
+
 ```
 Prasad-Portfolio/
 ├── index.html              # Homepage
@@ -91,6 +95,7 @@ Prasad-Portfolio/
 - Git
 
 ### Local Development
+
 ```bash
 # Clone repository
 git clone https://github.com/prasad0411/prasad-portfolio.git
