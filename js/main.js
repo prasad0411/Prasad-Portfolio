@@ -3,6 +3,8 @@ import { smoothScroll } from './utils.js';
 const codeChars =
   'SELECT*FROMWHEREINSERTUPDATEDELETEJOINdefclassimportpublicprivatevoidintStringreturn{}()[];0123456789';
 
+const UI_DELAY_MS = 10;
+
 let mouseX = -1000;
 let mouseY = -1000;
 
@@ -10,10 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   smoothScroll();
   setTimeout(() => {
     initMatrixRain();
-  }, 200);
+  }, UI_DELAY_MS);
   initStatsCounter();
   initScrollReveal();
   initSkillBars();
+  initCopyEmail();
 });
 
 function initMatrixRain() {
@@ -81,7 +84,7 @@ function initSkillBars() {
             progress.style.setProperty('--target-width', width + '%');
             setTimeout(() => {
               progress.classList.add('animate');
-            }, 300);
+            }, UI_DELAY_MS);
           }
         }
       });
@@ -103,7 +106,7 @@ function initStatsCounter() {
           setTimeout(() => {
             const target = parseInt(entry.target.dataset.target);
             animateNumber(entry.target, 0, target, 2000);
-          }, 200);
+          }, UI_DELAY_MS);
           observer.unobserve(entry.target);
         }
       });
@@ -136,7 +139,7 @@ function initScrollReveal() {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, 200);
+          }, UI_DELAY_MS);
         }
       });
     },
@@ -148,4 +151,27 @@ function initScrollReveal() {
     .forEach((el) => {
       observer.observe(el);
     });
+}
+
+function initCopyEmail() {
+  const copyEmailButton = document.getElementById('copyEmailButton');
+  if (!copyEmailButton) return;
+
+  const email = 'kanade.pra@northeastern.edu';
+
+  copyEmailButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      const notification = document.getElementById('emailNotification');
+      if (!notification) return;
+
+      notification.textContent = `✓ Email copied: ${email}`;
+      notification.style.display = 'block';
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 3000);
+    } catch {
+      window.location.href = `mailto:${email}`;
+    }
+  });
 }

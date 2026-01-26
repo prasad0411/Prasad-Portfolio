@@ -1,11 +1,12 @@
 # Prasad Kanade - Portfolio Website
 
-![Portfolio Screenshot](docs/screenshot.png)
+![Portfolio Screenshot](docs/screenshot.svg)
 
 **Author:** Prasad Kanade  
 **Course:** [CS 5610 Web Development - Spring 2026](https://northeastern.instructure.com/courses/202630)  
 **Institution:** Northeastern University  
-**Live Demo:** https://prasad-portfolio.netlify.app
+**Live Demo (GitHub Pages):** https://prasad0411.github.io/Prasad-Portfolio/  
+**Live Demo (Netlify):** https://prasad-portfolio.netlify.app
 
 ---
 
@@ -17,10 +18,12 @@ Interactive personal portfolio showcasing software engineering experience, techn
 
 ## ✨ Features
 
-- **Interactive Skills Network Graph** - Canvas-based physics simulation with 18 skill nodes
-- **Animated Stats Counter** - Impact metrics that count up on scroll
-- **Terminal Command Interface** - Interactive CLI in footer for navigation
-- **Scroll Reveal Animations** - Content fades in as you scroll
+- **Matrix Rain Background** - Developer-themed animated canvas background on the homepage
+- **Animated Skill Bars** - Skill progress bars animate on scroll
+- **Animated Stats Counter** - Impact metrics count up on scroll
+- **Neural Network Visualization (Projects page)** - Canvas animation demonstrating model “activation”
+- **Scroll Reveal Animations** - Content fades in as you scroll (fast reveal)
+- **Copy Email** - One-click copy-to-clipboard interaction in the contact section
 - **Responsive Design** - Mobile-first approach with CSS Grid and Flexbox
 - **ES6 Modules** - Modern JavaScript architecture
 - **W3C Compliant** - Valid HTML5 and accessible markup
@@ -48,21 +51,21 @@ prasad-portfolio/
 ├── css/
 │   ├── main.css
 │   ├── components.css
-│   └── skills-graph.css
 ├── js/
 │   ├── main.js
-│   ├── skillsGraph.js
 │   ├── projects.js
 │   └── utils.js
 ├── images/
 │   ├── profile.jpg
 │   ├── favicon.ico
-│   └── projects/
 ├── assets/
 │   └── resume.pdf
 ├── docs/
 │   ├── DESIGN.md
-│   └── screenshot.png
+│   ├── screenshot.svg
+│   ├── wireframe-homepage.html
+│   ├── wireframe-projects.html
+│   └── wireframe-ai-page.html
 ├── package.json
 ├── .prettierrc
 ├── .eslintrc.cjs
@@ -82,9 +85,6 @@ prasad-portfolio/
 ### Local Development
 
 ```bash
-git clone https://github.com/prasad0411/prasad-portfolio.git
-cd prasad-portfolio
-
 npm install
 
 npm run format
@@ -95,6 +95,12 @@ python3 -m http.server 8000
 ```
 
 Open http://localhost:8000
+
+---
+
+## 🧾 Design Document
+
+See `docs/DESIGN.md` (includes project description, personas, user stories, and wireframe links).
 
 ---
 
@@ -139,16 +145,15 @@ Open http://localhost:8000
    - README documentation structure
 
 3. **Design Document**
-   - User persona generation
-   - User story formatting
+   - Persona/story structure assistance
    - Documentation organization
 
 **Human Contributions:**
 
-- All creative component implementations
+- Homepage + projects architecture and implementation
+- Matrix canvas animation and neural-network visualization logic
+- Scroll reveal + skill bar animation logic
 - Project architecture decisions
-- Custom physics engine for skills graph
-- Terminal interface logic
 - Final content review and editing
 
 ---
@@ -180,7 +185,7 @@ Open http://localhost:8000
 
 ## 🎥 Video Demo
 
-**Link:** [YouTube Demo](https://youtube.com/...)  
+**Link:** [YouTube Demo](https://youtube.com/...) (replace with your real narrated link)  
 **Duration:** 3 minutes
 
 ---

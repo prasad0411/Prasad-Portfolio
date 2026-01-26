@@ -1,5 +1,7 @@
 let neuralInitialized = false;
 
+const UI_DELAY_MS = 10;
+
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   observeNeuralNetwork();
@@ -16,7 +18,7 @@ function observeNeuralNetwork() {
           neuralInitialized = true;
           setTimeout(() => {
             initNeuralNetwork();
-          }, 200);
+          }, UI_DELAY_MS);
           observer.unobserve(entry.target);
         }
       });
@@ -131,7 +133,7 @@ function initScrollReveal() {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, 200);
+          }, UI_DELAY_MS);
         }
       });
     },
