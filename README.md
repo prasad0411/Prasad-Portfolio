@@ -51,43 +51,6 @@ A professional portfolio website showcasing software engineering experience, AI/
 - Git and GitHub for version control
 - GitHub Pages for deployment
 
-## Project Structure
-
-```
-Prasad-Portfolio/
-├── index.html              # Homepage
-├── projects.html           # Projects showcase
-├── ai-generated.html       # AI-generated article
-├── css/
-│   ├── main.css           # Main stylesheet
-│   └── components.css     # Component styles
-├── js/
-│   ├── main.js            # Homepage JavaScript
-│   ├── projects.js        # Projects page JavaScript
-│   └── utils.js           # Utility functions
-├── images/
-│   ├── favicon.ico
-│   ├── profile.jpg
-│   └── projects/
-├── assets/
-│   └── resume.pdf
-├── docs/
-│   ├── DESIGN.md
-│   ├── Home Page.png
-│   ├── Projects.png
-│   ├── LinkedIn.png
-│   ├── Github.png
-│   ├── AI Generated Page.png
-│   ├── wireframe-homepage.jpg
-│   ├── wireframe-projects.jpg
-│   └── wireframe-ai-page.jpg
-├── package.json           # Dependencies
-├── .prettierrc            # Code formatting config
-├── .eslintrc.cjs          # Linting config
-├── LICENSE                # MIT License
-└── README.md              # This file
-```
-
 ## Installation and Setup
 
 ### Prerequisites
