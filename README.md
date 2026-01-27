@@ -5,6 +5,8 @@
 **Institution**: Northeastern University  
 **Class Link**: https://northeastern.instructure.com/courses/245751  
 **Deployed Site**: https://prasad0411.github.io/Prasad-Portfolio/
+**Demo Link**: https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bb3caaeb-de0e-4a6b-8b64-b3de0153088e
+**Presentation**: https://docs.google.com/presentation/d/18KcJzm2gpB7OPhEhwHI4OUNMRl6DSuv8b5fxc7dkCqc/edit?usp=sharing
 
 ## Project Objective
 
