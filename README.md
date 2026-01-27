@@ -135,37 +135,6 @@ python3 -m http.server 8000
 - Usage: Content refinement and clarity improvements
 - Implementation: All personal content written by human, reviewed with AI assistance
 
-**Human Contributions:**
-
-- All creative component implementations including Matrix rain and Neural network
-- Project architecture and design decisions
-- Interactive functionality and user experience design
-- All personal content writing
-- Final testing, debugging, and deployment
-
-## Rubric Compliance
-
-- Design document with personas, stories, and mockups
-- Meaningful homepage with professional content
-- ES6 modules in package.json and script tags
-- Deployed on GitHub Pages
-- Original creative components
-- Organized folder structure
-- Meta tags for author, description, and icon
-- Original JavaScript over 150 lines without libraries
-- Prettier formatted
-- W3C compliant HTML
-- ESLint compliant with no errors
-- All images include alt attributes
-- 3 HTML pages with different URLs
-- Class-based CSS selectors
-- Standard HTML tags only
-- Clean CSS without important declarations
-- CSS Grid and Flexbox throughout
-- Comprehensive README with screenshot and instructions
-- package.json with dependencies listed
-- MIT License included
-
 ## Contact
 
 **Prasad Kanade**  
