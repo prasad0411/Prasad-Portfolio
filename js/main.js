@@ -1,177 +1,67 @@
-import { smoothScroll } from './utils.js';
+/**
+ * Portfolio - Minimal JavaScript
+ * Only essential functionality, no gimmicks
+ */
 
-const codeChars =
-  'SELECT*FROMWHEREINSERTUPDATEDELETEJOINdefclassimportpublicprivatevoidintStringreturn{}()[];0123456789';
-
-const UI_DELAY_MS = 10;
-
-let mouseX = -1000;
-let mouseY = -1000;
-
+// Smooth scroll for anchor links
 document.addEventListener('DOMContentLoaded', () => {
-  smoothScroll();
-  setTimeout(() => {
-    initMatrixRain();
-  }, UI_DELAY_MS);
-  initStatsCounter();
+  initSmoothScroll();
   initScrollReveal();
-  initSkillBars();
-  initCopyEmail();
 });
 
-function initMatrixRain() {
-  const canvas = document.getElementById('matrixCanvas');
-  if (!canvas) return;
+/**
+ * Smooth scrolling for in-page anchor links
+ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href === '#') return;
 
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+      e.preventDefault();
+      const target = document.querySelector(href);
 
-  const columns = Math.floor(canvas.width / 20);
-  const drops = Array(columns).fill(0);
+      if (target) {
+        const navHeight = document.querySelector('.nav').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function draw() {
-    ctx.fillStyle = 'rgba(10, 14, 39, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = 'rgba(0, 255, 65, 0.8)';
-    ctx.font = '15px monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-      const x = i * 20;
-      const y = drops[i] * 20;
-
-      const distToMouse = Math.sqrt(Math.pow(x - mouseX, 2) + Math.pow(y - mouseY, 2));
-
-      if (distToMouse < 100) {
-        drops[i] = 0;
-        continue;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
       }
-
-      const char = codeChars[Math.floor(Math.random() * codeChars.length)];
-      ctx.fillText(char, x, y);
-
-      if (y > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 33);
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-}
-
-function initSkillBars() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          const progress = entry.target.querySelector('.skill-progress');
-          if (progress) {
-            const width = progress.getAttribute('data-width');
-            progress.style.setProperty('--target-width', width + '%');
-            setTimeout(() => {
-              progress.classList.add('animate');
-            }, UI_DELAY_MS);
-          }
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  document.querySelectorAll('.skill-item').forEach((item) => observer.observe(item));
-}
-
-function initStatsCounter() {
-  const statNumbers = document.querySelectorAll('.stat-number-large');
-  if (statNumbers.length === 0) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            const target = parseInt(entry.target.dataset.target);
-            animateNumber(entry.target, 0, target, 2000);
-          }, UI_DELAY_MS);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  statNumbers.forEach((el) => observer.observe(el));
-}
-
-function animateNumber(element, start, end, duration) {
-  const increment = (end - start) / (duration / 16);
-  let current = start;
-
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= end) {
-      element.textContent = end;
-      clearInterval(timer);
-    } else {
-      element.textContent = Math.floor(current);
-    }
-  }, 16);
-}
-
-function initScrollReveal() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, UI_DELAY_MS);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  document
-    .querySelectorAll('.project-card-detailed, .timeline-item, .leadership-card, .about-content')
-    .forEach((el) => {
-      observer.observe(el);
     });
+  });
 }
 
-function initCopyEmail() {
-  const copyEmailButton = document.getElementById('copyEmailButton');
-  if (!copyEmailButton) return;
+/**
+ * Subtle fade-in on scroll for content sections
+ * Minimal and non-distracting
+ */
+function initScrollReveal() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  };
 
-  const email = 'kanade.pra@northeastern.edu';
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
-  copyEmailButton.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      const notification = document.getElementById('emailNotification');
-      if (!notification) return;
+  // Apply to work cards and case studies only
+  const elementsToReveal = document.querySelectorAll('.work-card, .case-study, .experience-item');
 
-      notification.textContent = `✓ Email copied: ${email}`;
-      notification.style.display = 'block';
-      setTimeout(() => {
-        notification.style.display = 'none';
-      }, 3000);
-    } catch {
-      window.location.href = `mailto:${email}`;
-    }
+  elementsToReveal.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
   });
 }

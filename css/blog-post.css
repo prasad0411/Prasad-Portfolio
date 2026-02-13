@@ -1,0 +1,194 @@
+/* ============================================
+   BLOG POST STYLES
+   ============================================ */
+
+.blog-post {
+  padding: var(--space-16) 0 var(--space-24);
+}
+
+.blog-post-header {
+  max-width: var(--max-width-narrow);
+  margin-bottom: var(--space-12);
+}
+
+.back-link {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-text-primary);
+}
+
+.blog-post-date {
+  display: block;
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.blog-post-title {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-6);
+}
+
+.blog-post-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Blog Post Content */
+.blog-post-content {
+  max-width: var(--max-width-narrow);
+}
+
+.blog-post-content p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: var(--space-6);
+}
+
+.blog-post-content h2 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-5);
+}
+
+.blog-post-content h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-6);
+}
+
+.blog-post-content li {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: var(--space-3);
+  position: relative;
+}
+
+.blog-post-content ul li::before {
+  content: "—";
+  position: absolute;
+  left: calc(var(--space-6) * -1);
+  color: var(--color-text-muted);
+}
+
+.blog-post-content ol {
+  list-style: decimal;
+}
+
+.blog-post-content code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background-color: var(--color-bg-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+}
+
+.blog-post-content pre {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-6);
+  overflow-x: auto;
+  margin-bottom: var(--space-6);
+}
+
+.blog-post-content pre code {
+  background: none;
+  padding: 0;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.blog-post-content blockquote {
+  border-left: 3px solid var(--color-border);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.blog-post-content a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.blog-post-content a:hover {
+  color: var(--color-text-secondary);
+}
+
+/* Blog Post Footer */
+.blog-post-footer {
+  max-width: var(--max-width-narrow);
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.author-name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.author-bio {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+.share-links a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.share-links a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: var(--space-12) 0 var(--space-16);
+  }
+
+  .blog-post-title {
+    font-size: var(--text-2xl);
+  }
+
+  .blog-post-footer {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+}
