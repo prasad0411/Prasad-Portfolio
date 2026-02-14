@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Containerizing Legacy Java Services — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-anim">
+            Containerizing Legacy Java Services: Lessons from Amdocs
+          </h1>
+          <p class="post-meta hero-anim">January 2026 · 6 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            At Amdocs, our CRM microservices were deployed manually to AWS EC2 instances. Every
+            release was a 45-minute process involving SSH sessions, config file edits, and crossed
+            fingers. When I was tasked with fixing this, Docker became the obvious answer — but
+            containerizing production Java services that had been running on bare metal for years
+            came with its own challenges.
+          </p>
+
+          <h2>Situation</h2>
+
+          <p>
+            The Amdocs CRM platform for JCOM ran three core Java/Spring Boot microservices handling
+            billing, order management, and service activation for 10M+ telecom subscribers. These
+            services were deployed directly on EC2 instances through a manual process: an engineer
+            would SSH into each server, pull the latest JAR from an artifact repository, update
+            environment-specific configuration files, and restart the service.
+          </p>
+
+          <p>
+            This process had several compounding problems. Each deployment took approximately 45
+            minutes per service, which meant a full release cycle across all three services consumed
+            over two hours of engineering time. Configuration drift between environments was common
+            — staging and production had subtly different settings that occasionally caused bugs
+            that were impossible to reproduce locally. And rollbacks required the same manual
+            process in reverse, making incident recovery painfully slow.
+          </p>
+
+          <h2>Task</h2>
+
+          <p>
+            My objective was to containerize all three microservices using Docker, establish
+            development-production parity through Docker Compose, and automate the deployment
+            pipeline to AWS EC2. The constraints were strict: zero downtime during the transition,
+            no changes to the application code itself, and the solution needed to be maintainable by
+            a team that had no prior Docker experience.
+          </p>
+
+          <h2>Action</h2>
+
+          <h3>Multi-Stage Dockerfiles</h3>
+
+          <p>
+            The first challenge was image size. A naive Dockerfile that included the full JDK and
+            Maven dependencies produced images over 800MB. I implemented multi-stage builds where
+            the first stage compiled the application using a Maven image, and the second stage
+            copied only the resulting JAR into a minimal JRE-based image. This reduced image sizes
+            from 800MB+ to under 200MB.
+          </p>
+
+          <pre><code>FROM maven:3.8-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn package -DskipTests
+
+FROM eclipse-temurin:17-jre-alpine
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]</code></pre>
+
+          <h3>Docker Compose for Local Development</h3>
+
+          <p>
+            Configuration drift was solved by externalizing all environment-specific values into
+            environment variables, managed through Docker Compose files. A single
+            <code>docker-compose.yml</code> brought up all three services plus their Oracle database
+            dependency locally, ensuring that every developer was running an identical stack. This
+            eliminated the "works on my machine" class of bugs entirely.
+          </p>
+
+          <h3>Automated EC2 Deployment</h3>
+
+          <p>
+            For production, I set up a deployment script that built fresh images, pushed them to our
+            container registry, SSH'd into EC2 instances to pull the new images, performed a health
+            check on the new container before routing traffic to it, and kept the previous container
+            available for instant rollback. The health check was critical — if the new container
+            failed to respond on its health endpoint within 30 seconds, the script would
+            automatically roll back.
+          </p>
+
+          <h2>Result</h2>
+
+          <p>
+            Deployment time dropped from 45 minutes to 8 minutes per service — an 82% improvement.
+            Full release cycles that previously took 2+ hours now completed in under 25 minutes.
+            Configuration drift was eliminated entirely since every environment ran identical
+            container images with only environment variables differing. The rollback process went
+            from a manual 45-minute procedure to a single command taking under 2 minutes.
+          </p>
+
+          <p>
+            Beyond the direct time savings, the team's confidence in deploying increased
+            significantly. Where previously the team batched releases into biweekly windows to
+            minimize risk, we moved to deploying multiple times per week. The Docker Compose setup
+            also cut new developer onboarding time from two days of environment setup to a single
+            <code>docker-compose up</code> command.
+          </p>
+
+          <h2>Key Takeaways</h2>
+
+          <p>
+            Multi-stage builds are non-negotiable for production Java images — the size difference
+            directly impacts pull times and startup speed. Environment parity through Docker Compose
+            catches configuration bugs before they reach production. Health checks and automated
+            rollback are essential — containerization without them just makes bad deployments
+            faster. And keeping the solution simple enough for non-Docker-experts to maintain is
+            what makes the change stick long-term.
+          </p>
+
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions about containerization? Reach me at
+            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

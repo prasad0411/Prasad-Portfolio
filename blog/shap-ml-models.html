@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Why SHAP Changed How I Think About ML Models — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li>
+            <a href="../work.html">Work</a>
+          </li>
+          <li>
+            <a href="../blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="../index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-anim">Why SHAP Changed How I Think About ML Models</h1>
+          <p class="post-meta hero-anim">December 2025 · 6 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            When I built a thyroid disease classification model that achieved 97.6% accuracy, I
+            thought the hard part was done. It wasn't. The real challenge was convincing anyone in
+            healthcare to trust a black-box prediction. SHAP (SHapley Additive exPlanations)
+            fundamentally changed how I approach ML model development, and I believe every data
+            scientist working in high-stakes domains needs to understand why.
+          </p>
+
+          <h2>Situation</h2>
+
+          <p>
+            For my research project — later published in Springer — I was building a machine
+            learning system to classify thyroid diseases from patient hormone level data. The
+            dataset contained 7,200 patient records with multiple features including TSH levels, T3
+            and T4 concentrations, age, sex, and various clinical indicators. The goal was to create
+            a diagnostic support tool that could assist endocrinologists in making faster, more
+            consistent diagnoses.
+          </p>
+
+          <p>
+            The technical challenge wasn't achieving high accuracy — XGBoost and Random Forest both
+            crossed 95% relatively quickly with proper feature engineering and hyperparameter
+            tuning. The real problem was that healthcare professionals don't trust models they can't
+            understand. A doctor isn't going to change their diagnostic approach based on a system
+            that simply outputs "thyroid disease: yes" with a confidence score. They need to
+            understand why the model is making that prediction, which features are driving the
+            decision, and whether those features align with known clinical indicators.
+          </p>
+
+          <h2>Task</h2>
+
+          <p>
+            My task evolved from "build an accurate classifier" to "build an accurate classifier
+            that can explain its reasoning in terms clinicians understand." The model needed to not
+            only predict correctly but also provide feature-level explanations for each individual
+            prediction, show which patient attributes contributed most to the diagnosis, and
+            demonstrate that the model's decision logic aligned with established medical knowledge
+            about thyroid disease.
+          </p>
+
+          <h2>Action</h2>
+
+          <h3>Why SHAP Over Other Explainability Methods</h3>
+
+          <p>
+            I evaluated several explainability approaches before settling on SHAP. Feature
+            importance scores from tree-based models give global rankings but don't explain
+            individual predictions. LIME (Local Interpretable Model-agnostic Explanations) provides
+            local explanations but can be unstable — running it twice on the same instance can
+            produce different explanations. SHAP, grounded in cooperative game theory and Shapley
+            values, provides both consistent local explanations and meaningful global feature
+            importance — with mathematical guarantees of fairness and consistency.
+          </p>
+
+          <h3>Integrating SHAP with XGBoost</h3>
+
+          <p>
+            XGBoost was chosen as the base model because it consistently outperformed other
+            algorithms on the dataset, and the <code>shap</code> library includes a specialized
+            <code>TreeExplainer</code> optimized for tree-based models that computes exact Shapley
+            values efficiently. After training the XGBoost model with optimized hyperparameters
+            through cross-validated grid search, I generated SHAP values for every prediction in the
+            test set.
+          </p>
+
+          <p>
+            The SHAP summary plots revealed that TSH (Thyroid Stimulating Hormone) levels were by
+            far the most influential feature — exactly what endocrinologists would expect. High TSH
+            values pushed predictions strongly toward hypothyroidism, while low values indicated
+            hyperthyroidism. T3 and T4 levels were the second and third most important features,
+            again aligning with clinical knowledge. This alignment between the model's learned
+            patterns and established medical understanding was the key validation that the model was
+            learning real clinical signals rather than spurious correlations.
+          </p>
+
+          <h3>Individual Patient Explanations</h3>
+
+          <p>
+            For each patient prediction, SHAP force plots showed exactly which features pushed the
+            prediction toward or away from a thyroid disease diagnosis. A clinician could look at a
+            specific patient's SHAP explanation and see that the model flagged thyroid disease
+            primarily because of elevated TSH and suppressed T4, rather than relying on less
+            clinically meaningful features like age or sex. This transparency transforms the model
+            from a black box into a tool that augments clinical judgment.
+          </p>
+
+          <h2>Result</h2>
+
+          <p>
+            The final model achieved 97.6% classification accuracy with complete SHAP-based
+            explainability for every prediction. The research was published in Springer conference
+            proceedings, with the explainability component being the key differentiator from prior
+            work in this space. The SHAP analysis confirmed that the model's feature importance
+            rankings perfectly matched established clinical knowledge about thyroid disease markers,
+            validating both the model's accuracy and its decision logic.
+          </p>
+
+          <p>
+            More importantly for my development as an engineer, SHAP changed my default approach to
+            any ML project. I now consider explainability from the start — not as an afterthought
+            once the model is trained. In domains like healthcare, finance, and criminal justice, a
+            model that's accurate but unexplainable is often less valuable than a slightly less
+            accurate model that can justify its decisions.
+          </p>
+
+          <h2>Key Takeaways</h2>
+
+          <p>
+            Accuracy alone isn't sufficient for high-stakes ML applications — explainability
+            determines whether models get adopted in practice. SHAP provides mathematically
+            grounded, consistent explanations at both individual and global levels, making it
+            superior to alternatives like LIME for production use. When SHAP feature importances
+            align with domain expertise, it validates that the model is learning real signals. And
+            building explainability into the ML pipeline from day one is far more effective than
+            trying to retrofit it after training.
+          </p>
+
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions about ML explainability? Reach me at
+            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>Designed &amp; Built by Prasad Kanade · 2026</p>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -20,7 +20,7 @@
   --font-heading: 'Sora', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --max-w: 1060px;
+  --max-w: 1180px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -126,7 +126,7 @@ img {
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
 }
 section {
   padding: 72px 0;
@@ -136,8 +136,8 @@ section + section::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 40px;
-  right: 40px;
+  left: 32px;
+  right: 32px;
   max-width: var(--max-w);
   margin: 0 auto;
   height: 1px;
@@ -164,7 +164,7 @@ section + section::before {
 .nav-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -470,15 +470,21 @@ section + section::before {
   font-size: 18px;
 }
 .proj-ghlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-body);
   transition: color 0.3s var(--ease);
 }
 .proj-ghlink:hover {
   color: var(--accent);
 }
 .proj-ghlink svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -964,10 +970,10 @@ section + section::before {
    ============================================ */
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 18px;
   }
   .nav-inner {
-    padding: 0 20px;
+    padding: 0 18px;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -998,7 +1004,7 @@ section + section::before {
     flex-direction: column;
   }
   section + section::before {
-    left: 20px;
-    right: 20px;
+    left: 18px;
+    right: 18px;
   }
 }
