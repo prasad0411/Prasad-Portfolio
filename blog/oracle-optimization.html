@@ -33,19 +33,19 @@
 
           <p>At Amdocs, I worked on the CRM platform powering JCOM — Japan's largest cable telecom operator with over 10 million subscribers. When critical subscriber lookups started taking 12+ seconds, I was tasked with diagnosing and fixing the performance issues across 20+ high-traffic queries in a live production environment.</p>
 
-          <p>Here's the full story structured around the STAR framework — the same approach I use to communicate technical work clearly.</p>
+          <p>Here's the full story — from diagnosis to implementation to measurable results.</p>
 
-          <h2>Situation</h2>
+          <h2>The Challenge</h2>
 
           <p>JCOM's CRM platform handled everything from billing to service activation for 10M+ subscribers. The system processed 50,000+ transactions daily through SOAP-based integrations with external BSS/OSS systems. As subscriber data volumes grew beyond initial capacity planning, query performance degraded significantly. Critical subscriber lookup operations that once completed in under 2 seconds were now taking 12+ seconds, directly impacting customer service response times and agent productivity.</p>
 
           <p>The database team had already tried basic optimizations — adding single-column indexes and increasing allocated memory — but these changes had minimal impact. The root causes were deeper than surface-level tuning could address.</p>
 
-          <h2>Task</h2>
+          <h2>The Goal</h2>
 
           <p>My objective was clear but constrained: optimize the 20+ most-trafficked Oracle SQL queries and PL/SQL stored procedures to bring execution times back to acceptable levels, all without disrupting the live production system that thousands of customer service agents relied on daily. Every change needed to be thoroughly tested in staging before deployment, and rollback procedures had to be in place for each optimization.</p>
 
-          <h2>Action</h2>
+          <h2>The Approach</h2>
 
           <h3>Step 1: Diagnosing with AWR Reports</h3>
 
@@ -79,7 +79,7 @@ WHERE plan_status = 'ACTIVE';</code></pre>
 
           <p>For data that changed more frequently, I set up materialized views with fast refresh to pre-compute expensive join operations, eliminating the need to recalculate them on every query.</p>
 
-          <h2>Result</h2>
+          <h2>The Impact</h2>
 
           <p>After implementing these optimizations across all 20+ targeted queries, the measurable outcomes were significant. Average query execution times dropped from 12 seconds to 4.8 seconds — a 60% improvement. The work was done incrementally over several weeks, with each change tested in staging environments before production deployment. Throughout the entire process, 99.7% uptime was maintained with zero service disruptions.</p>
 

@@ -40,7 +40,7 @@
             Organization, I designed a MySQL schema from scratch that needed to handle 100,000+
             records efficiently. Here's the practical process I followed.
           </p>
-          <h2>Situation</h2>
+          <h2>The Challenge</h2>
           <p>
             ISKCON's temple management system was running on a collection of spreadsheets and a
             poorly structured database with massive redundancy. Devotee information was duplicated
@@ -49,14 +49,14 @@
             5,000+ daily registrations, and the lack of referential integrity meant orphaned records
             were accumulating steadily.
           </p>
-          <h2>Task</h2>
+          <h2>The Goal</h2>
           <p>
             Design a fully normalized (3NF) relational database schema that could manage 100K+
             records across devotee profiles, events, donations, and financial transactions. The
             schema needed to eliminate data redundancy, enforce referential integrity, and support
             the RESTful API layer I was building with Node.js and Express.
           </p>
-          <h2>Action</h2>
+          <h2>The Approach</h2>
           <p>
             I started with entity-relationship modeling, identifying the core entities: devotees,
             events, donations, transactions, and venues. The critical insight was separating contact
@@ -79,7 +79,7 @@
             <code>is_active</code> flag rather than hard deletes, preserving referential integrity
             for historical reporting.
           </p>
-          <h2>Result</h2>
+          <h2>The Impact</h2>
           <p>
             The normalized schema managed 100K+ records with zero redundancy. Data inconsistencies
             dropped from a weekly occurrence to effectively zero thanks to foreign key constraints

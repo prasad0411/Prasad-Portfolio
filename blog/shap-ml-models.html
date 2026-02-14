@@ -33,17 +33,17 @@
 
           <p>When I built a thyroid disease classification model that achieved 97.6% accuracy, I thought the hard part was done. It wasn't. The real challenge was convincing anyone in healthcare to trust a black-box prediction. SHAP (SHapley Additive exPlanations) fundamentally changed how I approach ML model development, and I believe every data scientist working in high-stakes domains needs to understand why.</p>
 
-          <h2>Situation</h2>
+          <h2>The Challenge</h2>
 
           <p>For my research project — later published in Springer — I was building a machine learning system to classify thyroid diseases from patient hormone level data. The dataset contained 7,200 patient records with multiple features including TSH levels, T3 and T4 concentrations, age, sex, and various clinical indicators. The goal was to create a diagnostic support tool that could assist endocrinologists in making faster, more consistent diagnoses.</p>
 
           <p>The technical challenge wasn't achieving high accuracy — XGBoost and Random Forest both crossed 95% relatively quickly with proper feature engineering and hyperparameter tuning. The real problem was that healthcare professionals don't trust models they can't understand. A doctor isn't going to change their diagnostic approach based on a system that simply outputs "thyroid disease: yes" with a confidence score. They need to understand why the model is making that prediction, which features are driving the decision, and whether those features align with known clinical indicators.</p>
 
-          <h2>Task</h2>
+          <h2>The Goal</h2>
 
           <p>My task evolved from "build an accurate classifier" to "build an accurate classifier that can explain its reasoning in terms clinicians understand." The model needed to not only predict correctly but also provide feature-level explanations for each individual prediction, show which patient attributes contributed most to the diagnosis, and demonstrate that the model's decision logic aligned with established medical knowledge about thyroid disease.</p>
 
-          <h2>Action</h2>
+          <h2>The Approach</h2>
 
           <h3>Why SHAP Over Other Explainability Methods</h3>
 
@@ -59,7 +59,7 @@
 
           <p>For each patient prediction, SHAP force plots showed exactly which features pushed the prediction toward or away from a thyroid disease diagnosis. A clinician could look at a specific patient's SHAP explanation and see that the model flagged thyroid disease primarily because of elevated TSH and suppressed T4, rather than relying on less clinically meaningful features like age or sex. This transparency transforms the model from a black box into a tool that augments clinical judgment.</p>
 
-          <h2>Result</h2>
+          <h2>The Impact</h2>
 
           <p>The final model achieved 97.6% classification accuracy with complete SHAP-based explainability for every prediction. The research was published in Springer conference proceedings, with the explainability component being the key differentiator from prior work in this space. The SHAP analysis confirmed that the model's feature importance rankings perfectly matched established clinical knowledge about thyroid disease markers, validating both the model's accuracy and its decision logic.</p>
 

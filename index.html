@@ -37,14 +37,14 @@
           <div class="hero-grid">
             <div>
               <h1>
-                <span class="hero-line">I build <em>scalable systems</em></span>
-                <span class="hero-line">and optimize databases</span>
-                <span class="hero-line">for enterprise platforms.</span>
+                <span class="hero-line">I architect distributed systems</span>
+                <span class="hero-line">that serve millions — optimizing</span>
+                <span class="hero-line">every layer from database to deployment.</span>
               </h1>
               <p class="hero-sub hero-line">
                 MS Computer Science at <strong>Northeastern University</strong>. Previously at
-                <strong>Amdocs Corporation</strong>, engineering production microservices for
-                Japan's largest cable telecom with 10M+ subscribers.
+                <strong>Amdocs Corporation</strong>, engineering 8+ production microservices for
+                Japan's largest telecom platform with 10M+ subscribers and 99.5% uptime.
               </p>
               <div class="hero-btns hero-line">
                 <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
@@ -81,44 +81,46 @@
               <p class="exp-company">Amdocs Corporation — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Engineered 3 production microservices using Java and Spring Boot for JCOM's
-                  telecom CRM platform serving 10M+ subscribers across billing, order management,
-                  and service activation
+                  Engineered 8+ production microservices using Spring Boot and Oracle for JCOM's CRM
+                  and telecom billing platform serving 10M+ subscribers, delivering 25+ features and
+                  maintaining 99.5% uptime across distributed service architecture
                 </li>
                 <li>
-                  Optimized 20+ Oracle SQL queries and PL/SQL stored procedures, reducing average
-                  execution time from 12s to 4.8s (60% improvement) for subscriber data retrieval
-                  operations
+                  Optimized Oracle database queries, achieving 60% performance improvement through
+                  composite indexing and query refactoring, eliminating 15 hours/week of processing
+                  delays and enhancing system responsiveness for critical operations
+                </li>
+                <li>
+                  Built automated test suites with JUnit and Mockito covering unit, integration, and
+                  API contract testing, achieving 80% code coverage and reducing production defects
+                  by 30%
                 </li>
                 <li>
                   Developed 5 SOAP-based web services integrating Amdocs CRM with external BSS/OSS
                   systems, processing 50K+ daily transactions with 99.7% uptime
                 </li>
                 <li>
-                  Containerized 3 microservices using Docker and deployed on AWS EC2, reducing
+                  Containerized microservices using Docker and deployed on AWS EC2, reducing
                   deployment time from 45 minutes to 8 minutes per release cycle
-                </li>
-                <li>
-                  Led technical training sessions for 4 junior engineers on Oracle database
-                  optimization and microservices architecture
                 </li>
               </ul>
             </div>
 
             <div class="exp-card reveal">
               <div class="exp-top">
-                <span class="exp-role">Software Developer Intern</span>
-                <span class="exp-date">July 2023 – December 2023</span>
+                <span class="exp-role">Software Engineer Intern</span>
+                <span class="exp-date">July 2022 – December 2022</span>
               </div>
               <p class="exp-company">ISKCON Organization — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Built RESTful APIs using Node.js and Express.js for temple management system
-                  handling 5K+ daily devotee registrations and donation tracking
+                  Automated infrastructure monitoring with Bash scripts and cron jobs, implementing
+                  alerting systems for CPU, memory, disk usage, and service availability that saved
+                  4 hours weekly while reducing unplanned downtime by 25%
                 </li>
                 <li>
-                  Containerized full-stack application using Docker Compose and deployed on AWS,
-                  reducing infrastructure costs by 35%
+                  Deployed cloud-native applications on AWS EC2 with ECR/ECS, reducing deployment
+                  time by 78% and achieving 93% uptime
                 </li>
                 <li>
                   Designed normalized MySQL database schema (3NF) managing 100K+ records across
@@ -129,21 +131,25 @@
 
             <div class="exp-card reveal">
               <div class="exp-top">
-                <span class="exp-role">Software Developer Intern — Mobile</span>
-                <span class="exp-date">January 2023 – April 2023</span>
+                <span class="exp-role">Software Developer Intern</span>
+                <span class="exp-date">March 2021 – October 2021</span>
               </div>
-              <p class="exp-company">Simba Developers Organization — Remote</p>
+              <p class="exp-company">Simba Developers Organization — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Developed cross-platform mobile application using Flutter and Dart with Provider
-                  state management, achieving 44% improvement in UI rendering performance
+                  Architected distributed microservices using Node.js and Express for authentication
+                  and payment modules, enabling independent scaling and reducing cascade failures by
+                  65% through fault-tolerant design patterns
                 </li>
                 <li>
-                  Integrated Firebase Authentication and Cloud Firestore, supporting 1K+ concurrent
-                  users with real-time data synchronization
+                  Integrated WebSocket modules for real-time bidirectional communication, achieving
+                  sub-50ms latency for live chat and push notifications across 10K+ concurrent
+                  connections
                 </li>
                 <li>
-                  Implemented push notifications and deep linking, increasing user engagement by 28%
+                  Reduced app load time by 44% (3.2s → 1.8s) by optimizing Flutter state management
+                  with Riverpod and Bloc, implementing lazy loading, caching strategies, and widget
+                  tree restructuring
                 </li>
               </ul>
             </div>
@@ -202,14 +208,15 @@
                     /></svg
                 ></a>
               </div>
-              <p class="proj-title">Jobs Scraping Automation</p>
+              <p class="proj-title">Automated Job Tracking Platform</p>
               <p class="proj-desc">
-                Automated job scraper that aggregates internship positions from multiple sources
-                into Google Sheets. Processes 1,300+ daily postings with 98%+ accuracy.
+                Multi-tier data pipeline processing 8,000+ job postings weekly from 6+ platforms.
+                9-stage validation with fuzzy matching, visa filtering, and location normalization
+                across 400+ cities. 98% accuracy.
               </p>
               <div class="proj-tags tag-anim">
                 <span class="tag">Python</span><span class="tag">Selenium</span
-                ><span class="tag">APIs</span><span class="tag">Google Sheets</span
+                ><span class="tag">REST APIs</span><span class="tag">Google Sheets</span
                 ><span class="tag">Automation</span>
               </div>
             </div>
@@ -230,13 +237,14 @@
               </div>
               <p class="proj-title">Thyroid Disease Classification</p>
               <p class="proj-desc">
-                ML classification system using XGBoost with SHAP explainability for thyroid disease
-                diagnosis. 97.6% accuracy across 7,200 patient records. Published in Springer.
+                XGBoost model achieving 97.6% accuracy across 7,200 patients for 3 thyroid
+                conditions. SHAP explainability for clinical interpretability. SMOTE oversampling
+                improved minority class recall from 68% to 93%. Published in Springer.
               </p>
               <div class="proj-tags tag-anim">
                 <span class="tag">Python</span><span class="tag">XGBoost</span
-                ><span class="tag">SHAP</span><span class="tag">Scikit-learn</span
-                ><span class="tag">Pandas</span>
+                ><span class="tag">SHAP</span><span class="tag">SMOTE</span
+                ><span class="tag">Scikit-learn</span>
               </div>
             </div>
 
@@ -283,8 +291,10 @@
               Classification and Diagnosis of Thyroid Disease Using XGBoost and SHAP
             </p>
             <p class="pub-desc">
-              High-accuracy interpretable ML system for clinical thyroid disease diagnosis. Built
-              with explainable AI frameworks enabling clinician trust and adoption.
+              XGBoost classification model for 3 thyroid conditions with SHAP-based explainability.
+              Identified TSH, T3, and T4 as primary diagnostic indicators (65% combined importance).
+              Applied SMOTE to address 3:1 class imbalance, improving minority class recall from 68%
+              to 93%.
             </p>
             <div class="pub-stats">
               <div><span class="pub-val">97.6%</span><span class="pub-lbl">Accuracy</span></div>
@@ -314,22 +324,33 @@
               <h3>Languages</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Java</span><span class="skill-tag">Python</span
+                ><span class="skill-tag">C++</span><span class="skill-tag">C</span
                 ><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span
                 ><span class="skill-tag">SQL</span><span class="skill-tag">PL/SQL</span
+                ><span class="skill-tag">Shell/Bash</span><span class="skill-tag">R</span
                 ><span class="skill-tag">Solidity</span><span class="skill-tag">Dart</span
-                ><span class="skill-tag">C++</span><span class="skill-tag">HTML/CSS</span
-                ><span class="skill-tag">R</span>
+                ><span class="skill-tag">HTML/CSS</span>
               </div>
             </div>
             <div class="skill-card reveal">
-              <h3>Backend & Cloud</h3>
+              <h3>Backend & APIs</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Spring Boot</span><span class="skill-tag">Node.js</span
-                ><span class="skill-tag">Express.js</span><span class="skill-tag">REST APIs</span
-                ><span class="skill-tag">SOAP</span><span class="skill-tag">GraphQL</span
+                ><span class="skill-tag">Express.js</span><span class="skill-tag">Flask</span
+                ><span class="skill-tag">FastAPI</span><span class="skill-tag">Flutter</span
+                ><span class="skill-tag">React.js</span><span class="skill-tag">REST APIs</span
+                ><span class="skill-tag">SOAP</span><span class="skill-tag">JWT</span
+                ><span class="skill-tag">Microservices</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <h3>Cloud & DevOps</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS ECR</span
+                ><span class="skill-tag">AWS ECS</span><span class="skill-tag">AWS SageMaker</span
                 ><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span
-                ><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span
-                ><span class="skill-tag">AWS RDS</span><span class="skill-tag">CI/CD</span>
+                ><span class="skill-tag">Git</span><span class="skill-tag">Linux</span
+                ><span class="skill-tag">CI/CD</span><span class="skill-tag">SoapUI</span>
               </div>
             </div>
             <div class="skill-card reveal">
@@ -337,38 +358,30 @@
               <div class="skill-tags">
                 <span class="skill-tag">Oracle</span><span class="skill-tag">MySQL</span
                 ><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span
-                ><span class="skill-tag">Firebase</span><span class="skill-tag">Redis</span
+                ><span class="skill-tag">Firestore</span><span class="skill-tag">Redis</span
                 ><span class="skill-tag">DynamoDB</span>
-              </div>
-            </div>
-            <div class="skill-card reveal">
-              <h3>Frameworks & Tools</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">React</span><span class="skill-tag">Flutter</span
-                ><span class="skill-tag">Git</span><span class="skill-tag">JUnit</span
-                ><span class="skill-tag">Maven</span><span class="skill-tag">Gradle</span
-                ><span class="skill-tag">Jira</span><span class="skill-tag">Linux</span
-                ><span class="skill-tag">Postman</span><span class="skill-tag">Swagger</span
-                ><span class="skill-tag">Selenium</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Data Science & ML</h3>
               <div class="skill-tags">
-                <span class="skill-tag">TensorFlow</span><span class="skill-tag">Scikit-learn</span
-                ><span class="skill-tag">XGBoost</span><span class="skill-tag">Pandas</span
+                <span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span
+                ><span class="skill-tag">Scikit-learn</span><span class="skill-tag">XGBoost</span
+                ><span class="skill-tag">HuggingFace</span><span class="skill-tag">LangChain</span
+                ><span class="skill-tag">SHAP</span><span class="skill-tag">Pandas</span
                 ><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span
-                ><span class="skill-tag">Seaborn</span><span class="skill-tag">Tableau</span
-                ><span class="skill-tag">SHAP</span>
+                ><span class="skill-tag">Seaborn</span><span class="skill-tag">Tableau</span>
               </div>
             </div>
             <div class="skill-card reveal">
-              <h3>Architecture & Practices</h3>
+              <h3>Testing & Practices</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Microservices</span><span class="skill-tag">MVC</span
-                ><span class="skill-tag">SOLID</span><span class="skill-tag">Design Patterns</span
-                ><span class="skill-tag">Agile/Scrum</span><span class="skill-tag">TDD</span
-                ><span class="skill-tag">System Design</span><span class="skill-tag">OOP</span>
+                <span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span
+                ><span class="skill-tag">Selenium</span><span class="skill-tag">Postman</span
+                ><span class="skill-tag">Swagger</span><span class="skill-tag">TDD</span
+                ><span class="skill-tag">Agile/Scrum</span
+                ><span class="skill-tag">System Design</span><span class="skill-tag">SOLID</span
+                ><span class="skill-tag">Design Patterns</span><span class="skill-tag">OOP</span>
               </div>
             </div>
           </div>
@@ -387,36 +400,40 @@
           <div class="stagger">
             <div class="edu-card reveal">
               <div class="edu-top">
-                <span class="edu-degree">MS Computer Science</span>
+                <span class="edu-degree">Masters of Science in Computer Science</span>
                 <span class="edu-date">September 2025 – May 2027</span>
               </div>
               <p class="edu-school">Northeastern University — Boston, MA</p>
               <p class="edu-gpa">CGPA: 3.83 / 4.0</p>
               <p class="edu-courses-label">Relevant Coursework</p>
               <div class="edu-courses">
-                <span class="edu-course">Database Management Systems</span>
+                <span class="edu-course">Distributed Systems</span>
                 <span class="edu-course">Algorithms</span>
-                <span class="edu-course">Object-Oriented Design</span>
                 <span class="edu-course">Web Development</span>
-                <span class="edu-course">Computer Systems</span>
+                <span class="edu-course">Database Management Systems</span>
+                <span class="edu-course">Machine Learning</span>
+                <span class="edu-course">Natural Language Processing</span>
               </div>
             </div>
             <div class="edu-card reveal">
               <div class="edu-top">
-                <span class="edu-degree">B.Tech Computer Science</span>
-                <span class="edu-date">August 2020 – May 2024</span>
+                <span class="edu-degree"
+                  >Bachelor of Technology in Computer Science and Engineering</span
+                >
+                <span class="edu-date">October 2020 – November 2023</span>
               </div>
-              <p class="edu-school">Maharashtra Institute of Technology — Pune, India</p>
+              <p class="edu-school">
+                Maharashtra Institute of Technology–World Peace University — Pune, India
+              </p>
               <p class="edu-gpa">CGPA: 9.53 / 10</p>
               <p class="edu-courses-label">Relevant Coursework</p>
               <div class="edu-courses">
                 <span class="edu-course">Data Structures</span>
                 <span class="edu-course">Operating Systems</span>
-                <span class="edu-course">Computer Networks</span>
-                <span class="edu-course">Machine Learning</span>
-                <span class="edu-course">Database Systems</span>
                 <span class="edu-course">Software Engineering</span>
-                <span class="edu-course">Cloud Computing</span>
+                <span class="edu-course">Artificial Intelligence</span>
+                <span class="edu-course">Computer Networks</span>
+                <span class="edu-course">Probability & Statistics</span>
               </div>
             </div>
           </div>

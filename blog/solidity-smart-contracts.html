@@ -41,7 +41,7 @@
             permanent and publicly exploitable. Here's what I learned building a crowdfunding
             platform on Ethereum.
           </p>
-          <h2>Situation</h2>
+          <h2>The Challenge</h2>
           <p>
             I was building a decentralized crowdfunding platform where users could create campaigns,
             contribute ETH, and receive automated refunds if campaigns failed to meet their goals.
@@ -49,14 +49,14 @@
             security wasn't optional, it was existential. A reentrancy bug or integer overflow could
             drain every campaign's funds instantly.
           </p>
-          <h2>Task</h2>
+          <h2>The Goal</h2>
           <p>
             Design and implement Solidity smart contracts that securely managed campaign creation,
             ETH contributions, milestone-based fund release, and automated refunds. The contracts
             needed to be gas-efficient, resistant to common attack vectors (reentrancy, integer
             overflow, front-running), and thoroughly tested before any testnet deployment.
           </p>
-          <h2>Action</h2>
+          <h2>The Approach</h2>
           <p>
             The most important architectural decision was implementing the withdrawal pattern
             instead of push payments. Rather than having the contract send ETH to users (which opens
@@ -78,7 +78,7 @@
             refund. I used OpenZeppelin's SafeMath (pre-Solidity 0.8) patterns and ReentrancyGuard
             as a defense-in-depth measure even with the withdrawal pattern.
           </p>
-          <h2>Result</h2>
+          <h2>The Impact</h2>
           <p>
             The platform deployed successfully on Ethereum testnet with zero security issues
             detected during testing. The withdrawal pattern eliminated reentrancy concerns entirely.
