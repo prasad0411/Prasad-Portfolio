@@ -32,19 +32,21 @@
     <main>
       <!-- ===== HERO ===== -->
       <section class="hero">
+        <div class="hero-mesh"></div>
         <div class="container">
           <div class="hero-grid">
             <div>
-              <h1 class="hero-anim">
-                I build <span class="grad">scalable systems</span> and optimize databases for
-                enterprise platforms.
+              <h1>
+                <span class="hero-line">I build <em>scalable systems</em></span>
+                <span class="hero-line">and optimize databases</span>
+                <span class="hero-line">for enterprise platforms.</span>
               </h1>
-              <p class="hero-sub hero-anim">
+              <p class="hero-sub hero-line">
                 MS Computer Science at <strong>Northeastern University</strong>. Previously at
                 <strong>Amdocs Corporation</strong>, engineering production microservices for
                 Japan's largest cable telecom with 10M+ subscribers.
               </p>
-              <div class="hero-btns hero-anim">
+              <div class="hero-btns hero-line">
                 <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
                 <a href="https://github.com/prasad0411" target="_blank" class="btn">GitHub</a>
                 <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank" class="btn"
@@ -53,28 +55,24 @@
                 <a href="mailto:kanade.pra@northeastern.edu" class="btn">Email</a>
               </div>
             </div>
-            <!-- 
-              TO ADD YOUR PHOTO:
-              1. Put your photo in the images/ folder as "profile.jpg"
-              2. Delete the <div class="photo-placeholder">...</div> below
-              3. Uncomment the <img> line below
-            -->
-            <div class="hero-photo hero-anim">
+            <div class="hero-photo hero-line">
               <img src="images/profile.jpg" alt="Prasad Kanade" />
             </div>
           </div>
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== EXPERIENCE ===== -->
       <section id="experience">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Experience</p>
             <p class="sec-title">Where I've Worked</p>
           </div>
 
-          <div class="stagger">
+          <div class="exp-timeline stagger">
             <div class="exp-card reveal">
               <div class="exp-top">
                 <span class="exp-role">Software Engineering Associate</span>
@@ -153,10 +151,12 @@
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== PROJECTS ===== -->
       <section id="projects">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Projects</p>
             <p class="sec-title">Things I've Built</p>
           </div>
@@ -173,21 +173,18 @@
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
-                  </svg>
-                </a>
+                    /></svg
+                ></a>
               </div>
               <p class="proj-title">Blockchain Crowdfunding Platform</p>
               <p class="proj-desc">
                 Blockchain-based crowdfunding merging private and community projects with secure,
                 transparent transactions. Smart contracts govern fund flows for campaign management.
               </p>
-              <div class="proj-tags">
-                <span class="tag">Solidity</span>
-                <span class="tag">React</span>
-                <span class="tag">Hardhat</span>
-                <span class="tag">Ethers.js</span>
-                <span class="tag">Web3</span>
+              <div class="proj-tags tag-anim">
+                <span class="tag">Solidity</span><span class="tag">React</span
+                ><span class="tag">Hardhat</span><span class="tag">Ethers.js</span
+                ><span class="tag">Web3</span>
               </div>
             </div>
 
@@ -202,21 +199,18 @@
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
-                  </svg>
-                </a>
+                    /></svg
+                ></a>
               </div>
               <p class="proj-title">Jobs Scraping Automation</p>
               <p class="proj-desc">
                 Automated job scraper that aggregates internship positions from multiple sources
                 into Google Sheets. Processes 1,300+ daily postings with 98%+ accuracy.
               </p>
-              <div class="proj-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Selenium</span>
-                <span class="tag">APIs</span>
-                <span class="tag">Google Sheets</span>
-                <span class="tag">Automation</span>
+              <div class="proj-tags tag-anim">
+                <span class="tag">Python</span><span class="tag">Selenium</span
+                ><span class="tag">APIs</span><span class="tag">Google Sheets</span
+                ><span class="tag">Automation</span>
               </div>
             </div>
 
@@ -231,21 +225,18 @@
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
-                  </svg>
-                </a>
+                    /></svg
+                ></a>
               </div>
               <p class="proj-title">Thyroid Disease Classification</p>
               <p class="proj-desc">
                 ML classification system using XGBoost with SHAP explainability for thyroid disease
                 diagnosis. 97.6% accuracy across 7,200 patient records. Published in Springer.
               </p>
-              <div class="proj-tags">
-                <span class="tag">Python</span>
-                <span class="tag">XGBoost</span>
-                <span class="tag">SHAP</span>
-                <span class="tag">Scikit-learn</span>
-                <span class="tag">Pandas</span>
+              <div class="proj-tags tag-anim">
+                <span class="tag">Python</span><span class="tag">XGBoost</span
+                ><span class="tag">SHAP</span><span class="tag">Scikit-learn</span
+                ><span class="tag">Pandas</span>
               </div>
             </div>
 
@@ -260,34 +251,32 @@
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
-                  </svg>
-                </a>
+                    /></svg
+                ></a>
               </div>
               <p class="proj-title">DSA Solutions Repository</p>
               <p class="proj-desc">
                 Active DSA preparation in Java organized by data structures and algorithms. Covers
                 arrays, trees, graphs, dynamic programming, and more with optimized solutions.
               </p>
-              <div class="proj-tags">
-                <span class="tag">Java</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">Data Structures</span>
-                <span class="tag">LeetCode</span>
+              <div class="proj-tags tag-anim">
+                <span class="tag">Java</span><span class="tag">Algorithms</span
+                ><span class="tag">Data Structures</span><span class="tag">LeetCode</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== PUBLICATION ===== -->
       <section id="publication">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Research</p>
             <p class="sec-title">Published Work</p>
           </div>
-
           <div class="pub-card reveal">
             <span class="pub-badge">Springer · March 2024</span>
             <p class="pub-title">
@@ -304,122 +293,97 @@
             <a
               href="https://link.springer.com/chapter/10.1007/978-981-97-6106-7_9"
               target="_blank"
-              style="display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 500"
+              style="display: inline-block; margin-top: 14px; font-size: 15px; font-weight: 500"
               >Read Paper →</a
             >
           </div>
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== SKILLS ===== -->
       <section id="skills">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Technical Skills</p>
             <p class="sec-title">Technologies I Work With</p>
           </div>
-
           <div class="skills-grid stagger">
             <div class="skill-card reveal">
               <h3>Languages</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">PL/SQL</span>
-                <span class="skill-tag">Solidity</span>
-                <span class="skill-tag">Dart</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">R</span>
+                <span class="skill-tag">Java</span><span class="skill-tag">Python</span
+                ><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span
+                ><span class="skill-tag">SQL</span><span class="skill-tag">PL/SQL</span
+                ><span class="skill-tag">Solidity</span><span class="skill-tag">Dart</span
+                ><span class="skill-tag">C++</span><span class="skill-tag">HTML/CSS</span
+                ><span class="skill-tag">R</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Backend & Cloud</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Spring Boot</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express.js</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag">SOAP</span>
-                <span class="skill-tag">GraphQL</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">AWS EC2</span>
-                <span class="skill-tag">AWS S3</span>
-                <span class="skill-tag">AWS RDS</span>
-                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Spring Boot</span><span class="skill-tag">Node.js</span
+                ><span class="skill-tag">Express.js</span><span class="skill-tag">REST APIs</span
+                ><span class="skill-tag">SOAP</span><span class="skill-tag">GraphQL</span
+                ><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span
+                ><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span
+                ><span class="skill-tag">AWS RDS</span><span class="skill-tag">CI/CD</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Databases</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Oracle</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Firebase</span>
-                <span class="skill-tag">Redis</span>
-                <span class="skill-tag">DynamoDB</span>
+                <span class="skill-tag">Oracle</span><span class="skill-tag">MySQL</span
+                ><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span
+                ><span class="skill-tag">Firebase</span><span class="skill-tag">Redis</span
+                ><span class="skill-tag">DynamoDB</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Frameworks & Tools</h3>
               <div class="skill-tags">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Flutter</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">JUnit</span>
-                <span class="skill-tag">Maven</span>
-                <span class="skill-tag">Gradle</span>
-                <span class="skill-tag">Jira</span>
-                <span class="skill-tag">Linux</span>
-                <span class="skill-tag">Postman</span>
-                <span class="skill-tag">Swagger</span>
-                <span class="skill-tag">Selenium</span>
+                <span class="skill-tag">React</span><span class="skill-tag">Flutter</span
+                ><span class="skill-tag">Git</span><span class="skill-tag">JUnit</span
+                ><span class="skill-tag">Maven</span><span class="skill-tag">Gradle</span
+                ><span class="skill-tag">Jira</span><span class="skill-tag">Linux</span
+                ><span class="skill-tag">Postman</span><span class="skill-tag">Swagger</span
+                ><span class="skill-tag">Selenium</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Data Science & ML</h3>
               <div class="skill-tags">
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">XGBoost</span>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Matplotlib</span>
-                <span class="skill-tag">Seaborn</span>
-                <span class="skill-tag">Tableau</span>
-                <span class="skill-tag">SHAP</span>
+                <span class="skill-tag">TensorFlow</span><span class="skill-tag">Scikit-learn</span
+                ><span class="skill-tag">XGBoost</span><span class="skill-tag">Pandas</span
+                ><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span
+                ><span class="skill-tag">Seaborn</span><span class="skill-tag">Tableau</span
+                ><span class="skill-tag">SHAP</span>
               </div>
             </div>
             <div class="skill-card reveal">
               <h3>Architecture & Practices</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Microservices</span>
-                <span class="skill-tag">MVC</span>
-                <span class="skill-tag">SOLID</span>
-                <span class="skill-tag">Design Patterns</span>
-                <span class="skill-tag">Agile/Scrum</span>
-                <span class="skill-tag">TDD</span>
-                <span class="skill-tag">System Design</span>
-                <span class="skill-tag">OOP</span>
+                <span class="skill-tag">Microservices</span><span class="skill-tag">MVC</span
+                ><span class="skill-tag">SOLID</span><span class="skill-tag">Design Patterns</span
+                ><span class="skill-tag">Agile/Scrum</span><span class="skill-tag">TDD</span
+                ><span class="skill-tag">System Design</span><span class="skill-tag">OOP</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== EDUCATION ===== -->
       <section id="education">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Education</p>
             <p class="sec-title">Where I Studied</p>
           </div>
-
           <div class="stagger">
             <div class="edu-card reveal">
               <div class="edu-top">
@@ -428,8 +392,15 @@
               </div>
               <p class="edu-school">Northeastern University — Boston, MA</p>
               <p class="edu-gpa">CGPA: 3.83 / 4.0</p>
+              <p class="edu-courses-label">Relevant Coursework</p>
+              <div class="edu-courses">
+                <span class="edu-course">Database Management Systems</span>
+                <span class="edu-course">Algorithms</span>
+                <span class="edu-course">Object-Oriented Design</span>
+                <span class="edu-course">Web Development</span>
+                <span class="edu-course">Computer Systems</span>
+              </div>
             </div>
-
             <div class="edu-card reveal">
               <div class="edu-top">
                 <span class="edu-degree">B.Tech Computer Science</span>
@@ -437,19 +408,30 @@
               </div>
               <p class="edu-school">Maharashtra Institute of Technology — Pune, India</p>
               <p class="edu-gpa">CGPA: 9.53 / 10</p>
+              <p class="edu-courses-label">Relevant Coursework</p>
+              <div class="edu-courses">
+                <span class="edu-course">Data Structures</span>
+                <span class="edu-course">Operating Systems</span>
+                <span class="edu-course">Computer Networks</span>
+                <span class="edu-course">Machine Learning</span>
+                <span class="edu-course">Database Systems</span>
+                <span class="edu-course">Software Engineering</span>
+                <span class="edu-course">Cloud Computing</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <div class="divider"></div>
+
       <!-- ===== CONTACT ===== -->
       <section id="contact">
         <div class="container">
-          <div class="sec-header reveal">
+          <div class="sec-header reveal-left">
             <p class="sec-label">Contact</p>
             <p class="sec-title">Let's Connect</p>
           </div>
-
           <div class="contact-grid reveal">
             <a href="mailto:kanade.pra@northeastern.edu" class="contact-link">
               <svg viewBox="0 0 24 24">
@@ -458,7 +440,7 @@
                 />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
-              kanade.pra@northeastern.edu
+              <span style="position: relative; z-index: 1">kanade.pra@northeastern.edu</span>
             </a>
             <a
               href="https://www.linkedin.com/in/prasad-kanade-/"
@@ -472,7 +454,7 @@
                 <rect x="2" y="9" width="4" height="12" />
                 <circle cx="4" cy="4" r="2" />
               </svg>
-              LinkedIn
+              <span style="position: relative; z-index: 1">LinkedIn</span>
             </a>
             <a href="https://github.com/prasad0411" target="_blank" class="contact-link">
               <svg viewBox="0 0 24 24">
@@ -480,7 +462,7 @@
                   d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
                 />
               </svg>
-              GitHub
+              <span style="position: relative; z-index: 1">GitHub</span>
             </a>
           </div>
         </div>

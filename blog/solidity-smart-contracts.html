@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Writing Secure Solidity Smart Contracts — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-line">
+            Writing Secure Solidity Smart Contracts: Lessons from Building a Crowdfunding dApp
+          </h1>
+          <p class="post-meta hero-line">July 2025 · 6 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            Smart contract bugs aren't like regular bugs. In traditional software, you deploy a fix.
+            In Solidity, once a contract is on-chain, it's immutable. Every vulnerability is
+            permanent and publicly exploitable. Here's what I learned building a crowdfunding
+            platform on Ethereum.
+          </p>
+          <h2>Situation</h2>
+          <p>
+            I was building a decentralized crowdfunding platform where users could create campaigns,
+            contribute ETH, and receive automated refunds if campaigns failed to meet their goals.
+            The smart contracts would handle real value — ETH that users deposited — which meant
+            security wasn't optional, it was existential. A reentrancy bug or integer overflow could
+            drain every campaign's funds instantly.
+          </p>
+          <h2>Task</h2>
+          <p>
+            Design and implement Solidity smart contracts that securely managed campaign creation,
+            ETH contributions, milestone-based fund release, and automated refunds. The contracts
+            needed to be gas-efficient, resistant to common attack vectors (reentrancy, integer
+            overflow, front-running), and thoroughly tested before any testnet deployment.
+          </p>
+          <h2>Action</h2>
+          <p>
+            The most important architectural decision was implementing the withdrawal pattern
+            instead of push payments. Rather than having the contract send ETH to users (which opens
+            reentrancy attack surfaces), I let users withdraw their own funds. This simple pattern
+            eliminates an entire class of vulnerabilities.
+          </p>
+          <p>
+            For the campaign logic, I used a state machine pattern — each campaign progresses
+            through states (Active, Successful, Failed, Finalized) with strict transition rules
+            enforced by modifiers. Fund release is milestone-based: campaign creators can only
+            withdraw portions of funds when predefined milestones are met, verified by contributor
+            votes. If a campaign fails, contributors can withdraw their deposits without any action
+            from the campaign creator.
+          </p>
+          <p>
+            Testing was done with Hardhat's local blockchain, writing tests in JavaScript that
+            simulated edge cases: what happens when a contributor tries to withdraw twice, when a
+            campaign creator tries to finalize before the deadline, when gas prices spike during a
+            refund. I used OpenZeppelin's SafeMath (pre-Solidity 0.8) patterns and ReentrancyGuard
+            as a defense-in-depth measure even with the withdrawal pattern.
+          </p>
+          <h2>Result</h2>
+          <p>
+            The platform deployed successfully on Ethereum testnet with zero security issues
+            detected during testing. The withdrawal pattern eliminated reentrancy concerns entirely.
+            The state machine architecture made the contract logic auditable — anyone could read the
+            Solidity code and understand exactly what state transitions were possible. Gas
+            optimization through efficient storage patterns kept transaction costs reasonable for
+            users.
+          </p>
+          <h2>Key Takeaways</h2>
+          <p>
+            The withdrawal pattern should be your default for any contract that sends ETH. State
+            machines make contract logic explicit and auditable. Test for edge cases that would
+            never happen in traditional software — in smart contracts, attackers will find them. Use
+            established patterns from OpenZeppelin rather than reinventing security primitives. And
+            always remember: immutability means every bug is a permanent bug.
+          </p>
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions? <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

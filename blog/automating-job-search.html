@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>How I Automated My Job Search with Python — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-line">How I Automated My Job Search with Python</h1>
+          <p class="post-meta hero-line">October 2025 · 6 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            Applying to 600+ positions manually was soul-crushing. So I did what any engineer would
+            do — I automated it. Here's how I built a job scraping pipeline that aggregates 1,300+
+            daily postings into a single Google Sheet.
+          </p>
+          <h2>Situation</h2>
+          <p>
+            As an international student seeking Summer 2026 internships, my application volume
+            needed to be high. Job postings were scattered across LinkedIn, Indeed, Glassdoor,
+            Handshake, and company career pages. Manually checking each platform daily, filtering
+            for relevant roles, and tracking applications in a spreadsheet was consuming 2-3 hours
+            every day — time I needed for coursework and interview prep.
+          </p>
+          <h2>Task</h2>
+          <p>
+            Build an automated system that scrapes internship postings from multiple sources,
+            filters them by relevance (SDE, backend, full-stack roles that sponsor international
+            students), deduplicates across platforms, and populates a Google Sheet with clean,
+            actionable data — title, company, location, posting date, and application link.
+          </p>
+          <h2>Action</h2>
+          <p>
+            I built the pipeline in Python using Selenium for JavaScript-heavy sites and
+            BeautifulSoup for static pages. For LinkedIn and Indeed, I used their unofficial APIs
+            where possible to avoid scraping limitations. The deduplication engine uses fuzzy string
+            matching on job titles and company names to catch cross-platform duplicates. A Google
+            Sheets API integration pushes new postings directly into a structured spreadsheet with
+            conditional formatting that highlights roles matching my target criteria. The entire
+            pipeline runs on a scheduled cron job.
+          </p>
+          <h2>Result</h2>
+          <p>
+            The system processes 1,300+ job postings daily with 98%+ accuracy in relevance
+            filtering. My daily job search time dropped from 2-3 hours to about 20 minutes of
+            reviewing pre-filtered, deduplicated results. The structured Google Sheet format made it
+            easy to track application status, follow-up dates, and response rates across hundreds of
+            applications.
+          </p>
+          <h2>Key Takeaways</h2>
+          <p>
+            Automating repetitive tasks is the most valuable skill an engineer can have — even
+            outside of work. Fuzzy matching is essential for real-world deduplication where the same
+            job appears with slightly different titles across platforms. And building tools for
+            yourself teaches you more about real-world software challenges than most coursework
+            projects.
+          </p>
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions? <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Designing Normalized Database Schemas — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-line">
+            Designing Normalized Database Schemas: Lessons from 100K+ Records
+          </h1>
+          <p class="post-meta hero-line">August 2025 · 6 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            Good database design is invisible. Bad database design haunts you forever. At ISKCON
+            Organization, I designed a MySQL schema from scratch that needed to handle 100,000+
+            records efficiently. Here's the practical process I followed.
+          </p>
+          <h2>Situation</h2>
+          <p>
+            ISKCON's temple management system was running on a collection of spreadsheets and a
+            poorly structured database with massive redundancy. Devotee information was duplicated
+            across registration, donation, and event tables. A single address change required
+            updates in multiple places, and data inconsistencies were common. The system handled
+            5,000+ daily registrations, and the lack of referential integrity meant orphaned records
+            were accumulating steadily.
+          </p>
+          <h2>Task</h2>
+          <p>
+            Design a fully normalized (3NF) relational database schema that could manage 100K+
+            records across devotee profiles, events, donations, and financial transactions. The
+            schema needed to eliminate data redundancy, enforce referential integrity, and support
+            the RESTful API layer I was building with Node.js and Express.
+          </p>
+          <h2>Action</h2>
+          <p>
+            I started with entity-relationship modeling, identifying the core entities: devotees,
+            events, donations, transactions, and venues. The critical insight was separating contact
+            information into its own table with a one-to-many relationship to devotees — people have
+            multiple addresses, phone numbers, and email addresses, and flattening these into the
+            devotee table was the root cause of most redundancy.
+          </p>
+          <p>
+            For the donation system, I created a normalized structure with a donations table
+            referencing both devotee_id and event_id (nullable for general donations), linked to a
+            transactions table for payment processing details. This separation meant donation
+            records remained clean even when payment processing details changed. I applied 3NF
+            rigorously: every non-key attribute depends on the key, the whole key, and nothing but
+            the key.
+          </p>
+          <p>
+            Indexing strategy was crucial for performance at scale. I created composite indexes on
+            the most common query patterns — devotee lookups by name and region, donation summaries
+            by date range, and event attendance by date. I also implemented soft deletes with an
+            <code>is_active</code> flag rather than hard deletes, preserving referential integrity
+            for historical reporting.
+          </p>
+          <h2>Result</h2>
+          <p>
+            The normalized schema managed 100K+ records with zero redundancy. Data inconsistencies
+            dropped from a weekly occurrence to effectively zero thanks to foreign key constraints
+            and proper normalization. Query performance was strong even at scale due to targeted
+            indexing. The clean schema made the API layer straightforward to build — each REST
+            endpoint mapped cleanly to one or two database operations.
+          </p>
+          <h2>Key Takeaways</h2>
+          <p>
+            Start with ER modeling before writing any SQL. Normalize to 3NF by default — denormalize
+            only when you have measured performance data justifying it. Separate concerns in your
+            schema just like you would in application code. Index for your actual query patterns,
+            not for every column. And soft deletes preserve referential integrity while supporting
+            historical reporting needs.
+          </p>
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions? <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

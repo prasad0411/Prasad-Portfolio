@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Building SOAP Web Services in 2024 — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-line">
+            Building SOAP Web Services in 2024 — Why Enterprise Still Relies on XML
+          </h1>
+          <p class="post-meta hero-line">November 2025 · 5 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            Everyone talks about REST and GraphQL, but at Amdocs I spent significant time building
+            SOAP-based web services. Here's why enterprise telecom still relies on XML-based
+            protocols, and what I learned integrating legacy BSS/OSS systems.
+          </p>
+          <h2>Situation</h2>
+          <p>
+            JCOM's telecom infrastructure consisted of dozens of systems built across different
+            decades. The billing system, provisioning platform, and customer management tools each
+            spoke different protocols. Many core systems — particularly those handling subscriber
+            provisioning and network activation — only exposed SOAP/WSDL interfaces. There was no
+            option to "just use REST."
+          </p>
+          <h2>Task</h2>
+          <p>
+            I needed to build 5 new integration services connecting the Amdocs CRM to external
+            BSS/OSS systems. These services needed to process 50,000+ daily transactions reliably,
+            handle complex data structures that SOAP excels at (nested subscriber hierarchies,
+            multi-step provisioning workflows), and maintain strict contract-first development with
+            WSDL schemas.
+          </p>
+          <h2>Action</h2>
+          <p>
+            I adopted a contract-first approach, starting with WSDL definitions before writing any
+            Java code. Using Apache CXF with Spring Boot, I generated Java stubs from WSDL files and
+            implemented the business logic layer on top. For error handling, SOAP Faults provided
+            structured error responses that downstream systems could parse programmatically —
+            something REST APIs often handle inconsistently. I implemented WS-Security for
+            authentication and WS-ReliableMessaging for guaranteed delivery on critical provisioning
+            calls.
+          </p>
+          <h2>Result</h2>
+          <p>
+            All 5 services went live processing 50K+ daily transactions with 99.7% uptime. The
+            contract-first approach meant zero integration issues at deployment — both sides had
+            agreed on the exact data contract before a single line of business logic was written.
+            The structured error handling through SOAP Faults reduced support tickets from
+            integration issues by over 40%.
+          </p>
+          <h2>Key Takeaways</h2>
+          <p>
+            SOAP isn't dead — it's mission-critical in enterprise environments where strict typing,
+            built-in security standards, and guaranteed delivery matter more than developer
+            convenience. Contract-first development eliminates integration surprises. And
+            understanding both REST and SOAP makes you significantly more valuable in enterprise
+            engineering roles where legacy system integration is a daily reality.
+          </p>
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions? <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

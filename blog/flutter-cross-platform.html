@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Building Cross-Platform Apps with Flutter — Prasad Kanade</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Prasad Kanade</a>
+        <ul class="nav-links">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="post-header">
+        <div class="container">
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title hero-line">
+            Building Cross-Platform Apps with Flutter: What I Learned at My First Internship
+          </h1>
+          <p class="post-meta hero-line">September 2025 · 5 min read</p>
+        </div>
+      </section>
+      <section class="post-content">
+        <div class="container">
+          <p>
+            My internship at Simba Developers was my first experience building a production mobile
+            app. Flutter's promise of "write once, run anywhere" sounds great in theory — here's
+            what it actually looks like in practice.
+          </p>
+          <h2>Situation</h2>
+          <p>
+            Simba Developers needed a mobile application that worked on both iOS and Android. The
+            team was small — just three developers — and maintaining two separate native codebases
+            wasn't feasible. The app needed real-time data sync, push notifications, deep linking,
+            and smooth animations. Performance needed to feel native, not like a web view wrapped in
+            a container.
+          </p>
+          <h2>Task</h2>
+          <p>
+            As the mobile development intern, I was responsible for building the cross-platform app
+            using Flutter and Dart, integrating Firebase for authentication and real-time database,
+            implementing push notifications, and ensuring the UI rendered smoothly on both platforms
+            with native-feeling performance.
+          </p>
+          <h2>Action</h2>
+          <p>
+            I chose Provider for state management after evaluating Bloc and Riverpod — Provider
+            offered the best balance of simplicity and power for our use case. For real-time
+            features, Cloud Firestore's snapshot listeners gave us live data synchronization without
+            building a custom WebSocket infrastructure. The push notification implementation
+            required platform-specific setup (APNs for iOS, FCM for Android), but Flutter's platform
+            channels handled the abstraction cleanly. Deep linking was the trickiest part — I used
+            the <code>uni_links</code> package to handle both universal links (iOS) and app links
+            (Android) with a unified routing system.
+          </p>
+          <p>
+            The biggest performance optimization came from widget tree management. Flutter rebuilds
+            entire widget subtrees when state changes, and naively structured state could cause the
+            entire screen to rebuild on every data update. I used <code>const</code> constructors
+            aggressively, broke large widgets into smaller stateless components, and moved state
+            subscriptions as low in the tree as possible.
+          </p>
+          <h2>Result</h2>
+          <p>
+            The app achieved a 44% improvement in UI rendering performance compared to the team's
+            initial prototype, supported 1,000+ concurrent users with real-time sync, and push
+            notifications with deep linking increased user engagement by 28%. The single codebase
+            meant our three-person team could iterate faster than a larger team maintaining separate
+            native apps.
+          </p>
+          <h2>Key Takeaways</h2>
+          <p>
+            Flutter genuinely delivers on cross-platform performance when you understand its
+            rendering model. State management choice matters enormously — pick the simplest tool
+            that handles your complexity. Widget tree structure has a direct, measurable impact on
+            performance. And platform-specific features (notifications, deep links) still require
+            understanding native iOS and Android concepts even in a cross-platform framework.
+          </p>
+          <p
+            style="
+              margin-top: 44px;
+              padding-top: 20px;
+              border-top: 1px solid var(--border);
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Questions? <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
