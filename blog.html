@@ -1,15 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Prasad Kanade" />
-    <meta name="description" content="Technical writing and thoughts on software engineering by Prasad Kanade" />
-    <link rel="icon" href="images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -17,114 +14,57 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="nav-container">
+      <div class="nav-inner">
         <a href="index.html" class="nav-logo">Prasad Kanade</a>
         <ul class="nav-links">
           <li><a href="work.html">Work</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
 
     <main>
-      <!-- Page Header -->
-      <section class="page-header">
+      <section class="hero" style="padding-bottom: 32px">
         <div class="container">
-          <h1 class="page-title">Blog</h1>
-          <p class="page-description">
-            Thoughts on software engineering, system design, and lessons learned from building at scale.
-          </p>
+          <p class="hero-label">Blog</p>
+          <h1>Writing about systems, databases, and engineering lessons.</h1>
         </div>
       </section>
 
-      <!-- Blog Posts List -->
-      <section class="section">
+      <section>
         <div class="container">
-          <div class="blog-list">
-            <!-- Blog Post 1 -->
-            <a href="blog/oracle-optimization.html" class="blog-card">
-              <div class="blog-card-content">
-                <time class="blog-date">January 2026</time>
-                <h2 class="blog-title">How I Achieved 60% Query Performance Improvement in Oracle</h2>
-                <p class="blog-excerpt">
-                  A deep dive into Oracle composite indexing strategies, execution plan analysis, 
-                  and the systematic approach I used to optimize database queries serving millions of users.
-                </p>
-                <span class="blog-read-time">8 min read</span>
-              </div>
-            </a>
-
-            <!-- Blog Post 2 -->
-            <a href="blog/microservices-lessons.html" class="blog-card">
-              <div class="blog-card-content">
-                <time class="blog-date">December 2025</time>
-                <h2 class="blog-title">Building Fault-Tolerant Microservices: Lessons from 10M Users</h2>
-                <p class="blog-excerpt">
-                  What I learned about designing resilient distributed systems while working on 
-                  JCOM's telecom platform. Covers circuit breakers, graceful degradation, and monitoring.
-                </p>
-                <span class="blog-read-time">12 min read</span>
-              </div>
-            </a>
-
-            <!-- Blog Post 3 -->
-            <a href="blog/testing-strategies.html" class="blog-card">
-              <div class="blog-card-content">
-                <time class="blog-date">November 2025</time>
-                <h2 class="blog-title">From 40% to 80% Test Coverage: A Practical Guide</h2>
-                <p class="blog-excerpt">
-                  How we transformed our testing culture at Amdocs. Includes practical strategies 
-                  for writing effective unit tests, integration tests, and establishing testing standards.
-                </p>
-                <span class="blog-read-time">10 min read</span>
-              </div>
-            </a>
-
-            <!-- Blog Post 4 -->
-            <a href="blog/explainable-ai.html" class="blog-card">
-              <div class="blog-card-content">
-                <time class="blog-date">October 2025</time>
-                <h2 class="blog-title">Why Explainable AI Matters in Healthcare</h2>
-                <p class="blog-excerpt">
-                  Reflections from my research on thyroid disease classification. Why accuracy alone 
-                  isn't enough, and how SHAP helped bridge the gap between ML models and clinical trust.
-                </p>
-                <span class="blog-read-time">7 min read</span>
-              </div>
-            </a>
-
-            <!-- Blog Post 5 -->
-            <a href="blog/mentoring-engineers.html" class="blog-card">
-              <div class="blog-card-content">
-                <time class="blog-date">September 2025</time>
-                <h2 class="blog-title">What I Learned from Mentoring 8 Junior Engineers</h2>
-                <p class="blog-excerpt">
-                  Technical skills are important, but effective mentorship is about more than code reviews. 
-                  Here's how I structured our training program and what made it successful.
-                </p>
-                <span class="blog-read-time">6 min read</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Newsletter/Contact CTA -->
-      <section class="section section-alt">
-        <div class="container">
-          <div class="blog-cta">
-            <h2 class="blog-cta-title">Want to discuss these topics?</h2>
-            <p class="blog-cta-text">
-              I'm always happy to chat about software engineering, system design, or career advice. 
-              Feel free to reach out via email or connect on LinkedIn.
+          <div class="blog-item">
+            <p class="blog-date">February 2026</p>
+            <p class="blog-title">
+              <a href="blog/oracle-optimization.html"
+                >How I Cut Oracle Query Times by 60% in Production</a
+              >
             </p>
-            <div class="blog-cta-links">
-              <a href="mailto:kanade.pra@northeastern.edu" class="btn btn-primary">Get in Touch</a>
-              <a href="https://www.linkedin.com/in/prasad-kanade-/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                Connect on LinkedIn
-              </a>
-            </div>
+            <p class="blog-excerpt">
+              Practical techniques for Oracle SQL optimization in high-traffic telecom systems —
+              execution plans, composite indexes, and PL/SQL refactoring.
+            </p>
+          </div>
+
+          <div class="blog-item">
+            <p class="blog-date">January 2026</p>
+            <p class="blog-title">
+              <a href="#">Containerizing Legacy Java Services: Lessons from Amdocs</a>
+            </p>
+            <p class="blog-excerpt">
+              What I learned moving monolithic Spring Boot services into Docker containers and
+              deploying on AWS EC2.
+            </p>
+          </div>
+
+          <div class="blog-item">
+            <p class="blog-date">December 2025</p>
+            <p class="blog-title"><a href="#">Why SHAP Changed How I Think About ML Models</a></p>
+            <p class="blog-excerpt">
+              Building interpretable ML systems for healthcare — how explainability frameworks can
+              bridge the gap between accuracy and clinical trust.
+            </p>
           </div>
         </div>
       </section>
@@ -132,10 +72,8 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="footer-text">© 2026 Prasad Kanade</p>
+        <p>Prasad Kanade · 2026</p>
       </div>
     </footer>
-
-    <script type="module" src="js/main.js"></script>
   </body>
 </html>

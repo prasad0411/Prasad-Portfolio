@@ -1,24 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Prasad Kanade" />
-    <meta name="description" content="A deep dive into Oracle composite indexing strategies and database query optimization" />
-    <link rel="icon" href="../images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/blog-post.css" />
-    <title>How I Achieved 60% Query Performance Improvement — Prasad Kanade</title>
+    <title>How I Cut Oracle Query Times by 60% — Prasad Kanade</title>
   </head>
   <body>
     <nav class="nav">
-      <div class="nav-container">
+      <div class="nav-inner">
         <a href="../index.html" class="nav-logo">Prasad Kanade</a>
         <ul class="nav-links">
           <li><a href="../work.html">Work</a></li>
@@ -29,134 +25,129 @@
     </nav>
 
     <main>
-      <article class="blog-post">
+      <section class="post-header">
         <div class="container">
-          <header class="blog-post-header">
-            <a href="../blog.html" class="back-link">← Back to Blog</a>
-            <time class="blog-post-date">January 2026</time>
-            <h1 class="blog-post-title">How I Achieved 60% Query Performance Improvement in Oracle</h1>
-            <p class="blog-post-subtitle">
-              A deep dive into composite indexing strategies, execution plan analysis, and the 
-              systematic approach I used to optimize database queries serving millions of users.
-            </p>
-          </header>
-
-          <div class="blog-post-content">
-            <p>
-              During my time at Amdocs, I worked on the backend systems for JCOM, Japan's largest 
-              cable television operator. One of the most impactful projects I led was optimizing 
-              the Oracle database queries that powered their subscriber management system.
-            </p>
-
-            <p>
-              When I joined the project, some of the most frequently used queries were taking 
-              3-5 seconds to execute. For a system serving 10+ million subscribers, this was 
-              causing cascading issues — timeout errors, poor user experience, and frustrated 
-              support teams.
-            </p>
-
-            <h2>Understanding the Problem</h2>
-
-            <p>
-              Before jumping into solutions, I spent time understanding the actual bottlenecks. 
-              I used Oracle's execution plan analysis to identify where queries were spending 
-              the most time.
-            </p>
-
-            <p>The key issues I found were:</p>
-
-            <ul>
-              <li>Full table scans on tables with millions of rows</li>
-              <li>Missing indexes on frequently filtered columns</li>
-              <li>Inefficient JOIN operations due to poor index coverage</li>
-              <li>Suboptimal query patterns that prevented index utilization</li>
-            </ul>
-
-            <h2>The Composite Indexing Strategy</h2>
-
-            <p>
-              The biggest improvement came from implementing composite indexes strategically. 
-              Rather than creating single-column indexes for every WHERE clause column, I 
-              analyzed query patterns to create composite indexes that covered multiple 
-              columns in the order they were most frequently accessed.
-            </p>
-
-            <p>
-              For example, our subscriber lookup queries typically filtered by region, then 
-              by subscription type, then by status. Creating a composite index on 
-              <code>(region_id, subscription_type, status)</code> allowed Oracle to use a 
-              single index scan for all three filters.
-            </p>
-
-            <h2>Query Rewriting</h2>
-
-            <p>
-              Some queries couldn't be optimized through indexes alone. I worked with the team 
-              to rewrite several queries to be more index-friendly:
-            </p>
-
-            <ul>
-              <li>Replacing <code>OR</code> conditions with <code>UNION ALL</code> where appropriate</li>
-              <li>Moving function calls out of WHERE clauses to enable index usage</li>
-              <li>Using bind variables consistently to improve execution plan caching</li>
-              <li>Breaking complex queries into simpler, more focused queries</li>
-            </ul>
-
-            <h2>Results</h2>
-
-            <p>
-              After implementing these optimizations over a 3-month period, we achieved a 
-              60% improvement in average query execution time. The queries that previously 
-              took 3-5 seconds now completed in under 1 second.
-            </p>
-
-            <p>
-              More importantly, this reduced our timeout errors by 85% and significantly 
-              improved the experience for both end users and support teams.
-            </p>
-
-            <h2>Key Takeaways</h2>
-
-            <p>
-              Database optimization isn't magic — it's about understanding your data access 
-              patterns and designing your indexes and queries to work together efficiently.
-            </p>
-
-            <ul>
-              <li>Always start with execution plan analysis before making changes</li>
-              <li>Composite indexes are often more valuable than multiple single-column indexes</li>
-              <li>Query patterns matter as much as indexes — sometimes you need to rewrite queries</li>
-              <li>Measure everything and validate improvements with real production data</li>
-            </ul>
-
-            <p>
-              If you're dealing with similar performance challenges, I'd be happy to discuss 
-              approaches. Feel free to reach out.
-            </p>
-          </div>
-
-          <footer class="blog-post-footer">
-            <div class="author-info">
-              <p class="author-name">Written by Prasad Kanade</p>
-              <p class="author-bio">
-                Software Engineer focused on distributed systems and database optimization. 
-                Currently pursuing MS at Northeastern University.
-              </p>
-            </div>
-            <div class="share-links">
-              <a href="mailto:kanade.pra@northeastern.edu">Discuss this post →</a>
-            </div>
-          </footer>
+          <a href="../blog.html" class="post-back">← Back to blog</a>
+          <h1 class="post-title">How I Cut Oracle Query Times by 60% in Production</h1>
+          <p class="post-meta">February 2026 · 6 min read</p>
         </div>
-      </article>
+      </section>
+
+      <section class="post-content">
+        <div class="container">
+          <p>
+            At Amdocs, I worked on the CRM platform powering JCOM — Japan's largest cable telecom
+            operator with over 10 million subscribers. The system handled everything from billing to
+            service activation, and performance was critical. When subscriber lookup queries started
+            taking 12+ seconds, it became a priority to fix.
+          </p>
+
+          <p>Here's what I learned optimizing Oracle databases in a live production environment.</p>
+
+          <h2>Finding the Problem</h2>
+
+          <p>
+            The first step wasn't writing better queries — it was understanding why the existing
+            ones were slow. Oracle's Automatic Workload Repository (AWR) reports became my best
+            friend. AWR captures database performance statistics at regular intervals, giving you a
+            clear picture of what's consuming resources.
+          </p>
+
+          <p>
+            The AWR data revealed three patterns: full table scans on subscriber tables with 10M+
+            rows, nested loop joins where hash joins would be more efficient, and PL/SQL procedures
+            that were executing row-by-row instead of set-based operations.
+          </p>
+
+          <h2>Composite Indexes</h2>
+
+          <p>
+            The biggest wins came from indexing. Single-column indexes existed, but the queries
+            filtered on multiple columns simultaneously. For a query filtering on
+            <code>region_id</code> and <code>subscription_status</code>, having separate indexes on
+            each column meant Oracle still had to merge results.
+          </p>
+
+          <p>
+            Creating composite indexes on the actual filter combinations eliminated this overhead.
+            The key insight: index column order matters. Put the most selective column first — in
+            our case, <code>region_id</code> had higher cardinality than
+            <code>subscription_status</code>, so it went first.
+          </p>
+
+          <pre><code>CREATE INDEX idx_subscriber_region_status 
+ON subscribers(region_id, subscription_status)
+TABLESPACE idx_ts;</code></pre>
+
+          <h2>PL/SQL Refactoring</h2>
+
+          <p>
+            Several stored procedures used cursor-based row-by-row processing — the classic "slow by
+            slow" anti-pattern. A procedure updating subscriber statuses was looping through
+            millions of rows individually when a single <code>UPDATE</code> with a
+            <code>WHERE</code> clause would accomplish the same thing in seconds.
+          </p>
+
+          <p>
+            The refactored version used bulk operations with <code>FORALL</code> and
+            <code>BULK COLLECT</code> where set-based operations weren't possible, reducing round
+            trips between the PL/SQL engine and SQL engine.
+          </p>
+
+          <h2>Query Result Caching</h2>
+
+          <p>
+            Some queries ran identically thousands of times per day — subscriber plan lookups, for
+            instance. Oracle's Result Cache stores query results in shared memory, so repeated
+            executions return cached data instead of re-executing.
+          </p>
+
+          <pre><code>SELECT /*+ RESULT_CACHE */ plan_name, monthly_rate, data_limit
+FROM subscription_plans
+WHERE plan_status = 'ACTIVE';</code></pre>
+
+          <p>
+            This worked well for relatively static data like plan catalogs. For frequently changing
+            data, we used materialized views with fast refresh to pre-compute expensive joins.
+          </p>
+
+          <h2>Results</h2>
+
+          <p>
+            After implementing these changes across 20+ queries, average execution times dropped
+            from 12s to 4.8s — a 60% improvement. The work was done incrementally over several
+            weeks, testing each change in staging before production deployment, with zero downtime
+            throughout the process.
+          </p>
+
+          <h2>Key Takeaways</h2>
+
+          <p>
+            Measure first. AWR reports, execution plans, and wait event analysis tell you exactly
+            where time is being spent. Without measurement, you're guessing. Index strategically —
+            composite indexes aligned with actual query patterns beat generic single-column indexes.
+            Think in sets, not loops — PL/SQL procedures should minimize row-by-row processing. And
+            cache what doesn't change — Result Cache and materialized views can eliminate redundant
+            computation entirely.
+          </p>
+
+          <p>
+            Database optimization isn't glamorous, but when your queries serve 10 million
+            subscribers, every millisecond counts.
+          </p>
+
+          <p style="margin-top: 40px; color: var(--text-muted); font-size: 14px">
+            Questions or want to discuss database optimization? Reach me at
+            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <p class="footer-text">© 2026 Prasad Kanade</p>
+        <p>Prasad Kanade · 2026</p>
       </div>
     </footer>
-
-    <script type="module" src="../js/main.js"></script>
   </body>
 </html>

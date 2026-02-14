@@ -1,15 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Prasad Kanade" />
-    <meta name="description" content="Case studies and detailed project work by Prasad Kanade" />
-    <link rel="icon" href="images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -17,10 +14,10 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="nav-container">
+      <div class="nav-inner">
         <a href="index.html" class="nav-logo">Prasad Kanade</a>
         <ul class="nav-links">
-          <li><a href="work.html" class="active">Work</a></li>
+          <li><a href="work.html">Work</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -28,365 +25,223 @@
     </nav>
 
     <main>
-      <!-- Page Header -->
-      <section class="page-header">
+      <section class="hero" style="padding-bottom: 32px">
         <div class="container">
-          <h1 class="page-title">Work</h1>
-          <p class="page-description">
-            Detailed case studies of projects I've worked on, including the challenges faced, 
-            solutions implemented, and impact delivered.
-          </p>
+          <p class="hero-label">Selected Work</p>
+          <h1>Case studies from production systems and research.</h1>
         </div>
       </section>
 
-      <!-- Case Study 1: Telecom Platform -->
-      <article class="case-study" id="telecom">
+      <section>
         <div class="container">
-          <header class="case-study-header">
-            <div class="case-study-meta">
-              <span class="case-study-company">Amdocs Corporation</span>
-              <span class="case-study-date">Dec 2023 — May 2025</span>
+          <!-- Case Study 1 -->
+          <div class="case-item">
+            <p class="case-label">Amdocs Corporation</p>
+            <p class="case-title">Oracle Database Optimization for Telecom CRM</p>
+
+            <div class="case-section">
+              <p class="case-section-label">Situation</p>
+              <p>
+                JCOM's CRM platform served 10M+ subscribers but suffered from degraded query
+                performance as data volumes grew, with critical subscriber lookups taking 12+
+                seconds.
+              </p>
             </div>
-            <h2 class="case-study-title">Enterprise Telecom Platform</h2>
-            <p class="case-study-subtitle">
-              Building scalable microservices for Japan's largest cable television provider
-            </p>
-          </header>
 
-          <div class="case-study-content">
-            <section class="case-study-section">
-              <h3>Overview</h3>
+            <div class="case-section">
+              <p class="case-section-label">Task</p>
               <p>
-                JCOM is Japan's largest cable television operator, serving over 10 million subscribers 
-                across the country. I was part of the core engineering team responsible for developing 
-                and maintaining the backend microservices that power their subscriber management, 
-                billing, and service provisioning systems.
+                Optimize database performance across 20+ high-traffic queries without disrupting
+                live production systems serving 50K+ daily transactions.
               </p>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>The Challenge</h3>
+            <div class="case-section">
+              <p class="case-section-label">Action</p>
               <p>
-                The existing system faced several critical issues that impacted both developer 
-                productivity and end-user experience:
+                Analyzed execution plans using Oracle AWR reports, restructured PL/SQL stored
+                procedures, added composite indexes on frequently joined columns, and implemented
+                query result caching for repeated subscriber lookups.
               </p>
-              <ul class="case-study-list">
-                <li>Database queries were taking 3-5 seconds for common operations, causing timeout issues</li>
-                <li>Test coverage was below 40%, leading to frequent production bugs</li>
-                <li>New team members took 3+ months to become productive due to complex codebase</li>
-                <li>Tightly coupled services caused cascading failures during peak traffic</li>
-              </ul>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>My Contributions</h3>
+            <div class="case-section">
+              <p class="case-section-label">Result</p>
               <p>
-                As a Software Engineering Associate, I took ownership of several key initiatives:
+                Reduced average query execution time from 12s to 4.8s — a 60% improvement — while
+                maintaining 99.7% uptime throughout the optimization process.
               </p>
-              <ul class="case-study-list">
-                <li>
-                  <strong>Database Optimization:</strong> Analyzed slow queries using Oracle's execution 
-                  plans and implemented composite indexes that reduced query times by 60%. Introduced 
-                  query caching for frequently accessed data.
-                </li>
-                <li>
-                  <strong>Microservices Development:</strong> Designed and implemented 8 production 
-                  microservices using Spring Boot, following domain-driven design principles to ensure 
-                  loose coupling and high cohesion.
-                </li>
-                <li>
-                  <strong>Testing Infrastructure:</strong> Established testing standards using JUnit 5 
-                  and Mockito, increasing code coverage from 40% to 80%. Implemented integration tests 
-                  that caught 30% more bugs before production.
-                </li>
-                <li>
-                  <strong>Team Mentorship:</strong> Created comprehensive onboarding documentation and 
-                  conducted weekly training sessions on API security, JWT authentication, and 
-                  microservices best practices.
-                </li>
-              </ul>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>Results</h3>
-              <div class="metrics-grid">
-                <div class="metric">
-                  <span class="metric-value">60%</span>
-                  <span class="metric-label">Query Performance Improvement</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">80%</span>
-                  <span class="metric-label">Test Coverage Achieved</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">30%</span>
-                  <span class="metric-label">Reduction in Production Bugs</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">40%</span>
-                  <span class="metric-label">Faster Engineer Onboarding</span>
-                </div>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">60%</span>
+                <span class="metric-label">Faster queries</span>
               </div>
-            </section>
-
-            <section class="case-study-section">
-              <h3>Tech Stack</h3>
-              <div class="tech-tags">
-                <span class="tag">Java 17</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">Oracle 19c</span>
-                <span class="tag">Apache CXF</span>
-                <span class="tag">SOAP/REST</span>
-                <span class="tag">Docker</span>
-                <span class="tag">JUnit 5</span>
-                <span class="tag">Mockito</span>
-                <span class="tag">Maven</span>
-                <span class="tag">Git</span>
+              <div class="metric">
+                <span class="metric-value">10M+</span>
+                <span class="metric-label">Subscribers served</span>
               </div>
-            </section>
+              <div class="metric">
+                <span class="metric-value">99.7%</span>
+                <span class="metric-label">Uptime maintained</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Case Study 2: ML Research -->
-      <article class="case-study" id="ml-research">
-        <div class="container">
-          <header class="case-study-header">
-            <div class="case-study-meta">
-              <span class="case-study-company">Published Research — IEEE</span>
-              <span class="case-study-date">2023</span>
+          <!-- Case Study 2 -->
+          <div class="case-item">
+            <p class="case-label">Amdocs Corporation</p>
+            <p class="case-title">Microservices Containerization & Deployment</p>
+
+            <div class="case-section">
+              <p class="case-section-label">Situation</p>
+              <p>
+                Deployment cycles for CRM microservices took 45+ minutes with manual configuration
+                steps, creating bottlenecks during release sprints and increasing risk of
+                configuration drift.
+              </p>
             </div>
-            <h2 class="case-study-title">Thyroid Disease Classification</h2>
-            <p class="case-study-subtitle">
-              Explainable AI for clinical decision support in medical diagnostics
-            </p>
-          </header>
 
-          <div class="case-study-content">
-            <section class="case-study-section">
-              <h3>Overview</h3>
+            <div class="case-section">
+              <p class="case-section-label">Task</p>
               <p>
-                Thyroid disorders affect over 200 million people globally, yet early diagnosis remains 
-                challenging due to subtle symptom patterns. This research developed a machine learning 
-                system that assists clinicians in diagnosing thyroid conditions with high accuracy 
-                while providing transparent explanations for each prediction.
+                Containerize 3 production Java/Spring Boot microservices and establish a repeatable
+                deployment pipeline on AWS.
               </p>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>The Challenge</h3>
+            <div class="case-section">
+              <p class="case-section-label">Action</p>
               <p>
-                Medical AI systems face unique challenges that go beyond accuracy metrics:
+                Created optimized multi-stage Dockerfiles reducing image sizes, configured Docker
+                Compose for local development parity, and set up automated deployments to AWS EC2
+                with health checks and rollback capabilities.
               </p>
-              <ul class="case-study-list">
-                <li>Clinicians are hesitant to trust "black box" models for critical diagnoses</li>
-                <li>Class imbalance in medical datasets leads to poor minority class detection</li>
-                <li>Feature selection must align with clinical understanding</li>
-                <li>Model predictions need to be interpretable for regulatory compliance</li>
-              </ul>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>My Contributions</h3>
-              <ul class="case-study-list">
-                <li>
-                  <strong>Data Engineering:</strong> Processed and cleaned dataset of 7,200 patient 
-                  records across 3 thyroid conditions. Implemented SMOTE for handling class imbalance 
-                  and feature engineering for clinical relevance.
-                </li>
-                <li>
-                  <strong>Model Development:</strong> Evaluated multiple algorithms (Random Forest, 
-                  SVM, Neural Networks) before selecting XGBoost for its balance of accuracy and 
-                  interpretability. Fine-tuned hyperparameters using cross-validation.
-                </li>
-                <li>
-                  <strong>Explainability:</strong> Integrated SHAP (SHapley Additive exPlanations) to 
-                  provide feature importance at both global and individual prediction levels, enabling 
-                  clinicians to understand why the model made specific recommendations.
-                </li>
-                <li>
-                  <strong>Publication:</strong> Co-authored IEEE paper documenting methodology, 
-                  results, and clinical implications. Presented findings at conference.
-                </li>
-              </ul>
-            </section>
+            <div class="case-section">
+              <p class="case-section-label">Result</p>
+              <p>
+                Reduced deployment time from 45 minutes to 8 minutes per release — an 82%
+                improvement — while eliminating configuration drift across environments.
+              </p>
+            </div>
 
-            <section class="case-study-section">
-              <h3>Results</h3>
-              <div class="metrics-grid">
-                <div class="metric">
-                  <span class="metric-value">97.6%</span>
-                  <span class="metric-label">Classification Accuracy</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">7,200</span>
-                  <span class="metric-label">Patient Records Analyzed</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">3</span>
-                  <span class="metric-label">Disease Classes Classified</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">IEEE</span>
-                  <span class="metric-label">Published Research</span>
-                </div>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">82%</span>
+                <span class="metric-label">Faster deploys</span>
               </div>
-            </section>
-
-            <section class="case-study-section">
-              <h3>Tech Stack</h3>
-              <div class="tech-tags">
-                <span class="tag">Python</span>
-                <span class="tag">XGBoost</span>
-                <span class="tag">SHAP</span>
-                <span class="tag">scikit-learn</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">Jupyter</span>
+              <div class="metric">
+                <span class="metric-value">3</span>
+                <span class="metric-label">Services containerized</span>
               </div>
-            </section>
+              <div class="metric">
+                <span class="metric-value">8 min</span>
+                <span class="metric-label">Deploy time</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Case Study 3: Cloud Infrastructure -->
-      <article class="case-study" id="cloud-infra">
-        <div class="container">
-          <header class="case-study-header">
-            <div class="case-study-meta">
-              <span class="case-study-company">ISKCON Organization</span>
-              <span class="case-study-date">Jul 2022 — Dec 2022</span>
-            </div>
-            <h2 class="case-study-title">Cloud Infrastructure Automation</h2>
-            <p class="case-study-subtitle">
-              Modernizing deployment pipelines and infrastructure monitoring
-            </p>
-          </header>
+          <!-- Case Study 3 -->
+          <div class="case-item">
+            <p class="case-label">Research — Springer Publication</p>
+            <p class="case-title">Thyroid Disease Classification with XGBoost & SHAP</p>
 
-          <div class="case-study-content">
-            <section class="case-study-section">
-              <h3>Overview</h3>
+            <div class="case-section">
+              <p class="case-section-label">Situation</p>
               <p>
-                ISKCON's digital platforms serve millions of visitors globally, requiring reliable 
-                infrastructure and quick deployment capabilities. I was brought in to modernize their 
-                deployment processes and implement proactive monitoring to prevent outages.
+                Thyroid disease diagnosis relies on complex hormone level interpretation, with
+                existing ML models achieving moderate accuracy but lacking interpretability for
+                clinical adoption.
               </p>
-            </section>
+            </div>
 
-            <section class="case-study-section">
-              <h3>The Challenge</h3>
-              <ul class="case-study-list">
-                <li>Manual deployments took 2+ hours and were error-prone</li>
-                <li>No proactive monitoring — issues discovered only after user complaints</li>
-                <li>Inconsistent environments between development, staging, and production</li>
-                <li>Frequent unplanned downtime affecting global users</li>
-              </ul>
-            </section>
+            <div class="case-section">
+              <p class="case-section-label">Task</p>
+              <p>
+                Develop a high-accuracy, interpretable classification system that clinicians could
+                trust and understand for thyroid disease diagnosis.
+              </p>
+            </div>
 
-            <section class="case-study-section">
-              <h3>My Contributions</h3>
-              <ul class="case-study-list">
-                <li>
-                  <strong>CI/CD Pipeline:</strong> Implemented automated deployment pipelines using 
-                  shell scripts and AWS services, reducing deployment time from 2+ hours to 25 minutes.
-                </li>
-                <li>
-                  <strong>Containerization:</strong> Dockerized applications to ensure environment 
-                  consistency across development, staging, and production.
-                </li>
-                <li>
-                  <strong>Monitoring System:</strong> Built comprehensive monitoring using Bash scripts 
-                  and cron jobs with automated alerting via email and Slack integration.
-                </li>
-                <li>
-                  <strong>Documentation:</strong> Created runbooks for common operational tasks, 
-                  enabling team members to resolve issues independently.
-                </li>
-              </ul>
-            </section>
+            <div class="case-section">
+              <p class="case-section-label">Action</p>
+              <p>
+                Built an XGBoost classification pipeline with SHAP (SHapley Additive exPlanations)
+                for model interpretability. Processed 7,200 patient records with feature
+                engineering, cross-validation, and hyperparameter optimization.
+              </p>
+            </div>
 
-            <section class="case-study-section">
-              <h3>Results</h3>
-              <div class="metrics-grid">
-                <div class="metric">
-                  <span class="metric-value">78%</span>
-                  <span class="metric-label">Faster Deployments</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">93%</span>
-                  <span class="metric-label">Uptime Achieved</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">25%</span>
-                  <span class="metric-label">Less Unplanned Downtime</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">4hrs</span>
-                  <span class="metric-label">Weekly Time Saved</span>
-                </div>
+            <div class="case-section">
+              <p class="case-section-label">Result</p>
+              <p>
+                Achieved 97.6% classification accuracy with full SHAP-based explainability.
+                Published in Springer conference proceedings.
+              </p>
+            </div>
+
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">97.6%</span>
+                <span class="metric-label">Accuracy</span>
               </div>
-            </section>
-
-            <section class="case-study-section">
-              <h3>Tech Stack</h3>
-              <div class="tech-tags">
-                <span class="tag">AWS EC2</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Bash</span>
-                <span class="tag">Linux</span>
-                <span class="tag">Cron</span>
-                <span class="tag">ECR/ECS</span>
-                <span class="tag">Shell Scripting</span>
-                <span class="tag">Git</span>
+              <div class="metric">
+                <span class="metric-value">7,200</span>
+                <span class="metric-label">Patient records</span>
               </div>
-            </section>
+            </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Other Projects Section -->
-      <section class="section section-alt">
-        <div class="container">
-          <h2 class="section-label">Other Projects</h2>
+          <!-- Case Study 4 -->
+          <div class="case-item">
+            <p class="case-label">Personal Project</p>
+            <p class="case-title">Decentralized Crowdfunding Platform</p>
 
-          <div class="projects-grid">
-            <div class="project-card-small">
-              <h3 class="project-title">Job Scraping Automation</h3>
-              <p class="project-description">
-                Automated job aggregation pipeline processing 200+ daily postings from multiple sources. 
-                Built with Python, BeautifulSoup, and scheduled via cron jobs.
+            <div class="case-section">
+              <p class="case-section-label">Situation</p>
+              <p>
+                Traditional crowdfunding platforms charge high fees (5-10%) and lack transparency in
+                fund management, creating trust issues between creators and backers.
               </p>
-              <div class="project-links">
-                <a href="https://github.com/prasad0411/JobsScrapingAutomation" target="_blank" rel="noopener noreferrer">
-                  View on GitHub →
-                </a>
-              </div>
             </div>
 
-            <div class="project-card-small">
-              <h3 class="project-title">DSA Practice Repository</h3>
-              <p class="project-description">
-                Comprehensive collection of data structure and algorithm implementations in Java, 
-                organized by topic with detailed explanations.
+            <div class="case-section">
+              <p class="case-section-label">Task</p>
+              <p>
+                Build a decentralized alternative on Ethereum that provides transparent, trustless
+                fund management with lower costs.
               </p>
-              <div class="project-links">
-                <a href="https://github.com/prasad0411/AllMyQuestions" target="_blank" rel="noopener noreferrer">
-                  View on GitHub →
-                </a>
-              </div>
             </div>
 
-            <div class="project-card-small">
-              <h3 class="project-title">Decentralized Crowdfunding</h3>
-              <p class="project-description">
-                Web3 crowdfunding platform built with Solidity smart contracts, React frontend, 
-                and MetaMask integration for transparent fund management.
+            <div class="case-section">
+              <p class="case-section-label">Action</p>
+              <p>
+                Developed Solidity smart contracts implementing the withdrawal pattern for security,
+                built a React frontend with Web3.js integration, and deployed on Ethereum testnet
+                with Hardhat for testing and deployment automation.
               </p>
-              <div class="project-links">
-                <a href="https://github.com/prasad0411" target="_blank" rel="noopener noreferrer">
-                  View on GitHub →
-                </a>
+            </div>
+
+            <div class="case-section">
+              <p class="case-section-label">Result</p>
+              <p>
+                Fully functional dApp supporting campaign creation, ETH contributions,
+                milestone-based fund release, and automated refunds — all enforced by smart contract
+                logic with zero intermediary fees.
+              </p>
+            </div>
+
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">0%</span>
+                <span class="metric-label">Platform fees</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">On-chain transparency</span>
               </div>
             </div>
           </div>
@@ -396,10 +251,8 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="footer-text">© 2026 Prasad Kanade</p>
+        <p>Prasad Kanade · 2026</p>
       </div>
     </footer>
-
-    <script type="module" src="js/main.js"></script>
   </body>
 </html>
