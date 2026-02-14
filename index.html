@@ -30,49 +30,57 @@
     </nav>
 
     <main>
-      <!-- Hero -->
+      <!-- ===== HERO ===== -->
       <section class="hero">
         <div class="container">
           <div class="hero-grid">
             <div>
-              <p class="hero-label hero-enter">Open to Summer 2026 Internships</p>
-              <h1 class="hero-enter">
-                I build <span class="gradient-text">scalable systems</span> and optimize databases
-                for platforms serving millions.
+              <h1 class="hero-anim">
+                I build <span class="grad">scalable systems</span> and optimize databases for
+                enterprise platforms.
               </h1>
-              <p class="hero-text hero-enter">
+              <p class="hero-sub hero-anim">
                 MS Computer Science at <strong>Northeastern University</strong>. Previously at
                 <strong>Amdocs Corporation</strong>, engineering production microservices for
                 Japan's largest cable telecom with 10M+ subscribers.
               </p>
-              <div class="hero-links hero-enter">
+              <div class="hero-btns hero-anim">
                 <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
-                <a href="https://github.com/prasadkanade" target="_blank" class="btn">GitHub</a>
+                <a href="https://github.com/prasad0411" target="_blank" class="btn">GitHub</a>
                 <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank" class="btn"
                   >LinkedIn</a
                 >
                 <a href="mailto:kanade.pra@northeastern.edu" class="btn">Email</a>
               </div>
             </div>
-            <div class="hero-photo hero-enter">
-              <!-- Replace with: <img src="images/profile.jpg" alt="Prasad Kanade" /> -->
-              <div class="hero-photo-placeholder">PK</div>
+            <!-- 
+              TO ADD YOUR PHOTO:
+              1. Put your photo in the images/ folder as "profile.jpg"
+              2. Delete the <div class="photo-placeholder">...</div> below
+              3. Uncomment the <img> line below
+            -->
+            <div class="hero-photo hero-anim">
+              <!-- <img src="images/profile.jpg" alt="Prasad Kanade" /> -->
+              <div class="photo-placeholder">
+                <span>📷</span>
+                Add profile.jpg
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Experience -->
+      <!-- ===== EXPERIENCE ===== -->
       <section id="experience">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Experience</p>
-            <p class="section-title">Where I've Worked</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Experience</p>
+            <p class="sec-title">Where I've Worked</p>
           </div>
 
           <div class="stagger">
             <div class="exp-card reveal">
-              <div class="exp-header">
+              <div class="exp-top">
                 <span class="exp-role">Software Engineering Associate</span>
                 <span class="exp-date">December 2023 – May 2025</span>
               </div>
@@ -104,7 +112,7 @@
             </div>
 
             <div class="exp-card reveal">
-              <div class="exp-header">
+              <div class="exp-top">
                 <span class="exp-role">Software Developer Intern</span>
                 <span class="exp-date">July 2023 – December 2023</span>
               </div>
@@ -126,7 +134,7 @@
             </div>
 
             <div class="exp-card reveal">
-              <div class="exp-header">
+              <div class="exp-top">
                 <span class="exp-role">Software Developer Intern — Mobile</span>
                 <span class="exp-date">January 2023 – April 2023</span>
               </div>
@@ -149,19 +157,23 @@
         </div>
       </section>
 
-      <!-- Projects -->
+      <!-- ===== PROJECTS ===== -->
       <section id="projects">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Projects</p>
-            <p class="section-title">Things I've Built</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Projects</p>
+            <p class="sec-title">Things I've Built</p>
           </div>
 
-          <div class="projects-grid stagger">
-            <div class="project-card reveal">
-              <div class="project-top">
-                <div class="project-icon">⛓</div>
-                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+          <div class="proj-grid stagger">
+            <div class="proj-card reveal">
+              <div class="proj-top">
+                <div class="proj-icon">⛓</div>
+                <a
+                  href="https://github.com/prasad0411/Blockchain-Crowdfunding-Platform"
+                  target="_blank"
+                  class="proj-ghlink"
+                >
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
@@ -169,13 +181,12 @@
                   </svg>
                 </a>
               </div>
-              <p class="project-title">Decentralized Crowdfunding Platform</p>
-              <p class="project-desc">
-                Full-stack dApp enabling transparent fundraising through Ethereum smart contracts.
-                Campaign creation, contribution tracking, and automated fund disbursement with
-                withdrawal pattern for security.
+              <p class="proj-title">Blockchain Crowdfunding Platform</p>
+              <p class="proj-desc">
+                Blockchain-based crowdfunding merging private and community projects with secure,
+                transparent transactions. Smart contracts govern fund flows for campaign management.
               </p>
-              <div class="project-tags">
+              <div class="proj-tags">
                 <span class="tag">Solidity</span>
                 <span class="tag">React</span>
                 <span class="tag">Hardhat</span>
@@ -184,10 +195,14 @@
               </div>
             </div>
 
-            <div class="project-card reveal">
-              <div class="project-top">
-                <div class="project-icon">📅</div>
-                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+            <div class="proj-card reveal">
+              <div class="proj-top">
+                <div class="proj-icon">🔍</div>
+                <a
+                  href="https://github.com/prasad0411/JobsScrapingAutomation"
+                  target="_blank"
+                  class="proj-ghlink"
+                >
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
@@ -195,25 +210,28 @@
                   </svg>
                 </a>
               </div>
-              <p class="project-title">Calendar Application</p>
-              <p class="project-desc">
-                Enterprise calendar with MVC architecture supporting multiple calendar management,
-                event scheduling with conflict detection, and auto-scheduling. 95%+ test coverage
-                with JUnit.
+              <p class="proj-title">Jobs Scraping Automation</p>
+              <p class="proj-desc">
+                Automated job scraper that aggregates internship positions from multiple sources
+                into Google Sheets. Processes 1,300+ daily postings with 98%+ accuracy.
               </p>
-              <div class="project-tags">
-                <span class="tag">Java</span>
-                <span class="tag">MVC</span>
-                <span class="tag">JUnit</span>
-                <span class="tag">XML</span>
-                <span class="tag">SOLID</span>
+              <div class="proj-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Selenium</span>
+                <span class="tag">APIs</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Automation</span>
               </div>
             </div>
 
-            <div class="project-card reveal">
-              <div class="project-top">
-                <div class="project-icon">🎵</div>
-                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+            <div class="proj-card reveal">
+              <div class="proj-top">
+                <div class="proj-icon">🧬</div>
+                <a
+                  href="https://github.com/prasad0411/Thyroid-Disease-Classification"
+                  target="_blank"
+                  class="proj-ghlink"
+                >
                   <svg viewBox="0 0 24 24">
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
@@ -221,30 +239,57 @@
                   </svg>
                 </a>
               </div>
-              <p class="project-title">Database Practicum — Music Platform</p>
-              <p class="project-desc">
-                Fully normalized (3NF) relational database for a music streaming platform,
-                processing 179,000+ records with optimized indexing and complex query performance
-                tuning.
+              <p class="proj-title">Thyroid Disease Classification</p>
+              <p class="proj-desc">
+                ML classification system using XGBoost with SHAP explainability for thyroid disease
+                diagnosis. 97.6% accuracy across 7,200 patient records. Published in Springer.
               </p>
-              <div class="project-tags">
-                <span class="tag">MySQL</span>
+              <div class="proj-tags">
                 <span class="tag">Python</span>
-                <span class="tag">SQL</span>
-                <span class="tag">ER Modeling</span>
-                <span class="tag">Normalization</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">SHAP</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Pandas</span>
+              </div>
+            </div>
+
+            <div class="proj-card reveal">
+              <div class="proj-top">
+                <div class="proj-icon">💻</div>
+                <a
+                  href="https://github.com/prasad0411/AllMyQuestions"
+                  target="_blank"
+                  class="proj-ghlink"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <p class="proj-title">DSA Solutions Repository</p>
+              <p class="proj-desc">
+                Active DSA preparation in Java organized by data structures and algorithms. Covers
+                arrays, trees, graphs, dynamic programming, and more with optimized solutions.
+              </p>
+              <div class="proj-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">LeetCode</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Publication -->
+      <!-- ===== PUBLICATION ===== -->
       <section id="publication">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Research</p>
-            <p class="section-title">Published Work</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Research</p>
+            <p class="sec-title">Published Work</p>
           </div>
 
           <div class="pub-card reveal">
@@ -252,36 +297,30 @@
             <p class="pub-title">
               Classification and Diagnosis of Thyroid Disease Using XGBoost and SHAP
             </p>
-            <p class="pub-venue">
-              High-accuracy interpretable ML system for clinical thyroid disease diagnosis using
-              explainable AI frameworks. Published in Springer conference proceedings.
+            <p class="pub-desc">
+              High-accuracy interpretable ML system for clinical thyroid disease diagnosis. Built
+              with explainable AI frameworks enabling clinician trust and adoption.
             </p>
             <div class="pub-stats">
-              <div>
-                <span class="pub-stat-value">97.6%</span>
-                <span class="pub-stat-label">Accuracy</span>
-              </div>
-              <div>
-                <span class="pub-stat-value">7,200</span>
-                <span class="pub-stat-label">Patients</span>
-              </div>
+              <div><span class="pub-val">97.6%</span><span class="pub-lbl">Accuracy</span></div>
+              <div><span class="pub-val">7,200</span><span class="pub-lbl">Patients</span></div>
             </div>
             <a
               href="https://link.springer.com/chapter/10.1007/978-981-97-6106-7_9"
               target="_blank"
-              style="display: inline-block; margin-top: 18px; font-size: 15px; font-weight: 500"
+              style="display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 500"
               >Read Paper →</a
             >
           </div>
         </div>
       </section>
 
-      <!-- Skills -->
+      <!-- ===== SKILLS ===== -->
       <section id="skills">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Technical Skills</p>
-            <p class="section-title">Technologies I Work With</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Technical Skills</p>
+            <p class="sec-title">Technologies I Work With</p>
           </div>
 
           <div class="skills-grid stagger">
@@ -312,10 +351,9 @@
                 <span class="skill-tag">GraphQL</span>
                 <span class="skill-tag">Docker</span>
                 <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">EC2</span>
-                <span class="skill-tag">S3</span>
-                <span class="skill-tag">RDS</span>
+                <span class="skill-tag">AWS EC2</span>
+                <span class="skill-tag">AWS S3</span>
+                <span class="skill-tag">AWS RDS</span>
                 <span class="skill-tag">CI/CD</span>
               </div>
             </div>
@@ -344,16 +382,18 @@
                 <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Postman</span>
                 <span class="skill-tag">Swagger</span>
+                <span class="skill-tag">Selenium</span>
               </div>
             </div>
             <div class="skill-card reveal">
-              <h3>Data & ML</h3>
+              <h3>Data Science & ML</h3>
               <div class="skill-tags">
                 <span class="skill-tag">TensorFlow</span>
                 <span class="skill-tag">Scikit-learn</span>
                 <span class="skill-tag">XGBoost</span>
                 <span class="skill-tag">Pandas</span>
                 <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Matplotlib</span>
                 <span class="skill-tag">Seaborn</span>
                 <span class="skill-tag">Tableau</span>
                 <span class="skill-tag">SHAP</span>
@@ -369,18 +409,19 @@
                 <span class="skill-tag">Agile/Scrum</span>
                 <span class="skill-tag">TDD</span>
                 <span class="skill-tag">System Design</span>
+                <span class="skill-tag">OOP</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Education -->
+      <!-- ===== EDUCATION ===== -->
       <section id="education">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Education</p>
-            <p class="section-title">Where I Studied</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Education</p>
+            <p class="sec-title">Where I Studied</p>
           </div>
 
           <div class="stagger">
@@ -390,11 +431,12 @@
                 <span class="edu-date">September 2025 – May 2027</span>
               </div>
               <p class="edu-school">Northeastern University — Boston, MA</p>
+              <p class="edu-gpa">CGPA: 3.83 / 4.0</p>
             </div>
 
             <div class="edu-card reveal">
               <div class="edu-top">
-                <span class="edu-degree">BE Computer Science</span>
+                <span class="edu-degree">B.Tech Computer Science</span>
                 <span class="edu-date">August 2020 – May 2024</span>
               </div>
               <p class="edu-school">Maharashtra Institute of Technology — Pune, India</p>
@@ -404,12 +446,12 @@
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- ===== CONTACT ===== -->
       <section id="contact">
         <div class="container">
-          <div class="section-header reveal">
-            <p class="section-label">Contact</p>
-            <p class="section-title">Let's Connect</p>
+          <div class="sec-header reveal">
+            <p class="sec-label">Contact</p>
+            <p class="sec-title">Let's Connect</p>
           </div>
 
           <div class="contact-grid reveal">
@@ -436,7 +478,7 @@
               </svg>
               LinkedIn
             </a>
-            <a href="https://github.com/prasadkanade" target="_blank" class="contact-link">
+            <a href="https://github.com/prasad0411" target="_blank" class="contact-link">
               <svg viewBox="0 0 24 24">
                 <path
                   d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"

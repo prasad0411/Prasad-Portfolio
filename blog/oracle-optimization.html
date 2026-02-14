@@ -23,75 +23,118 @@
         </ul>
       </div>
     </nav>
-
     <main>
       <section class="post-header">
         <div class="container">
           <a href="../blog.html" class="post-back">← Back to blog</a>
-          <h1 class="post-title hero-enter">How I Cut Oracle Query Times by 60% in Production</h1>
-          <p class="post-meta hero-enter">February 2026 · 6 min read</p>
+          <h1 class="post-title hero-anim">How I Cut Oracle Query Times by 60% in Production</h1>
+          <p class="post-meta hero-anim">February 2026 · 7 min read</p>
         </div>
       </section>
-
       <section class="post-content">
         <div class="container">
           <p>
             At Amdocs, I worked on the CRM platform powering JCOM — Japan's largest cable telecom
-            operator with over 10 million subscribers. The system handled everything from billing to
-            service activation, and performance was critical. When subscriber lookup queries started
-            taking 12+ seconds, it became a priority to fix.
-          </p>
-          <p>Here's what I learned optimizing Oracle databases in a live production environment.</p>
-
-          <h2>Finding the Problem</h2>
-          <p>
-            The first step wasn't writing better queries — it was understanding why the existing
-            ones were slow. Oracle's Automatic Workload Repository (AWR) reports became my best
-            friend. AWR captures database performance statistics at regular intervals, giving you a
-            clear picture of what's consuming resources.
-          </p>
-          <p>
-            The AWR data revealed three patterns: full table scans on subscriber tables with 10M+
-            rows, nested loop joins where hash joins would be more efficient, and PL/SQL procedures
-            executing row-by-row instead of set-based operations.
+            operator with over 10 million subscribers. When critical subscriber lookups started
+            taking 12+ seconds, I was tasked with diagnosing and fixing the performance issues
+            across 20+ high-traffic queries in a live production environment.
           </p>
 
-          <h2>Composite Indexes</h2>
           <p>
-            The biggest wins came from indexing. Single-column indexes existed, but queries filtered
-            on multiple columns simultaneously. For a query filtering on <code>region_id</code> and
-            <code>subscription_status</code>, having separate indexes on each column meant Oracle
-            still had to merge results.
+            Here's the full story structured around the STAR framework — the same approach I use to
+            communicate technical work clearly.
           </p>
+
+          <h2>Situation</h2>
+
           <p>
-            Creating composite indexes on actual filter combinations eliminated this overhead. The
-            key insight: index column order matters. Put the most selective column first —
-            <code>region_id</code> had higher cardinality than <code>subscription_status</code>, so
-            it went first.
+            JCOM's CRM platform handled everything from billing to service activation for 10M+
+            subscribers. The system processed 50,000+ transactions daily through SOAP-based
+            integrations with external BSS/OSS systems. As subscriber data volumes grew beyond
+            initial capacity planning, query performance degraded significantly. Critical subscriber
+            lookup operations that once completed in under 2 seconds were now taking 12+ seconds,
+            directly impacting customer service response times and agent productivity.
+          </p>
+
+          <p>
+            The database team had already tried basic optimizations — adding single-column indexes
+            and increasing allocated memory — but these changes had minimal impact. The root causes
+            were deeper than surface-level tuning could address.
+          </p>
+
+          <h2>Task</h2>
+
+          <p>
+            My objective was clear but constrained: optimize the 20+ most-trafficked Oracle SQL
+            queries and PL/SQL stored procedures to bring execution times back to acceptable levels,
+            all without disrupting the live production system that thousands of customer service
+            agents relied on daily. Every change needed to be thoroughly tested in staging before
+            deployment, and rollback procedures had to be in place for each optimization.
+          </p>
+
+          <h2>Action</h2>
+
+          <h3>Step 1: Diagnosing with AWR Reports</h3>
+
+          <p>
+            Rather than guessing, I started with Oracle's Automatic Workload Repository (AWR)
+            reports. AWR captures database performance statistics at regular intervals, providing a
+            comprehensive view of resource consumption. The data revealed three distinct patterns
+            causing the slowdowns.
+          </p>
+
+          <p>
+            First, full table scans were happening on subscriber tables containing 10M+ rows —
+            queries weren't leveraging available indexes effectively. Second, the optimizer was
+            choosing nested loop joins in situations where hash joins would be significantly more
+            efficient for the data volumes involved. Third, several PL/SQL stored procedures were
+            processing data row-by-row instead of using set-based operations.
+          </p>
+
+          <h3>Step 2: Composite Index Strategy</h3>
+
+          <p>
+            The biggest performance wins came from rethinking the indexing strategy. Single-column
+            indexes existed on most frequently queried columns, but the actual query patterns
+            filtered on multiple columns simultaneously. For example, a common query filtering on
+            both <code>region_id</code> and <code>subscription_status</code> required Oracle to scan
+            two separate indexes and merge the results.
+          </p>
+
+          <p>
+            I created composite indexes aligned with the actual query filter combinations, paying
+            careful attention to column order. The most selective column (higher cardinality) goes
+            first — in this case, <code>region_id</code> had far more distinct values than
+            <code>subscription_status</code>:
           </p>
 
           <pre><code>CREATE INDEX idx_subscriber_region_status
 ON subscribers(region_id, subscription_status)
 TABLESPACE idx_ts;</code></pre>
 
-          <h2>PL/SQL Refactoring</h2>
+          <h3>Step 3: PL/SQL Refactoring</h3>
+
           <p>
-            Several stored procedures used cursor-based row-by-row processing — the classic "slow by
-            slow" anti-pattern. A procedure updating subscriber statuses was looping through
-            millions of rows individually when a single <code>UPDATE</code> with a
-            <code>WHERE</code> clause would accomplish the same thing in seconds.
-          </p>
-          <p>
-            The refactored version used bulk operations with <code>FORALL</code> and
-            <code>BULK COLLECT</code> where set-based operations weren't possible, reducing round
-            trips between the PL/SQL engine and SQL engine.
+            Several stored procedures used cursor-based row-by-row processing — what Oracle
+            developers call the "slow by slow" anti-pattern. One procedure updating subscriber
+            statuses was looping through millions of rows individually when a single
+            <code>UPDATE</code> with a <code>WHERE</code> clause could accomplish the same operation
+            in seconds.
           </p>
 
-          <h2>Query Result Caching</h2>
           <p>
-            Some queries ran identically thousands of times per day — subscriber plan lookups, for
-            instance. Oracle's Result Cache stores query results in shared memory, so repeated
-            executions return cached data instead of re-executing.
+            Where pure set-based operations weren't feasible (due to complex business logic per
+            row), I refactored to use <code>FORALL</code> and <code>BULK COLLECT</code> — Oracle's
+            bulk processing features that drastically reduce context switches between the PL/SQL and
+            SQL engines.
+          </p>
+
+          <h3>Step 4: Result Caching</h3>
+
+          <p>
+            Some queries executed identically thousands of times per day — subscriber plan lookups
+            being the prime example. For these, I implemented Oracle's Result Cache, which stores
+            query results in shared memory:
           </p>
 
           <pre><code>SELECT /*+ RESULT_CACHE */ plan_name, monthly_rate, data_limit
@@ -99,38 +142,51 @@ FROM subscription_plans
 WHERE plan_status = 'ACTIVE';</code></pre>
 
           <p>
-            This worked well for relatively static data like plan catalogs. For frequently changing
-            data, we used materialized views with fast refresh to pre-compute expensive joins.
+            For data that changed more frequently, I set up materialized views with fast refresh to
+            pre-compute expensive join operations, eliminating the need to recalculate them on every
+            query.
           </p>
 
-          <h2>Results</h2>
+          <h2>Result</h2>
+
           <p>
-            After implementing these changes across 20+ queries, average execution times dropped
-            from 12s to 4.8s — a 60% improvement. The work was done incrementally over several
-            weeks, testing each change in staging before production deployment, with zero downtime
-            throughout.
+            After implementing these optimizations across all 20+ targeted queries, the measurable
+            outcomes were significant. Average query execution times dropped from 12 seconds to 4.8
+            seconds — a 60% improvement. The work was done incrementally over several weeks, with
+            each change tested in staging environments before production deployment. Throughout the
+            entire process, 99.7% uptime was maintained with zero service disruptions.
+          </p>
+
+          <p>
+            Beyond the immediate performance gains, the optimizations reduced load on the database
+            server, which had downstream benefits for other applications sharing the same Oracle
+            instance. The composite indexing strategy I developed became a template that the team
+            adopted for future query optimization work.
           </p>
 
           <h2>Key Takeaways</h2>
+
           <p>
-            Measure first. AWR reports, execution plans, and wait event analysis tell you exactly
-            where time is being spent. Without measurement, you're guessing. Index strategically —
-            composite indexes aligned with actual query patterns beat generic single-column indexes.
-            Think in sets, not loops — PL/SQL procedures should minimize row-by-row processing. And
-            cache what doesn't change — Result Cache and materialized views can eliminate redundant
-            computation entirely.
+            Measure before you optimize. AWR reports, execution plans, and wait event analysis tell
+            you exactly where time is being spent — without them, you're guessing. Index for your
+            actual query patterns, not for individual columns. Think in sets, not loops — row-by-row
+            processing in PL/SQL is almost always the wrong approach at scale. And cache what
+            doesn't change — Result Cache and materialized views eliminate redundant computation
+            entirely.
           </p>
+
           <p>
-            Database optimization isn't glamorous, but when your queries serve 10 million
-            subscribers, every millisecond counts.
+            Database optimization isn't glamorous work, but when your queries serve 10 million
+            subscribers, every millisecond saved translates directly to better user experience and
+            lower infrastructure costs.
           </p>
 
           <p
             style="
-              margin-top: 48px;
-              padding-top: 24px;
+              margin-top: 44px;
+              padding-top: 20px;
               border-top: 1px solid var(--border);
-              font-size: 15px;
+              font-size: 14px;
               color: var(--text-muted);
             "
           >
@@ -140,13 +196,9 @@ WHERE plan_status = 'ACTIVE';</code></pre>
         </div>
       </section>
     </main>
-
     <footer class="footer">
-      <div class="container">
-        <p>Designed & Built by Prasad Kanade · 2026</p>
-      </div>
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
     </footer>
-
     <script src="../js/main.js"></script>
   </body>
 </html>

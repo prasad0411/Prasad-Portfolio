@@ -23,18 +23,16 @@
         </ul>
       </div>
     </nav>
-
     <main>
       <section class="page-hero">
         <div class="container">
-          <p class="hero-label hero-enter">Selected Work</p>
-          <h1 class="hero-enter">Case studies from production systems and research.</h1>
-          <p class="hero-enter" style="color: var(--text-body); margin-top: 8px">
+          <p class="sec-label hero-anim">Selected Work</p>
+          <h1 class="hero-anim">Case studies from production systems and research.</h1>
+          <p class="hero-anim" style="color: var(--text-body); margin-top: 8px">
             Deep dives into problems I've solved and systems I've built.
           </p>
         </div>
       </section>
-
       <section>
         <div class="container stagger">
           <div class="case-card reveal">
@@ -45,7 +43,7 @@
                 <p class="case-block-label">Situation</p>
                 <p>
                   JCOM's CRM platform served 10M+ subscribers but critical subscriber lookups were
-                  taking 12+ seconds as data volumes grew.
+                  taking 12+ seconds as data volumes grew beyond initial capacity planning.
                 </p>
               </div>
               <div class="case-block">
@@ -58,29 +56,27 @@
               <div class="case-block">
                 <p class="case-block-label">Action</p>
                 <p>
-                  Analyzed execution plans via Oracle AWR, restructured PL/SQL procedures, added
-                  composite indexes, and implemented query result caching.
+                  Analyzed execution plans via Oracle AWR reports, restructured PL/SQL stored
+                  procedures from row-by-row to set-based, added composite indexes on frequently
+                  joined columns, and implemented query result caching.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Result</p>
                 <p>
-                  Reduced average query execution time from 12s to 4.8s — 60% improvement — with
-                  99.7% uptime maintained throughout.
+                  Reduced average query execution time from 12s to 4.8s — a 60% improvement — with
+                  99.7% uptime maintained throughout the optimization process.
                 </p>
               </div>
             </div>
             <div class="case-metrics">
               <div>
-                <span class="metric-value">60%</span
-                ><span class="metric-label">Faster queries</span>
+                <span class="metric-val">60%</span><span class="metric-lbl">Faster queries</span>
               </div>
               <div>
-                <span class="metric-value">10M+</span><span class="metric-label">Subscribers</span>
+                <span class="metric-val">10M+</span><span class="metric-lbl">Subscribers</span>
               </div>
-              <div>
-                <span class="metric-value">99.7%</span><span class="metric-label">Uptime</span>
-              </div>
+              <div><span class="metric-val">99.7%</span><span class="metric-lbl">Uptime</span></div>
             </div>
           </div>
 
@@ -91,42 +87,42 @@
               <div class="case-block">
                 <p class="case-block-label">Situation</p>
                 <p>
-                  Deployment cycles took 45+ minutes with manual config, creating bottlenecks during
-                  sprints and risk of configuration drift.
+                  Deployment cycles took 45+ minutes with manual configuration, creating bottlenecks
+                  during release sprints and increasing risk of configuration drift between
+                  environments.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Task</p>
                 <p>
                   Containerize 3 production Java/Spring Boot microservices and establish a
-                  repeatable deployment pipeline on AWS.
+                  repeatable, automated deployment pipeline on AWS.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Action</p>
                 <p>
-                  Created multi-stage Dockerfiles, configured Docker Compose for dev parity, set up
-                  automated deployments to EC2 with health checks.
+                  Created multi-stage Dockerfiles to minimize image size, configured Docker Compose
+                  for local development parity, and set up automated deployments to AWS EC2 with
+                  health checks and rollback.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Result</p>
                 <p>
-                  Reduced deployment from 45 to 8 minutes — 82% improvement — while eliminating
-                  configuration drift across environments.
+                  Reduced deployment time from 45 minutes to 8 minutes per release — an 82%
+                  improvement — while completely eliminating configuration drift across
+                  environments.
                 </p>
               </div>
             </div>
             <div class="case-metrics">
               <div>
-                <span class="metric-value">82%</span
-                ><span class="metric-label">Faster deploys</span>
+                <span class="metric-val">82%</span><span class="metric-lbl">Faster deploys</span>
               </div>
+              <div><span class="metric-val">3</span><span class="metric-lbl">Services</span></div>
               <div>
-                <span class="metric-value">3</span><span class="metric-label">Services</span>
-              </div>
-              <div>
-                <span class="metric-value">8 min</span><span class="metric-label">Deploy time</span>
+                <span class="metric-val">8 min</span><span class="metric-lbl">Deploy time</span>
               </div>
             </div>
           </div>
@@ -138,94 +134,94 @@
               <div class="case-block">
                 <p class="case-block-label">Situation</p>
                 <p>
-                  Existing ML models for thyroid diagnosis achieved moderate accuracy but lacked
-                  interpretability needed for clinical adoption.
+                  Existing ML models for thyroid diagnosis achieved moderate accuracy but lacked the
+                  interpretability needed for clinical adoption by healthcare professionals.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Task</p>
                 <p>
                   Develop a high-accuracy, interpretable classification system that clinicians could
-                  trust for thyroid disease diagnosis.
+                  understand and trust for thyroid disease diagnosis decisions.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Action</p>
                 <p>
-                  Built XGBoost pipeline with SHAP explainability. Processed 7,200 patient records
-                  with feature engineering and cross-validation.
+                  Built XGBoost pipeline with SHAP (SHapley Additive exPlanations) for model
+                  interpretability. Processed 7,200 patient records with feature engineering,
+                  cross-validation, and hyperparameter tuning.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Result</p>
                 <p>
-                  97.6% classification accuracy with full SHAP-based explainability. Published in
-                  Springer conference proceedings.
+                  Achieved 97.6% classification accuracy with full SHAP-based explainability,
+                  enabling transparent clinical decision support. Published in Springer conference
+                  proceedings.
                 </p>
               </div>
             </div>
             <div class="case-metrics">
               <div>
-                <span class="metric-value">97.6%</span><span class="metric-label">Accuracy</span>
+                <span class="metric-val">97.6%</span><span class="metric-lbl">Accuracy</span>
               </div>
               <div>
-                <span class="metric-value">7,200</span><span class="metric-label">Patients</span>
+                <span class="metric-val">7,200</span><span class="metric-lbl">Patients</span>
               </div>
             </div>
           </div>
 
           <div class="case-card reveal">
             <p class="case-company">Personal Project</p>
-            <p class="case-title">Decentralized Crowdfunding on Ethereum</p>
+            <p class="case-title">Blockchain Crowdfunding Platform</p>
             <div class="case-grid">
               <div class="case-block">
                 <p class="case-block-label">Situation</p>
                 <p>
-                  Traditional crowdfunding charges 5–10% fees and lacks transparency in fund
-                  management, creating trust issues.
+                  Traditional crowdfunding platforms charge 5–10% fees, lack transparency in fund
+                  management, and create trust issues between project creators and backers.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Task</p>
                 <p>
-                  Build a decentralized alternative providing transparent, trustless fund management
-                  with zero intermediary fees.
+                  Build a decentralized alternative on Ethereum providing transparent, trustless
+                  fund management with zero intermediary fees.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Action</p>
                 <p>
-                  Developed Solidity smart contracts with withdrawal pattern, React frontend with
-                  Web3.js, deployed on testnet via Hardhat.
+                  Developed Solidity smart contracts implementing withdrawal pattern for security,
+                  built React frontend with Web3.js wallet integration, and deployed on Ethereum
+                  testnet via Hardhat.
                 </p>
               </div>
               <div class="case-block">
                 <p class="case-block-label">Result</p>
                 <p>
-                  Fully functional dApp — campaign creation, ETH contributions, milestone-based
-                  releases, automated refunds on-chain.
+                  Fully functional dApp supporting campaign creation, ETH contributions,
+                  milestone-based fund release, and automated refunds — all enforced on-chain with
+                  zero platform fees.
                 </p>
               </div>
             </div>
             <div class="case-metrics">
               <div>
-                <span class="metric-value">0%</span><span class="metric-label">Platform fees</span>
+                <span class="metric-val">0%</span><span class="metric-lbl">Platform fees</span>
               </div>
               <div>
-                <span class="metric-value">100%</span><span class="metric-label">On-chain</span>
+                <span class="metric-val">100%</span><span class="metric-lbl">On-chain</span>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-
     <footer class="footer">
-      <div class="container">
-        <p>Designed & Built by Prasad Kanade · 2026</p>
-      </div>
+      <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
     </footer>
-
     <script src="js/main.js"></script>
   </body>
 </html>
