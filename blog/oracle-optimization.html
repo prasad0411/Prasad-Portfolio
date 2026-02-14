@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
@@ -28,8 +28,8 @@
       <section class="post-header">
         <div class="container">
           <a href="../blog.html" class="post-back">← Back to blog</a>
-          <h1 class="post-title">How I Cut Oracle Query Times by 60% in Production</h1>
-          <p class="post-meta">February 2026 · 6 min read</p>
+          <h1 class="post-title hero-enter">How I Cut Oracle Query Times by 60% in Production</h1>
+          <p class="post-meta hero-enter">February 2026 · 6 min read</p>
         </div>
       </section>
 
@@ -41,53 +41,46 @@
             service activation, and performance was critical. When subscriber lookup queries started
             taking 12+ seconds, it became a priority to fix.
           </p>
-
           <p>Here's what I learned optimizing Oracle databases in a live production environment.</p>
 
           <h2>Finding the Problem</h2>
-
           <p>
             The first step wasn't writing better queries — it was understanding why the existing
             ones were slow. Oracle's Automatic Workload Repository (AWR) reports became my best
             friend. AWR captures database performance statistics at regular intervals, giving you a
             clear picture of what's consuming resources.
           </p>
-
           <p>
             The AWR data revealed three patterns: full table scans on subscriber tables with 10M+
             rows, nested loop joins where hash joins would be more efficient, and PL/SQL procedures
-            that were executing row-by-row instead of set-based operations.
+            executing row-by-row instead of set-based operations.
           </p>
 
           <h2>Composite Indexes</h2>
-
           <p>
-            The biggest wins came from indexing. Single-column indexes existed, but the queries
-            filtered on multiple columns simultaneously. For a query filtering on
-            <code>region_id</code> and <code>subscription_status</code>, having separate indexes on
-            each column meant Oracle still had to merge results.
+            The biggest wins came from indexing. Single-column indexes existed, but queries filtered
+            on multiple columns simultaneously. For a query filtering on <code>region_id</code> and
+            <code>subscription_status</code>, having separate indexes on each column meant Oracle
+            still had to merge results.
+          </p>
+          <p>
+            Creating composite indexes on actual filter combinations eliminated this overhead. The
+            key insight: index column order matters. Put the most selective column first —
+            <code>region_id</code> had higher cardinality than <code>subscription_status</code>, so
+            it went first.
           </p>
 
-          <p>
-            Creating composite indexes on the actual filter combinations eliminated this overhead.
-            The key insight: index column order matters. Put the most selective column first — in
-            our case, <code>region_id</code> had higher cardinality than
-            <code>subscription_status</code>, so it went first.
-          </p>
-
-          <pre><code>CREATE INDEX idx_subscriber_region_status 
+          <pre><code>CREATE INDEX idx_subscriber_region_status
 ON subscribers(region_id, subscription_status)
 TABLESPACE idx_ts;</code></pre>
 
           <h2>PL/SQL Refactoring</h2>
-
           <p>
             Several stored procedures used cursor-based row-by-row processing — the classic "slow by
             slow" anti-pattern. A procedure updating subscriber statuses was looping through
             millions of rows individually when a single <code>UPDATE</code> with a
             <code>WHERE</code> clause would accomplish the same thing in seconds.
           </p>
-
           <p>
             The refactored version used bulk operations with <code>FORALL</code> and
             <code>BULK COLLECT</code> where set-based operations weren't possible, reducing round
@@ -95,7 +88,6 @@ TABLESPACE idx_ts;</code></pre>
           </p>
 
           <h2>Query Result Caching</h2>
-
           <p>
             Some queries ran identically thousands of times per day — subscriber plan lookups, for
             instance. Oracle's Result Cache stores query results in shared memory, so repeated
@@ -112,16 +104,14 @@ WHERE plan_status = 'ACTIVE';</code></pre>
           </p>
 
           <h2>Results</h2>
-
           <p>
             After implementing these changes across 20+ queries, average execution times dropped
             from 12s to 4.8s — a 60% improvement. The work was done incrementally over several
             weeks, testing each change in staging before production deployment, with zero downtime
-            throughout the process.
+            throughout.
           </p>
 
           <h2>Key Takeaways</h2>
-
           <p>
             Measure first. AWR reports, execution plans, and wait event analysis tell you exactly
             where time is being spent. Without measurement, you're guessing. Index strategically —
@@ -130,15 +120,22 @@ WHERE plan_status = 'ACTIVE';</code></pre>
             cache what doesn't change — Result Cache and materialized views can eliminate redundant
             computation entirely.
           </p>
-
           <p>
             Database optimization isn't glamorous, but when your queries serve 10 million
             subscribers, every millisecond counts.
           </p>
 
-          <p style="margin-top: 40px; color: var(--text-muted); font-size: 14px">
-            Questions or want to discuss database optimization? Reach me at
-            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>.
+          <p
+            style="
+              margin-top: 48px;
+              padding-top: 24px;
+              border-top: 1px solid var(--border);
+              font-size: 15px;
+              color: var(--text-muted);
+            "
+          >
+            Questions about database optimization? Reach me at
+            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
           </p>
         </div>
       </section>
@@ -146,8 +143,10 @@ WHERE plan_status = 'ACTIVE';</code></pre>
 
     <footer class="footer">
       <div class="container">
-        <p>Prasad Kanade · 2026</p>
+        <p>Designed & Built by Prasad Kanade · 2026</p>
       </div>
     </footer>
+
+    <script src="../js/main.js"></script>
   </body>
 </html>

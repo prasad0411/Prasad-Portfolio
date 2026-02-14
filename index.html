@@ -6,16 +6,16 @@
     <meta name="author" content="Prasad Kanade" />
     <meta
       name="description"
-      content="Software Engineer — distributed systems, database optimization, microservices."
+      content="Software Engineer — distributed systems, database optimization, scalable microservices."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Prasad Kanade</title>
+    <title>Prasad Kanade — Software Engineer</title>
   </head>
   <body>
     <nav class="nav">
@@ -33,21 +33,31 @@
       <!-- Hero -->
       <section class="hero">
         <div class="container">
-          <p class="hero-label">Software Engineer</p>
-          <h1>
-            I build scalable systems and optimize databases for enterprise platforms serving
-            millions of users.
-          </h1>
-          <p class="hero-text">
-            MS Computer Science at <span class="hl">Northeastern University</span>. Previously at
-            <span class="hl">Amdocs Corporation</span>, engineering production microservices for
-            Japan's largest cable telecom with 10M+ subscribers.
-          </p>
-          <div class="hero-links">
-            <a href="assets/resume.pdf" target="_blank">Resume</a>
-            <a href="https://github.com/prasadkanade" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank">LinkedIn</a>
-            <a href="mailto:kanade.pra@northeastern.edu">Email</a>
+          <div class="hero-grid">
+            <div>
+              <p class="hero-label hero-enter">Open to Summer 2026 Internships</p>
+              <h1 class="hero-enter">
+                I build <span class="gradient-text">scalable systems</span> and optimize databases
+                for platforms serving millions.
+              </h1>
+              <p class="hero-text hero-enter">
+                MS Computer Science at <strong>Northeastern University</strong>. Previously at
+                <strong>Amdocs Corporation</strong>, engineering production microservices for
+                Japan's largest cable telecom with 10M+ subscribers.
+              </p>
+              <div class="hero-links hero-enter">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
+                <a href="https://github.com/prasadkanade" target="_blank" class="btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank" class="btn"
+                  >LinkedIn</a
+                >
+                <a href="mailto:kanade.pra@northeastern.edu" class="btn">Email</a>
+              </div>
+            </div>
+            <div class="hero-photo hero-enter">
+              <!-- Replace with: <img src="images/profile.jpg" alt="Prasad Kanade" /> -->
+              <div class="hero-photo-placeholder">PK</div>
+            </div>
           </div>
         </div>
       </section>
@@ -55,81 +65,86 @@
       <!-- Experience -->
       <section id="experience">
         <div class="container">
-          <p class="section-label">Experience</p>
-
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Software Engineering Associate</span>
-              <span class="exp-date">December 2023 – May 2025</span>
-            </div>
-            <p class="exp-company">Amdocs Corporation — Pune, India</p>
-            <ul class="exp-bullets">
-              <li>
-                Engineered 3 production microservices using Java and Spring Boot for JCOM's telecom
-                CRM platform serving 10M+ subscribers across billing, order management, and service
-                activation
-              </li>
-              <li>
-                Optimized 20+ Oracle SQL queries and PL/SQL stored procedures, reducing average
-                execution time from 12s to 4.8s (60% improvement) for subscriber data retrieval
-                operations
-              </li>
-              <li>
-                Developed 5 SOAP-based web services integrating Amdocs CRM with external BSS/OSS
-                systems, processing 50K+ daily transactions with 99.7% uptime
-              </li>
-              <li>
-                Containerized 3 microservices using Docker and deployed on AWS EC2, reducing
-                deployment time from 45 minutes to 8 minutes per release cycle
-              </li>
-              <li>
-                Led technical training sessions for 4 junior engineers on Oracle database
-                optimization and microservices architecture
-              </li>
-            </ul>
+          <div class="section-header reveal">
+            <p class="section-label">Experience</p>
+            <p class="section-title">Where I've Worked</p>
           </div>
 
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Software Developer Intern</span>
-              <span class="exp-date">July 2023 – December 2023</span>
+          <div class="stagger">
+            <div class="exp-card reveal">
+              <div class="exp-header">
+                <span class="exp-role">Software Engineering Associate</span>
+                <span class="exp-date">December 2023 – May 2025</span>
+              </div>
+              <p class="exp-company">Amdocs Corporation — Pune, India</p>
+              <ul class="exp-bullets">
+                <li>
+                  Engineered 3 production microservices using Java and Spring Boot for JCOM's
+                  telecom CRM platform serving 10M+ subscribers across billing, order management,
+                  and service activation
+                </li>
+                <li>
+                  Optimized 20+ Oracle SQL queries and PL/SQL stored procedures, reducing average
+                  execution time from 12s to 4.8s (60% improvement) for subscriber data retrieval
+                  operations
+                </li>
+                <li>
+                  Developed 5 SOAP-based web services integrating Amdocs CRM with external BSS/OSS
+                  systems, processing 50K+ daily transactions with 99.7% uptime
+                </li>
+                <li>
+                  Containerized 3 microservices using Docker and deployed on AWS EC2, reducing
+                  deployment time from 45 minutes to 8 minutes per release cycle
+                </li>
+                <li>
+                  Led technical training sessions for 4 junior engineers on Oracle database
+                  optimization and microservices architecture
+                </li>
+              </ul>
             </div>
-            <p class="exp-company">ISKCON Organization — Pune, India</p>
-            <ul class="exp-bullets">
-              <li>
-                Built RESTful APIs using Node.js and Express.js for temple management system
-                handling 5K+ daily devotee registrations and donation tracking
-              </li>
-              <li>
-                Containerized full-stack application using Docker Compose and deployed on AWS,
-                reducing infrastructure costs by 35%
-              </li>
-              <li>
-                Designed normalized MySQL database schema (3NF) managing 100K+ records across
-                devotee profiles, events, and financial transactions
-              </li>
-            </ul>
-          </div>
 
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Software Developer Intern — Mobile</span>
-              <span class="exp-date">January 2023 – April 2023</span>
+            <div class="exp-card reveal">
+              <div class="exp-header">
+                <span class="exp-role">Software Developer Intern</span>
+                <span class="exp-date">July 2023 – December 2023</span>
+              </div>
+              <p class="exp-company">ISKCON Organization — Pune, India</p>
+              <ul class="exp-bullets">
+                <li>
+                  Built RESTful APIs using Node.js and Express.js for temple management system
+                  handling 5K+ daily devotee registrations and donation tracking
+                </li>
+                <li>
+                  Containerized full-stack application using Docker Compose and deployed on AWS,
+                  reducing infrastructure costs by 35%
+                </li>
+                <li>
+                  Designed normalized MySQL database schema (3NF) managing 100K+ records across
+                  devotee profiles, events, and financial transactions
+                </li>
+              </ul>
             </div>
-            <p class="exp-company">Simba Developers Organization — Remote</p>
-            <ul class="exp-bullets">
-              <li>
-                Developed cross-platform mobile application using Flutter and Dart with Provider
-                state management, achieving 44% improvement in UI rendering performance
-              </li>
-              <li>
-                Integrated Firebase Authentication and Cloud Firestore, supporting 1K+ concurrent
-                users with real-time data synchronization
-              </li>
-              <li>
-                Implemented push notifications and deep linking, increasing user engagement by 28%
-              </li>
-            </ul>
+
+            <div class="exp-card reveal">
+              <div class="exp-header">
+                <span class="exp-role">Software Developer Intern — Mobile</span>
+                <span class="exp-date">January 2023 – April 2023</span>
+              </div>
+              <p class="exp-company">Simba Developers Organization — Remote</p>
+              <ul class="exp-bullets">
+                <li>
+                  Developed cross-platform mobile application using Flutter and Dart with Provider
+                  state management, achieving 44% improvement in UI rendering performance
+                </li>
+                <li>
+                  Integrated Firebase Authentication and Cloud Firestore, supporting 1K+ concurrent
+                  users with real-time data synchronization
+                </li>
+                <li>
+                  Implemented push notifications and deep linking, increasing user engagement by 28%
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -137,53 +152,88 @@
       <!-- Projects -->
       <section id="projects">
         <div class="container">
-          <p class="section-label">Projects</p>
-
-          <div class="project-item">
-            <p class="project-title">Decentralized Crowdfunding Platform</p>
-            <p class="project-subtitle">Ethereum · Solidity · React · Web3.js</p>
-            <p class="project-desc">
-              Full-stack dApp enabling transparent fundraising through smart contracts. Implemented
-              campaign creation, contribution tracking, and automated fund disbursement with
-              withdrawal pattern for security.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Solidity</span>
-              <span class="tag">React</span>
-              <span class="tag">Hardhat</span>
-              <span class="tag">Ethers.js</span>
-            </div>
+          <div class="section-header reveal">
+            <p class="section-label">Projects</p>
+            <p class="section-title">Things I've Built</p>
           </div>
 
-          <div class="project-item">
-            <p class="project-title">Calendar Application</p>
-            <p class="project-subtitle">Java · MVC · JUnit</p>
-            <p class="project-desc">
-              Enterprise calendar system built with MVC architecture supporting multiple calendar
-              management, event scheduling with conflict detection, and both auto-scheduling and
-              manual placement. 95%+ test coverage with comprehensive JUnit test suite.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Java</span>
-              <span class="tag">MVC</span>
-              <span class="tag">JUnit</span>
-              <span class="tag">XML</span>
+          <div class="projects-grid stagger">
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">⛓</div>
+                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-title">Decentralized Crowdfunding Platform</p>
+              <p class="project-desc">
+                Full-stack dApp enabling transparent fundraising through Ethereum smart contracts.
+                Campaign creation, contribution tracking, and automated fund disbursement with
+                withdrawal pattern for security.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Solidity</span>
+                <span class="tag">React</span>
+                <span class="tag">Hardhat</span>
+                <span class="tag">Ethers.js</span>
+                <span class="tag">Web3</span>
+              </div>
             </div>
-          </div>
 
-          <div class="project-item">
-            <p class="project-title">Database Practicum — Music Platform</p>
-            <p class="project-subtitle">MySQL · Python · Normalization</p>
-            <p class="project-desc">
-              Designed and implemented a fully normalized (3NF) relational database for a music
-              streaming platform, processing 179,000+ records across artists, albums, tracks, and
-              user interactions with optimized indexing and query performance.
-            </p>
-            <div class="project-tags">
-              <span class="tag">MySQL</span>
-              <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-              <span class="tag">ER Modeling</span>
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">📅</div>
+                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-title">Calendar Application</p>
+              <p class="project-desc">
+                Enterprise calendar with MVC architecture supporting multiple calendar management,
+                event scheduling with conflict detection, and auto-scheduling. 95%+ test coverage
+                with JUnit.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">MVC</span>
+                <span class="tag">JUnit</span>
+                <span class="tag">XML</span>
+                <span class="tag">SOLID</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">🎵</div>
+                <a href="https://github.com/prasadkanade" target="_blank" class="project-link">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <p class="project-title">Database Practicum — Music Platform</p>
+              <p class="project-desc">
+                Fully normalized (3NF) relational database for a music streaming platform,
+                processing 179,000+ records with optimized indexing and complex query performance
+                tuning.
+              </p>
+              <div class="project-tags">
+                <span class="tag">MySQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">ER Modeling</span>
+                <span class="tag">Normalization</span>
+              </div>
             </div>
           </div>
         </div>
@@ -192,17 +242,35 @@
       <!-- Publication -->
       <section id="publication">
         <div class="container">
-          <p class="section-label">Publication</p>
-          <div class="pub-item">
+          <div class="section-header reveal">
+            <p class="section-label">Research</p>
+            <p class="section-title">Published Work</p>
+          </div>
+
+          <div class="pub-card reveal">
+            <span class="pub-badge">Springer · March 2024</span>
             <p class="pub-title">
               Classification and Diagnosis of Thyroid Disease Using XGBoost and SHAP
             </p>
-            <p class="pub-venue">Springer — March 2024 · 97.6% accuracy across 7,200 patients</p>
+            <p class="pub-venue">
+              High-accuracy interpretable ML system for clinical thyroid disease diagnosis using
+              explainable AI frameworks. Published in Springer conference proceedings.
+            </p>
+            <div class="pub-stats">
+              <div>
+                <span class="pub-stat-value">97.6%</span>
+                <span class="pub-stat-label">Accuracy</span>
+              </div>
+              <div>
+                <span class="pub-stat-value">7,200</span>
+                <span class="pub-stat-label">Patients</span>
+              </div>
+            </div>
             <a
-              class="pub-link"
               href="https://link.springer.com/chapter/10.1007/978-981-97-6106-7_9"
               target="_blank"
-              >Read paper →</a
+              style="display: inline-block; margin-top: 18px; font-size: 15px; font-weight: 500"
+              >Read Paper →</a
             >
           </div>
         </div>
@@ -211,26 +279,97 @@
       <!-- Skills -->
       <section id="skills">
         <div class="container">
-          <p class="section-label">Skills</p>
-          <div class="skills-grid">
-            <div class="skill-group">
+          <div class="section-header reveal">
+            <p class="section-label">Technical Skills</p>
+            <p class="section-title">Technologies I Work With</p>
+          </div>
+
+          <div class="skills-grid stagger">
+            <div class="skill-card reveal">
               <h3>Languages</h3>
-              <p>Java, Python, JavaScript, TypeScript, SQL, PL/SQL, Solidity, Dart, C++</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">PL/SQL</span>
+                <span class="skill-tag">Solidity</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">R</span>
+              </div>
             </div>
-            <div class="skill-group">
+            <div class="skill-card reveal">
               <h3>Backend & Cloud</h3>
-              <p>
-                Spring Boot, Node.js, Express.js, REST APIs, SOAP, Docker, AWS (EC2, S3, RDS),
-                Kubernetes
-              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">SOAP</span>
+                <span class="skill-tag">GraphQL</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">EC2</span>
+                <span class="skill-tag">S3</span>
+                <span class="skill-tag">RDS</span>
+                <span class="skill-tag">CI/CD</span>
+              </div>
             </div>
-            <div class="skill-group">
+            <div class="skill-card reveal">
               <h3>Databases</h3>
-              <p>Oracle, MySQL, PostgreSQL, MongoDB, Firebase, Redis</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Oracle</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">DynamoDB</span>
+              </div>
             </div>
-            <div class="skill-group">
+            <div class="skill-card reveal">
               <h3>Frameworks & Tools</h3>
-              <p>React, Flutter, Git, JUnit, Maven, Gradle, Jira, CI/CD, Linux</p>
+              <div class="skill-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">JUnit</span>
+                <span class="skill-tag">Maven</span>
+                <span class="skill-tag">Gradle</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Swagger</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <h3>Data & ML</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">XGBoost</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Seaborn</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">SHAP</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <h3>Architecture & Practices</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">MVC</span>
+                <span class="skill-tag">SOLID</span>
+                <span class="skill-tag">Design Patterns</span>
+                <span class="skill-tag">Agile/Scrum</span>
+                <span class="skill-tag">TDD</span>
+                <span class="skill-tag">System Design</span>
+              </div>
             </div>
           </div>
         </div>
@@ -239,16 +378,28 @@
       <!-- Education -->
       <section id="education">
         <div class="container">
-          <p class="section-label">Education</p>
-          <div class="edu-item">
-            <p class="edu-degree">MS Computer Science</p>
-            <p class="edu-school">Northeastern University — Boston, MA</p>
-            <p class="edu-date">September 2025 – May 2027</p>
+          <div class="section-header reveal">
+            <p class="section-label">Education</p>
+            <p class="section-title">Where I Studied</p>
           </div>
-          <div class="edu-item">
-            <p class="edu-degree">BE Computer Science — 9.53/10 GPA</p>
-            <p class="edu-school">Maharashtra Institute of Technology — Pune, India</p>
-            <p class="edu-date">August 2020 – May 2024</p>
+
+          <div class="stagger">
+            <div class="edu-card reveal">
+              <div class="edu-top">
+                <span class="edu-degree">MS Computer Science</span>
+                <span class="edu-date">September 2025 – May 2027</span>
+              </div>
+              <p class="edu-school">Northeastern University — Boston, MA</p>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-top">
+                <span class="edu-degree">BE Computer Science</span>
+                <span class="edu-date">August 2020 – May 2024</span>
+              </div>
+              <p class="edu-school">Maharashtra Institute of Technology — Pune, India</p>
+              <p class="edu-gpa">CGPA: 9.53 / 10</p>
+            </div>
           </div>
         </div>
       </section>
@@ -256,11 +407,43 @@
       <!-- Contact -->
       <section id="contact">
         <div class="container">
-          <p class="section-label">Contact</p>
-          <div class="contact-links">
-            <a href="mailto:kanade.pra@northeastern.edu">kanade.pra@northeastern.edu</a>
-            <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/prasadkanade" target="_blank">GitHub</a>
+          <div class="section-header reveal">
+            <p class="section-label">Contact</p>
+            <p class="section-title">Let's Connect</p>
+          </div>
+
+          <div class="contact-grid reveal">
+            <a href="mailto:kanade.pra@northeastern.edu" class="contact-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              kanade.pra@northeastern.edu
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prasad-kanade-/"
+              target="_blank"
+              class="contact-link"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/prasadkanade" target="_blank" class="contact-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+              GitHub
+            </a>
           </div>
         </div>
       </section>
@@ -268,8 +451,10 @@
 
     <footer class="footer">
       <div class="container">
-        <p>Prasad Kanade · 2026</p>
+        <p>Designed & Built by Prasad Kanade · 2026</p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -25,55 +25,49 @@
     </nav>
 
     <main>
-      <section class="hero" style="padding-bottom: 32px">
+      <section class="page-hero">
         <div class="container">
-          <p class="hero-label">Blog</p>
-          <h1>Writing about systems, databases, and engineering lessons.</h1>
+          <p class="hero-label hero-enter">Blog</p>
+          <h1 class="hero-enter">Writing about systems, databases, and engineering lessons.</h1>
         </div>
       </section>
 
       <section>
-        <div class="container">
-          <div class="blog-item">
+        <div class="container stagger">
+          <a href="blog/oracle-optimization.html" class="blog-card reveal">
             <p class="blog-date">February 2026</p>
-            <p class="blog-title">
-              <a href="blog/oracle-optimization.html"
-                >How I Cut Oracle Query Times by 60% in Production</a
-              >
-            </p>
+            <p class="blog-title">How I Cut Oracle Query Times by 60% in Production</p>
             <p class="blog-excerpt">
               Practical techniques for Oracle SQL optimization in high-traffic telecom systems —
               execution plans, composite indexes, and PL/SQL refactoring.
             </p>
-          </div>
-
-          <div class="blog-item">
+          </a>
+          <a href="#" class="blog-card reveal">
             <p class="blog-date">January 2026</p>
-            <p class="blog-title">
-              <a href="#">Containerizing Legacy Java Services: Lessons from Amdocs</a>
-            </p>
+            <p class="blog-title">Containerizing Legacy Java Services: Lessons from Amdocs</p>
             <p class="blog-excerpt">
               What I learned moving monolithic Spring Boot services into Docker containers and
               deploying on AWS EC2.
             </p>
-          </div>
-
-          <div class="blog-item">
+          </a>
+          <a href="#" class="blog-card reveal">
             <p class="blog-date">December 2025</p>
-            <p class="blog-title"><a href="#">Why SHAP Changed How I Think About ML Models</a></p>
+            <p class="blog-title">Why SHAP Changed How I Think About ML Models</p>
             <p class="blog-excerpt">
-              Building interpretable ML systems for healthcare — how explainability frameworks can
-              bridge the gap between accuracy and clinical trust.
+              Building interpretable ML systems for healthcare — bridging the gap between accuracy
+              and clinical trust.
             </p>
-          </div>
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <p>Prasad Kanade · 2026</p>
+        <p>Designed & Built by Prasad Kanade · 2026</p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -25,223 +25,194 @@
     </nav>
 
     <main>
-      <section class="hero" style="padding-bottom: 32px">
+      <section class="page-hero">
         <div class="container">
-          <p class="hero-label">Selected Work</p>
-          <h1>Case studies from production systems and research.</h1>
+          <p class="hero-label hero-enter">Selected Work</p>
+          <h1 class="hero-enter">Case studies from production systems and research.</h1>
+          <p class="hero-enter" style="color: var(--text-body); margin-top: 8px">
+            Deep dives into problems I've solved and systems I've built.
+          </p>
         </div>
       </section>
 
       <section>
-        <div class="container">
-          <!-- Case Study 1 -->
-          <div class="case-item">
-            <p class="case-label">Amdocs Corporation</p>
+        <div class="container stagger">
+          <div class="case-card reveal">
+            <p class="case-company">Amdocs Corporation</p>
             <p class="case-title">Oracle Database Optimization for Telecom CRM</p>
-
-            <div class="case-section">
-              <p class="case-section-label">Situation</p>
-              <p>
-                JCOM's CRM platform served 10M+ subscribers but suffered from degraded query
-                performance as data volumes grew, with critical subscriber lookups taking 12+
-                seconds.
-              </p>
+            <div class="case-grid">
+              <div class="case-block">
+                <p class="case-block-label">Situation</p>
+                <p>
+                  JCOM's CRM platform served 10M+ subscribers but critical subscriber lookups were
+                  taking 12+ seconds as data volumes grew.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Task</p>
+                <p>
+                  Optimize performance across 20+ high-traffic queries without disrupting live
+                  production systems serving 50K+ daily transactions.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Action</p>
+                <p>
+                  Analyzed execution plans via Oracle AWR, restructured PL/SQL procedures, added
+                  composite indexes, and implemented query result caching.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Result</p>
+                <p>
+                  Reduced average query execution time from 12s to 4.8s — 60% improvement — with
+                  99.7% uptime maintained throughout.
+                </p>
+              </div>
             </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Task</p>
-              <p>
-                Optimize database performance across 20+ high-traffic queries without disrupting
-                live production systems serving 50K+ daily transactions.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Action</p>
-              <p>
-                Analyzed execution plans using Oracle AWR reports, restructured PL/SQL stored
-                procedures, added composite indexes on frequently joined columns, and implemented
-                query result caching for repeated subscriber lookups.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Result</p>
-              <p>
-                Reduced average query execution time from 12s to 4.8s — a 60% improvement — while
-                maintaining 99.7% uptime throughout the optimization process.
-              </p>
-            </div>
-
             <div class="case-metrics">
-              <div class="metric">
-                <span class="metric-value">60%</span>
-                <span class="metric-label">Faster queries</span>
+              <div>
+                <span class="metric-value">60%</span
+                ><span class="metric-label">Faster queries</span>
               </div>
-              <div class="metric">
-                <span class="metric-value">10M+</span>
-                <span class="metric-label">Subscribers served</span>
+              <div>
+                <span class="metric-value">10M+</span><span class="metric-label">Subscribers</span>
               </div>
-              <div class="metric">
-                <span class="metric-value">99.7%</span>
-                <span class="metric-label">Uptime maintained</span>
+              <div>
+                <span class="metric-value">99.7%</span><span class="metric-label">Uptime</span>
               </div>
             </div>
           </div>
 
-          <!-- Case Study 2 -->
-          <div class="case-item">
-            <p class="case-label">Amdocs Corporation</p>
-            <p class="case-title">Microservices Containerization & Deployment</p>
-
-            <div class="case-section">
-              <p class="case-section-label">Situation</p>
-              <p>
-                Deployment cycles for CRM microservices took 45+ minutes with manual configuration
-                steps, creating bottlenecks during release sprints and increasing risk of
-                configuration drift.
-              </p>
+          <div class="case-card reveal">
+            <p class="case-company">Amdocs Corporation</p>
+            <p class="case-title">Microservices Containerization & AWS Deployment</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <p class="case-block-label">Situation</p>
+                <p>
+                  Deployment cycles took 45+ minutes with manual config, creating bottlenecks during
+                  sprints and risk of configuration drift.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Task</p>
+                <p>
+                  Containerize 3 production Java/Spring Boot microservices and establish a
+                  repeatable deployment pipeline on AWS.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Action</p>
+                <p>
+                  Created multi-stage Dockerfiles, configured Docker Compose for dev parity, set up
+                  automated deployments to EC2 with health checks.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Result</p>
+                <p>
+                  Reduced deployment from 45 to 8 minutes — 82% improvement — while eliminating
+                  configuration drift across environments.
+                </p>
+              </div>
             </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Task</p>
-              <p>
-                Containerize 3 production Java/Spring Boot microservices and establish a repeatable
-                deployment pipeline on AWS.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Action</p>
-              <p>
-                Created optimized multi-stage Dockerfiles reducing image sizes, configured Docker
-                Compose for local development parity, and set up automated deployments to AWS EC2
-                with health checks and rollback capabilities.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Result</p>
-              <p>
-                Reduced deployment time from 45 minutes to 8 minutes per release — an 82%
-                improvement — while eliminating configuration drift across environments.
-              </p>
-            </div>
-
             <div class="case-metrics">
-              <div class="metric">
-                <span class="metric-value">82%</span>
-                <span class="metric-label">Faster deploys</span>
+              <div>
+                <span class="metric-value">82%</span
+                ><span class="metric-label">Faster deploys</span>
               </div>
-              <div class="metric">
-                <span class="metric-value">3</span>
-                <span class="metric-label">Services containerized</span>
+              <div>
+                <span class="metric-value">3</span><span class="metric-label">Services</span>
               </div>
-              <div class="metric">
-                <span class="metric-value">8 min</span>
-                <span class="metric-label">Deploy time</span>
+              <div>
+                <span class="metric-value">8 min</span><span class="metric-label">Deploy time</span>
               </div>
             </div>
           </div>
 
-          <!-- Case Study 3 -->
-          <div class="case-item">
-            <p class="case-label">Research — Springer Publication</p>
+          <div class="case-card reveal">
+            <p class="case-company">Research · Springer Publication</p>
             <p class="case-title">Thyroid Disease Classification with XGBoost & SHAP</p>
-
-            <div class="case-section">
-              <p class="case-section-label">Situation</p>
-              <p>
-                Thyroid disease diagnosis relies on complex hormone level interpretation, with
-                existing ML models achieving moderate accuracy but lacking interpretability for
-                clinical adoption.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Task</p>
-              <p>
-                Develop a high-accuracy, interpretable classification system that clinicians could
-                trust and understand for thyroid disease diagnosis.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Action</p>
-              <p>
-                Built an XGBoost classification pipeline with SHAP (SHapley Additive exPlanations)
-                for model interpretability. Processed 7,200 patient records with feature
-                engineering, cross-validation, and hyperparameter optimization.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Result</p>
-              <p>
-                Achieved 97.6% classification accuracy with full SHAP-based explainability.
-                Published in Springer conference proceedings.
-              </p>
-            </div>
-
-            <div class="case-metrics">
-              <div class="metric">
-                <span class="metric-value">97.6%</span>
-                <span class="metric-label">Accuracy</span>
+            <div class="case-grid">
+              <div class="case-block">
+                <p class="case-block-label">Situation</p>
+                <p>
+                  Existing ML models for thyroid diagnosis achieved moderate accuracy but lacked
+                  interpretability needed for clinical adoption.
+                </p>
               </div>
-              <div class="metric">
-                <span class="metric-value">7,200</span>
-                <span class="metric-label">Patient records</span>
+              <div class="case-block">
+                <p class="case-block-label">Task</p>
+                <p>
+                  Develop a high-accuracy, interpretable classification system that clinicians could
+                  trust for thyroid disease diagnosis.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Action</p>
+                <p>
+                  Built XGBoost pipeline with SHAP explainability. Processed 7,200 patient records
+                  with feature engineering and cross-validation.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Result</p>
+                <p>
+                  97.6% classification accuracy with full SHAP-based explainability. Published in
+                  Springer conference proceedings.
+                </p>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div>
+                <span class="metric-value">97.6%</span><span class="metric-label">Accuracy</span>
+              </div>
+              <div>
+                <span class="metric-value">7,200</span><span class="metric-label">Patients</span>
               </div>
             </div>
           </div>
 
-          <!-- Case Study 4 -->
-          <div class="case-item">
-            <p class="case-label">Personal Project</p>
-            <p class="case-title">Decentralized Crowdfunding Platform</p>
-
-            <div class="case-section">
-              <p class="case-section-label">Situation</p>
-              <p>
-                Traditional crowdfunding platforms charge high fees (5-10%) and lack transparency in
-                fund management, creating trust issues between creators and backers.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Task</p>
-              <p>
-                Build a decentralized alternative on Ethereum that provides transparent, trustless
-                fund management with lower costs.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Action</p>
-              <p>
-                Developed Solidity smart contracts implementing the withdrawal pattern for security,
-                built a React frontend with Web3.js integration, and deployed on Ethereum testnet
-                with Hardhat for testing and deployment automation.
-              </p>
-            </div>
-
-            <div class="case-section">
-              <p class="case-section-label">Result</p>
-              <p>
-                Fully functional dApp supporting campaign creation, ETH contributions,
-                milestone-based fund release, and automated refunds — all enforced by smart contract
-                logic with zero intermediary fees.
-              </p>
-            </div>
-
-            <div class="case-metrics">
-              <div class="metric">
-                <span class="metric-value">0%</span>
-                <span class="metric-label">Platform fees</span>
+          <div class="case-card reveal">
+            <p class="case-company">Personal Project</p>
+            <p class="case-title">Decentralized Crowdfunding on Ethereum</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <p class="case-block-label">Situation</p>
+                <p>
+                  Traditional crowdfunding charges 5–10% fees and lacks transparency in fund
+                  management, creating trust issues.
+                </p>
               </div>
-              <div class="metric">
-                <span class="metric-value">100%</span>
-                <span class="metric-label">On-chain transparency</span>
+              <div class="case-block">
+                <p class="case-block-label">Task</p>
+                <p>
+                  Build a decentralized alternative providing transparent, trustless fund management
+                  with zero intermediary fees.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Action</p>
+                <p>
+                  Developed Solidity smart contracts with withdrawal pattern, React frontend with
+                  Web3.js, deployed on testnet via Hardhat.
+                </p>
+              </div>
+              <div class="case-block">
+                <p class="case-block-label">Result</p>
+                <p>
+                  Fully functional dApp — campaign creation, ETH contributions, milestone-based
+                  releases, automated refunds on-chain.
+                </p>
+              </div>
+            </div>
+            <div class="case-metrics">
+              <div>
+                <span class="metric-value">0%</span><span class="metric-label">Platform fees</span>
+              </div>
+              <div>
+                <span class="metric-value">100%</span><span class="metric-label">On-chain</span>
               </div>
             </div>
           </div>
@@ -251,8 +222,10 @@
 
     <footer class="footer">
       <div class="container">
-        <p>Prasad Kanade · 2026</p>
+        <p>Designed & Built by Prasad Kanade · 2026</p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
