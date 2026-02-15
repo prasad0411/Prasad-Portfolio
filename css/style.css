@@ -307,6 +307,12 @@ section {
   color: var(--text-h);
   margin-bottom: 24px;
 }
+.hero h2{
+  font-family:var(--f-head);
+  font-size:clamp(24px,3.2vw,36px);
+  font-weight:700;line-height:1.25;letter-spacing:-1px;
+  color:var(--text-h);margin-bottom:24px;
+}
 .hero h1 em {
   font-style: normal;
   color: var(--text-h);
