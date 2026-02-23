@@ -343,7 +343,7 @@ section {
   overflow: hidden;
   border: 2px solid var(--border-hover);
   flex-shrink: 0;
-  animation: photoFloat 6s ease-in-out infinite alternate;
+  animation: photoFloat 4s ease-in-out infinite alternate;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 @keyframes photoFloat {
@@ -351,7 +351,7 @@ section {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-8px);
+    transform: translateY(-18px);
   }
 }
 .hero-photo img {
