@@ -291,7 +291,7 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 300px;
   gap: 52px;
   align-items: center;
   position: relative;
@@ -337,8 +337,8 @@ section {
 
 /* Photo */
 .hero-photo {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   border-radius: 22px;
   overflow: hidden;
   border: 2px solid var(--border-hover);
