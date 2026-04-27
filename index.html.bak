@@ -26,10 +26,6 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="theme-toggle" aria-label="Toggle light/dark mode">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
       </div>
     </nav>
 
@@ -41,17 +37,10 @@
           <div class="hero-grid">
             <div>
               <h2>
-                <span class="hero-line">I build production systems that automate</span>
-                <span class="hero-line">complex workflows at scale — from data</span>
-                <span class="hero-line">pipelines to intelligent outreach engines.</span>
+                <span class="hero-line">I architect scalable distributed systems</span>
+                <span class="hero-line">that serve millions — optimizing</span>
+                <span class="hero-line">every layer from ideating to deployment.</span>
               </h2>
-              <!-- Mini Terminal -->
-              <div class="mini-terminal hero-line">
-                <div class="term-bar"><span class="term-dot red"></span><span class="term-dot yellow"></span><span class="term-dot green"></span><span class="term-title">prasad@portfolio</span></div>
-                <div class="term-body">
-                  <div class="term-line"><span class="term-prompt">$</span> <span class="term-typed" id="terminal-text"></span><span class="term-cursor">|</span></div>
-                </div>
-              </div>
               <p class="hero-sub hero-line">
                 I am currently pursuing a MS in Computer Science at
                 <strong>Northeastern University</strong>. <br />Previously, I worked at
@@ -59,25 +48,12 @@
                 microservices for a telecom platform serving 10M+ subscribers with 99.5% uptime.
               </p>
               <div class="hero-btns hero-line">
-                <div class="resume-dropdown">
-                  <button class="btn btn-primary resume-toggle">Resume ▾</button>
-                  <div class="resume-menu">
-                    <a href="assets/resume.pdf" target="_blank">SDE Resume</a>
-                    <a href="assets/resume-ml.pdf" target="_blank">ML Resume</a>
-                    <a href="assets/resume-da.pdf" target="_blank">DA Resume</a>
-                  </div>
-                </div>
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">Resume</a>
                 <a href="https://github.com/prasad0411" target="_blank" class="btn">GitHub</a>
                 <a href="https://www.linkedin.com/in/prasad-kanade-/" target="_blank" class="btn"
                   >LinkedIn</a
                 >
                 <a href="mailto:kanade.pra@northeastern.edu" class="btn">Email</a>
-              </div>
-              <!-- Now Building Widget -->
-              <div class="now-building hero-line">
-                <span class="now-dot"></span>
-                <span class="now-label">Now building:</span>
-                <span class="now-project">Thyroid Disease Prediction with RAG + LLM Explainability</span>
               </div>
             </div>
             <div class="hero-photo" style="opacity: 1">
@@ -207,28 +183,16 @@
                     /></svg
                 ></a>
               </div>
-              <p class="proj-title">Automated Job Hunt Pipeline</p>
+              <p class="proj-title">Automated Job Tracking Platform</p>
               <p class="proj-desc">
-                Production-grade data pipeline processing 8,000+ weekly postings across 6 sources.
-                Star-schema analytics, TF-IDF fuzzy dedup, anomaly detection with SPC bounds,
-                crash-safe WAL, circuit breakers, 8-layer email discovery, and pluggable
-                validation pipeline.
+                Multi-tier data pipeline processing 8,000+ job postings weekly from 6+ platforms.
+                9-stage validation with fuzzy matching, visa filtering, and location normalization
+                across 400+ cities. 98% accuracy.
               </p>
-              <!-- Live Stats Counter -->
-              <div class="proj-live-stats">
-                <div class="proj-stat"><span class="proj-stat-val pub-val">237</span><span class="proj-stat-lbl">Tests</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">27,500</span><span class="proj-stat-lbl">Lines</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">219</span><span class="proj-stat-lbl">Domains</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">6,120</span><span class="proj-stat-lbl">Jobs</span></div>
-              </div>
-              <div class="proj-links">
-                <a href="https://job-scraping-analytics.streamlit.app/" target="_blank" class="proj-dashboard-link">Live Dashboard →</a>
-              </div>
               <div class="proj-tags tag-anim">
-                <span class="tag">Python</span><span class="tag">SQLite</span
-                ><span class="tag">TF-IDF</span><span class="tag">pytest</span
-                ><span class="tag">CI/CD</span><span class="tag">WAL</span
-                ><span class="tag">Selenium</span>
+                <span class="tag">Python</span><span class="tag">Selenium</span
+                ><span class="tag">REST APIs</span><span class="tag">Google Sheets</span
+                ><span class="tag">Automation</span>
               </div>
             </div>
 
@@ -408,16 +372,6 @@
                 ><span class="skill-tag">SHAP</span><span class="skill-tag">Pandas</span
                 ><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span
                 ><span class="skill-tag">Seaborn</span><span class="skill-tag">Tableau</span>
-              </div>
-            </div>
-            <div class="skill-card reveal">
-              <h3>System Design Patterns</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">Write-Ahead Log</span><span class="skill-tag">Circuit Breaker</span
-                ><span class="skill-tag">Anomaly Detection</span><span class="skill-tag">Star Schema</span
-                ><span class="skill-tag">TF-IDF</span><span class="skill-tag">ETL Pipeline</span
-                ><span class="skill-tag">Feature Store</span><span class="skill-tag">SPC Bounds</span
-                ><span class="skill-tag">Data Contracts</span><span class="skill-tag">Hot-Reload</span>
               </div>
             </div>
             <div class="skill-card reveal">
