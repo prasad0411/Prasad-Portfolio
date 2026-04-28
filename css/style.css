@@ -1954,7 +1954,10 @@ body.light-mode .resume-menu {
 /* Photo alignment — move up */
 .hero-photo {
   align-self: start !important;
-  margin-top: -80px;
+  margin-top: 0px;
+}
+.hero-grid {
+  align-items: start !important;
 }
 
 
@@ -1982,4 +1985,21 @@ body.light-mode .resume-menu {
 /* Resume menu — show on click */
 .resume-menu.show {
   display: block !important;
+}
+
+
+/* Resume dropdown dark mode fix */
+.resume-menu a {
+  color: var(--text-h) !important;
+  font-weight: 500 !important;
+}
+body.light-mode .resume-menu a {
+  color: #1f2937 !important;
+}
+
+
+/* Resume button — always white text in dark mode */
+.btn-primary {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
