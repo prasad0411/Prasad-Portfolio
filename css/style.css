@@ -1463,7 +1463,7 @@ h3,
   display: inline-block;
 }
 .resume-menu {
-  display: none;
+  display: none !important;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1478,7 +1478,10 @@ h3,
 }
 .resume-dropdown:hover .resume-menu,
 .resume-dropdown:focus-within .resume-menu {
-  display: block;
+  display: block !important;
+}
+.resume-menu.open {
+  display: block !important;
 }
 .resume-menu a {
   display: block;
@@ -1518,10 +1521,12 @@ h3,
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  width: 18px;
+  height: 18px;
 }
-.icon-moon { display: none; }
-body.light-mode .icon-sun { display: none; }
-body.light-mode .icon-moon { display: block; }
+.theme-toggle .icon-moon { display: none; }
+body.light-mode .theme-toggle .icon-sun { display: none; }
+body.light-mode .theme-toggle .icon-moon { display: block; }
 
 /* Light mode overrides */
 body.light-mode {

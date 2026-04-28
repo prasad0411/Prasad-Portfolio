@@ -196,91 +196,85 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 })();
 
 
+
 // ============================================
 // Mini Terminal Typing Effect
 // ============================================
 (function () {
-  const commands = [
-    { cmd: 'python3 -m aggregator', delay: 60 },
-    { cmd: '✓ 47 valid, 183 discarded, 0 errors', delay: 40, pause: 1500 },
-    { cmd: 'python3 -m pytest tests/ -v', delay: 50 },
-    { cmd: '237 passed in 0.84s', delay: 40, pause: 1500 },
-    { cmd: 'python3 -m outreach', delay: 50 },
-    { cmd: '✓ 12 emails discovered, 8 drafts created', delay: 40, pause: 1500 },
-    { cmd: 'cat .local/analytics.db | wc -l', delay: 60 },
-    { cmd: '6,120 jobs tracked across 12 dimensions', delay: 40, pause: 2000 },
-  ];
-
-  const el = document.getElementById('terminal-text');
+  var el = document.getElementById('terminal-text');
   if (!el) return;
 
-  let cmdIdx = 0;
-  let charIdx = 0;
-  let isOutput = false;
+  var commands = [
+    'python3 -m aggregator',
+    '✓ 47 valid, 183 discarded, 0 errors',
+    'python3 -m pytest tests/ -v',
+    '237 passed in 0.84s',
+    'python3 -m outreach',
+    '✓ 12 emails discovered, 8 drafts created',
+    'cat .local/analytics.db | wc -l',
+    '6,120 jobs across 12 dimensions'
+  ];
 
-  function typeNext() {
-    if (cmdIdx >= commands.length) {
-      cmdIdx = 0; // loop
-    }
+  var cmdIdx = 0;
+  var charIdx = 0;
 
-    const entry = commands[cmdIdx];
-    if (charIdx < entry.cmd.length) {
-      el.textContent += entry.cmd[charIdx];
+  function typeChar() {
+    if (cmdIdx >= commands.length) cmdIdx = 0;
+    var cmd = commands[cmdIdx];
+
+    if (charIdx <= cmd.length) {
+      el.textContent = cmd.substring(0, charIdx);
       charIdx++;
-      setTimeout(typeNext, entry.delay || 50);
+      setTimeout(typeChar, cmd.charAt(0) === '✓' ? 30 : 55);
     } else {
-      // Done typing this line
-      setTimeout(() => {
+      setTimeout(function () {
         el.textContent = '';
         charIdx = 0;
         cmdIdx++;
-        typeNext();
-      }, entry.pause || 800);
+        typeChar();
+      }, 1800);
     }
   }
 
-  // Start after a short delay
-  setTimeout(typeNext, 1000);
+  setTimeout(typeChar, 800);
 })();
 
 // ============================================
 // Dark/Light Theme Toggle
 // ============================================
 (function () {
-  const toggle = document.querySelector('.theme-toggle');
+  var toggle = document.querySelector('.theme-toggle');
   if (!toggle) return;
 
-  // Check saved preference
-  const saved = localStorage.getItem('theme');
+  var saved = localStorage.getItem('theme');
   if (saved === 'light') {
     document.body.classList.add('light-mode');
   }
 
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', function () {
     document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
+    var isLight = document.body.classList.contains('light-mode');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 })();
 
 // ============================================
-// Resume Dropdown (mobile-friendly)
+// Resume Dropdown
 // ============================================
 (function () {
-  const toggle = document.querySelector('.resume-toggle');
-  if (!toggle) return;
+  var btn = document.querySelector('.resume-toggle');
+  var menu = document.querySelector('.resume-menu');
+  if (!btn || !menu) return;
 
-  toggle.addEventListener('click', (e) => {
+  btn.addEventListener('click', function (e) {
     e.preventDefault();
-    const menu = toggle.nextElementSibling;
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    e.stopPropagation();
+    menu.classList.toggle('open');
   });
 
-  // Close on click outside
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', function (e) {
     if (!e.target.closest('.resume-dropdown')) {
-      const menu = document.querySelector('.resume-menu');
-      if (menu) menu.style.display = '';
+      menu.classList.remove('open');
     }
   });
 })();
