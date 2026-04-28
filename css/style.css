@@ -1808,51 +1808,18 @@ body.light-mode .mini-terminal .term-typed {
 }
 
 
-/* TERMINAL TEXT FIX — always white on dark terminal bg */
-.mini-terminal,
-.mini-terminal * {
-  color: #e2e8f0;
-}
-.mini-terminal .term-prompt {
-  color: #22c55e !important;
-}
-.mini-terminal .term-cursor {
-  color: #60a5fa !important;
-}
-.mini-terminal .term-title {
-  color: #8e91a0 !important;
-}
-body.light-mode .mini-terminal,
-body.light-mode .mini-terminal * {
-  color: #e2e8f0;
-}
-body.light-mode .mini-terminal .term-prompt {
-  color: #22c55e !important;
-}
-
-
-
-
-
-.resume-menu a {
-  color: var(--text-body) !important;
-}
-.resume-menu a:hover {
-  background: var(--accent-dim) !important;
-  color: var(--accent) !important;
-}
-body.light-mode .resume-menu {
-  background: #ffffff !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
-}
 
 /* ============================================
-   HERO GRADIENT FIX — ensure visibility
+   TERMINAL — always white text on dark bg
    ============================================ */
-
+.mini-terminal, .mini-terminal * { color: #e2e8f0; }
+.mini-terminal .term-prompt { color: #22c55e !important; }
+.mini-terminal .term-cursor { color: #60a5fa !important; }
+.mini-terminal .term-title { color: #8e91a0 !important; }
+body.light-mode .mini-terminal, body.light-mode .mini-terminal * { color: #e2e8f0; }
 
 /* ============================================
-   CURRENTLY BUILDING — polished cards
+   CURRENTLY BUILDING — polished pill cards
    ============================================ */
 .now-building-section {
   margin-top: 30px;
@@ -1866,140 +1833,97 @@ body.light-mode .resume-menu {
   margin-bottom: 14px;
 }
 .now-dot {
-  width: 9px;
-  height: 9px;
+  width: 9px; height: 9px;
   background: #22c55e;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 8px rgba(34,197,94,0.5);
   animation: pulse-dot 2s infinite;
   flex-shrink: 0;
 }
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(34, 197, 94, 0.5); }
-  50% { opacity: 0.4; box-shadow: 0 0 4px rgba(34, 197, 94, 0.2); }
-}
 .now-label {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 12px; font-weight: 700;
   color: var(--text-sec);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.now-projects {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.now-projects { display: flex; gap: 10px; flex-wrap: wrap; }
 .now-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: flex; align-items: center; gap: 8px;
   padding: 8px 14px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 13px; font-weight: 500;
   color: var(--text-body);
   transition: all 0.25s var(--ease);
   cursor: default;
 }
 .now-item:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent); color: var(--accent);
   background: var(--accent-dim);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(91, 156, 246, 0.1);
+  box-shadow: 0 4px 12px rgba(91,156,246,0.1);
 }
-.now-emoji {
-  font-size: 14px;
+.now-emoji { font-size: 14px; }
+
+/* ============================================
+   RESUME DROPDOWN — ONE CLEAN RULE SET
+   ============================================ */
+.resume-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 500;
+  min-width: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1f2e;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
 }
-
-
-
+.resume-menu.show { display: block; }
+.resume-menu a {
+  display: block;
+  padding: 11px 18px;
+  font-size: 14px; font-weight: 500;
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.resume-menu a:hover {
+  background: rgba(91,156,246,0.12);
+  color: #5b9cf6;
+}
+/* Light mode */
 body.light-mode .resume-menu {
-  background: #fff !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
-body.light-mode .resume-menu a {
-  color: #374151 !important;
-}
-body.light-mode .resume-menu a:hover {
-  background: #f3f4f6 !important;
-  color: #3b82f6 !important;
-}
+body.light-mode .resume-menu a { color: #1f2937; }
+body.light-mode .resume-menu a:hover { background: #f3f4f6; color: #3b82f6; }
 
-
-/* Resume dropdown — overlay fix */
-.hero-btns {
-  position: relative;
-  z-index: 50;
-}
-.resume-dropdown {
-  z-index: 200 !important;
-}
-
-
-
-
-
-body.light-mode .resume-menu {
-  background: #fff !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
-}
-
-
-/* Photo alignment — move up */
-.hero-photo {
-  align-self: start !important;
-  margin-top: 0px;
-}
-.hero-grid {
-  align-items: start !important;
-}
-
-
-/* Slower, smoother animations */
-.reveal, .reveal-left {
-  transition-duration: 0.9s !important;
-}
-.hero-line {
-  animation-duration: 1.2s !important;
-}
-
-
-/* Resume button text always visible */
+/* Resume button always white text */
+.btn-primary,
 .resume-toggle,
 .resume-toggle:hover,
 .resume-toggle:focus,
-.resume-toggle:active,
-.resume-toggle:focus-visible {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  opacity: 1 !important;
-}
-
-
-/* Resume menu — show on click */
-.resume-menu.show {
-  display: block !important;
-}
-
-
-/* Resume dropdown dark mode fix */
-.resume-menu a {
-  color: var(--text-h) !important;
-  font-weight: 500 !important;
-}
-body.light-mode .resume-menu a {
-  color: #1f2937 !important;
-}
-
-
-/* Resume button — always white text in dark mode */
-.btn-primary {
+.resume-toggle:active {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }
+
+/* ============================================
+   HERO LAYOUT FIXES
+   ============================================ */
+.hero-grid { align-items: start !important; }
+.hero-photo { align-self: start !important; margin-top: -30px; }
+.hero-btns { position: relative; z-index: 50; }
+.resume-dropdown { z-index: 200; }
+
+/* Hero heading visible */
+.hero h2 { color: var(--text-h) !important; -webkit-text-fill-color: var(--text-h) !important; }
+
+/* Slower animations */
+.reveal, .reveal-left { transition-duration: 0.9s !important; }
