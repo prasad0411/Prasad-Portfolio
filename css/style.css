@@ -1447,6 +1447,7 @@ h3,
 .resume-dropdown {
   position: relative;
   display: inline-block;
+  z-index: 200;
 }
 .resume-menu {
   display: none !important;
@@ -1871,27 +1872,11 @@ body.light-mode .hero h2 {
 
 
 /* ============================================
-   HERO HEADING — animated gradient (clean)
+   HERO HEADING — visible in both modes
    ============================================ */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 .hero h2 {
-  background: linear-gradient(135deg, #f1f2f5 0%, #5b9cf6 40%, #8b7cf6 70%, #f1f2f5 100%) !important;
-  background-size: 300% auto !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  animation: gradient-shift 6s ease infinite !important;
-}
-body.light-mode .hero h2 {
-  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 40%, #7c3aed 70%, #1e293b 100%) !important;
-  background-size: 300% auto !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  color: var(--text-h) !important;
+  -webkit-text-fill-color: var(--text-h) !important;
 }
 
 
@@ -1957,4 +1942,23 @@ body.light-mode .hero h2 {
 }
 .now-emoji {
   font-size: 14px;
+}
+
+
+/* Resume dropdown overlay fix */
+.resume-menu {
+  z-index: 300 !important;
+  background: var(--bg-elevated) !important;
+}
+body.light-mode .resume-menu {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+body.light-mode .resume-menu a {
+  color: #374151 !important;
+}
+body.light-mode .resume-menu a:hover {
+  background: #f3f4f6 !important;
+  color: #3b82f6 !important;
 }
