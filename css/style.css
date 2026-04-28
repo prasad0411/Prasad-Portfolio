@@ -1985,7 +1985,7 @@ body.light-mode .resume-menu {
 /* Photo alignment — move up */
 .hero-photo {
   align-self: start !important;
-  margin-top: -20px;
+  margin-top: -80px;
 }
 
 
@@ -1995,4 +1995,16 @@ body.light-mode .resume-menu {
 }
 .hero-line {
   animation-duration: 1.2s !important;
+}
+
+
+/* Resume button text always visible */
+.resume-toggle,
+.resume-toggle:hover,
+.resume-toggle:focus,
+.resume-toggle:active,
+.resume-toggle:focus-visible {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  opacity: 1 !important;
 }
