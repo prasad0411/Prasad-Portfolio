@@ -1363,21 +1363,7 @@ h3,
 }
 
 
-/* ============================================
-   NOW BUILDING WIDGET
-   ============================================ */
-.now-building {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  padding: 10px 16px;
-  background: var(--accent-dim);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 14px;
-  width: fit-content;
-}
+
 .now-dot {
   width: 8px;
   height: 8px;
@@ -1465,9 +1451,9 @@ h3,
 .resume-menu {
   display: none !important;
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 0;
-  margin-bottom: 6px;
+  margin-top: 6px;
   background: var(--bg-card);
   border: 1px solid var(--border-hover);
   border-radius: 8px;
@@ -1860,4 +1846,102 @@ body.light-mode .mini-terminal * {
 }
 body.light-mode .mini-terminal .term-prompt {
   color: #22c55e !important;
+}
+
+
+/* ============================================
+   NOW BUILDING — PROMINENT SECTION
+   ============================================ */
+.now-building-section {
+  margin-top: 28px;
+}
+.now-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.now-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+  flex-shrink: 0;
+}
+.now-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sec);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.now-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.now-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  transition: opacity 0.4s, transform 0.4s, border-color 0.3s;
+  cursor: default;
+}
+.now-item:hover {
+  border-color: var(--accent);
+}
+.now-emoji {
+  font-size: 16px;
+}
+.now-hidden {
+  display: none;
+}
+.now-item.active {
+  display: flex;
+}
+
+/* ============================================
+   RESUME DROPDOWN — DARK THEME FIX
+   ============================================ */
+.resume-menu {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-hover) !important;
+  z-index: 200;
+}
+.resume-menu a {
+  color: var(--text-body) !important;
+}
+.resume-menu a:hover {
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+}
+body.light-mode .resume-menu {
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* ============================================
+   HERO GRADIENT FIX — ensure visibility
+   ============================================ */
+.hero h2 span {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light-mode .hero h2 {
+  background: linear-gradient(135deg, #111827 0%, #3b82f6 50%, #7c3aed 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
 }

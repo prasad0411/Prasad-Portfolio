@@ -311,24 +311,17 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 })();
 
 // ============================================
-// Now Building — Rotating Projects
+// Now Building — Cycle through project cards
 // ============================================
 (function () {
-  var el = document.getElementById('now-project');
-  if (!el) return;
-  var projects = [
-    'Thyroid Disease Prediction with RAG + LLM Explainability',
-    'DSA Problem Solving — 400+ Problems in Java',
-    'Job Hunt Pipeline — 27,500 Lines, 237 Tests'
-  ];
+  var items = document.querySelectorAll('.now-item');
+  if (items.length < 2) return;
   var idx = 0;
-  setInterval(function () {
-    el.style.opacity = '0';
-    setTimeout(function () {
-      idx = (idx + 1) % projects.length;
-      el.textContent = projects[idx];
-      el.style.opacity = '1';
-    }, 400);
-  }, 4000);
+
+  // Show all items initially
+  items.forEach(function(item) {
+    item.classList.remove('now-hidden');
+    item.classList.add('active');
+  });
 })();
 
