@@ -13,6 +13,7 @@
     <title>Blog — Prasad Kanade</title>
   </head>
   <body>
+    <script>if(localStorage.getItem("theme")==="light")document.body.classList.add("light-mode");</script>
     <nav class="nav">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Prasad Kanade</a>
@@ -115,10 +116,6 @@
       <div class="container"><p>Designed & Built by Prasad Kanade · 2026</p></div>
     </footer>
     <script src="js/main.js"></script>
-  <script>
-// theme-persist
-(function(){if(localStorage.getItem('theme')==='light'){document.body.classList.add('light-mode');}
-var t=document.querySelector('.theme-toggle');if(t){t.addEventListener('click',function(){document.body.classList.toggle('light-mode');localStorage.setItem('theme',document.body.classList.contains('light-mode')?'light':'dark');});}})();
-</script>
+  
 </body>
 </html>

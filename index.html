@@ -18,6 +18,7 @@
     <title>Prasad Kanade — Software Engineer</title>
   </head>
   <body>
+    <script>if(localStorage.getItem("theme")==="light")document.body.classList.add("light-mode");</script>
     <nav class="nav">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Prasad Kanade</a>
@@ -84,18 +85,6 @@
             <div class="hero-photo" style="opacity: 1">
               <img src="images/profile.jpg" alt="Prasad Kanade" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <!-- ===== GITHUB ACTIVITY ===== -->
-      <section id="github-activity">
-        <div class="container">
-          <div class="github-stats reveal">
-            <img src="https://github-readme-stats.vercel.app/api?username=prasad0411&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=5b9cf6&icon_color=5b9cf6&text_color=c4c7d0" alt="GitHub Stats" />
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=prasad0411&theme=tokyonight&hide_border=true&background=00000000&ring=5b9cf6&fire=8b7cf6&currStreakLabel=5b9cf6" alt="GitHub Streak" />
           </div>
         </div>
       </section>
@@ -232,11 +221,9 @@
                 <div class="proj-stat"><span class="proj-stat-val pub-val">237</span><span class="proj-stat-lbl">Tests</span></div>
                 <div class="proj-stat"><span class="proj-stat-val pub-val">27,500</span><span class="proj-stat-lbl">Lines</span></div>
                 <div class="proj-stat"><span class="proj-stat-val pub-val">219</span><span class="proj-stat-lbl">Domains</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">6,120</span><span class="proj-stat-lbl">Jobs</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">12</span><span class="proj-stat-lbl">Sources</span></div>
               </div>
-              <div class="proj-links">
-                <a href="https://job-scraping-analytics.streamlit.app/" target="_blank" class="proj-dashboard-link">Live Dashboard →</a>
-              </div>
+              
               <div class="proj-tags tag-anim">
                 <span class="tag">Python</span><span class="tag">SQLite</span
                 ><span class="tag">TF-IDF</span><span class="tag">pytest</span
@@ -328,8 +315,9 @@
                 <div class="proj-stat-item"><span class="proj-stat-num">ETH</span><span class="proj-stat-label">Network</span></div>
               </div>
               <p class="proj-desc">
-                Blockchain-based crowdfunding merging private and community projects with secure,
-                transparent transactions. Smart contracts govern fund flows for campaign management.
+                Decentralized crowdfunding dApp on Ethereum with Solidity smart contracts implementing
+                withdrawal pattern, milestone-based fund release, and automated refunds. React frontend
+                with Web3.js wallet integration. Zero platform fees, fully on-chain governance.
               </p>
               <div class="proj-tags tag-anim">
                 <span class="tag">Solidity</span><span class="tag">React</span

@@ -1465,9 +1465,9 @@ h3,
 .resume-menu {
   display: none !important;
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 0;
-  margin-top: 6px;
+  margin-bottom: 6px;
   background: var(--bg-card);
   border: 1px solid var(--border-hover);
   border-radius: 8px;
@@ -1837,4 +1837,27 @@ body.light-mode .mini-terminal .term-typed {
 }
 .footer-links a:hover {
   color: var(--accent);
+}
+
+
+/* TERMINAL TEXT FIX — always white on dark terminal bg */
+.mini-terminal,
+.mini-terminal * {
+  color: #e2e8f0;
+}
+.mini-terminal .term-prompt {
+  color: #22c55e !important;
+}
+.mini-terminal .term-cursor {
+  color: #60a5fa !important;
+}
+.mini-terminal .term-title {
+  color: #8e91a0 !important;
+}
+body.light-mode .mini-terminal,
+body.light-mode .mini-terminal * {
+  color: #e2e8f0;
+}
+body.light-mode .mini-terminal .term-prompt {
+  color: #22c55e !important;
 }

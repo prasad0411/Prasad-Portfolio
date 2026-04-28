@@ -332,12 +332,3 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   }, 4000);
 })();
 
-// ============================================
-// Theme Persistence Across Pages
-// ============================================
-(function () {
-  // Apply saved theme immediately (before DOM renders)
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-  }
-})();
