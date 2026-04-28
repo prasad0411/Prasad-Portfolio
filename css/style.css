@@ -1463,13 +1463,8 @@ h3,
   z-index: 100;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-.resume-dropdown:hover .resume-menu,
-.resume-dropdown:focus-within .resume-menu {
-  display: block !important;
-}
-.resume-menu.open {
-  display: block !important;
-}
+
+
 .resume-menu a {
   display: block;
   padding: 10px 16px;
@@ -1724,13 +1719,13 @@ body.light-mode .mini-terminal .term-typed {
   height: 3px;
   background: var(--accent);
   border-radius: 50%;
-  opacity: 0.15;
+  opacity: 0.3;
   animation: float-particle linear infinite;
 }
 @keyframes float-particle {
   0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-  10% { opacity: 0.15; }
-  90% { opacity: 0.15; }
+  10% { opacity: 0.35; }
+  90% { opacity: 0.35; }
   100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
 }
 
@@ -1958,4 +1953,46 @@ body.light-mode .resume-menu a:hover {
   z-index: 300 !important;
   position: absolute !important;
   top: 100% !important;
+}
+
+
+/* ============================================
+   RESUME DROPDOWN — CLEAN FIX
+   ============================================ */
+.resume-menu {
+  display: none !important;
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+  z-index: 500 !important;
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border-hover) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3) !important;
+  min-width: 160px !important;
+  overflow: hidden !important;
+}
+.resume-menu.show {
+  display: block !important;
+}
+body.light-mode .resume-menu {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+}
+
+
+/* Photo alignment — move up */
+.hero-photo {
+  align-self: start !important;
+  margin-top: -20px;
+}
+
+
+/* Slower, smoother animations */
+.reveal, .reveal-left {
+  transition-duration: 0.9s !important;
+}
+.hero-line {
+  animation-duration: 1.2s !important;
 }

@@ -9,7 +9,7 @@ const revealObs = new IntersectionObserver(
         revealObs.unobserve(e.target);
       }
     }),
-  { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+  { threshold: 0.06, rootMargin: '0px 0px -50px 0px' }
 );
 document.querySelectorAll('.reveal, .reveal-left').forEach((el) => revealObs.observe(el));
 
@@ -269,12 +269,12 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   btn.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    menu.classList.toggle('open');
+    menu.classList.toggle('show');
   });
 
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.resume-dropdown')) {
-      menu.classList.remove('open');
+      menu.classList.remove('show');
     }
   });
 })();
@@ -286,13 +286,13 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 (function () {
   var container = document.getElementById('particles');
   if (!container) return;
-  for (var i = 0; i < 25; i++) {
+  for (var i = 0; i < 40; i++) {
     var p = document.createElement('div');
     p.className = 'particle';
     p.style.left = Math.random() * 100 + '%';
     p.style.animationDuration = (8 + Math.random() * 12) + 's';
     p.style.animationDelay = (Math.random() * 10) + 's';
-    p.style.width = (2 + Math.random() * 3) + 'px';
+    p.style.width = (3 + Math.random() * 4) + 'px';
     p.style.height = p.style.width;
     container.appendChild(p);
   }
