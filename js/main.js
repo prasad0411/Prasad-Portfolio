@@ -225,7 +225,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     if (charIdx <= cmd.length) {
       el.textContent = cmd.substring(0, charIdx);
       charIdx++;
-      setTimeout(typeChar, cmd.charAt(0) === '✓' ? 30 : 55);
+      setTimeout(typeChar, cmd.charAt(0) === '\u2713' ? 40 : 70);
     } else {
       setTimeout(function () {
         el.textContent = '';

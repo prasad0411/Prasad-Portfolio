@@ -1924,7 +1924,115 @@ body.light-mode .resume-menu a:hover { background: #f3f4f6; color: #3b82f6; }
 .resume-dropdown { z-index: 200; }
 
 /* Hero heading visible */
-.hero h2 { color: var(--text-h) !important; -webkit-text-fill-color: var(--text-h) !important; }
+.hero h2 {
+  color: var(--text-h) !important;
+  -webkit-text-fill-color: var(--text-h) !important;
+  text-shadow: 0 0 40px rgba(91, 156, 246, 0.15), 0 0 80px rgba(91, 156, 246, 0.05);
+}
+body.light-mode .hero h2 {
+  text-shadow: none;
+}
 
 /* Slower animations */
-.reveal, .reveal-left { transition-duration: 0.9s !important; }
+.reveal, .reveal-left { transition-duration: 1.2s !important; }
+.stagger .reveal:nth-child(1) { transition-delay: 0s; }
+.stagger .reveal:nth-child(2) { transition-delay: 0.15s; }
+.stagger .reveal:nth-child(3) { transition-delay: 0.3s; }
+.stagger .reveal:nth-child(4) { transition-delay: 0.45s; }
+.stagger .reveal:nth-child(5) { transition-delay: 0.6s; }
+.stagger .reveal:nth-child(6) { transition-delay: 0.75s; }
+.stagger .reveal:nth-child(7) { transition-delay: 0.9s; }
+
+
+/* Project cards — gradient border sweep on hover */
+.proj-card {
+  position: relative;
+  overflow: hidden;
+}
+.proj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+.proj-card:hover::after {
+  background: linear-gradient(135deg, var(--accent), var(--grad-b), var(--accent));
+  background-size: 200% 200%;
+  animation: border-sweep 2s ease infinite;
+}
+@keyframes border-sweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Experience cards — accent left border on hover */
+.exp-card {
+  border-left: 3px solid transparent;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+.exp-card:hover {
+  border-left-color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Currently Building pills — slide in animation */
+.now-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slide-in-pill 0.6s ease forwards;
+}
+.now-item:nth-child(1) { animation-delay: 0.3s; }
+.now-item:nth-child(2) { animation-delay: 0.5s; }
+.now-item:nth-child(3) { animation-delay: 0.7s; }
+@keyframes slide-in-pill {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scroll progress bar — thinner, gradient */
+.scroll-bar {
+  height: 2px !important;
+  background: linear-gradient(90deg, var(--accent), var(--grad-b)) !important;
+}
+
+/* Skill cards — subtle lift on hover */
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Education cards — subtle hover */
+.edu-card {
+  transition: border-color 0.3s ease;
+}
+.edu-card:hover {
+  border-color: var(--accent);
+}
+
+/* Publication card — glow on hover */
+.pub-card {
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.pub-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(91, 156, 246, 0.08);
+}
+
+/* Contact links — lift on hover */
+.contact-link {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.contact-link:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important;
+}
