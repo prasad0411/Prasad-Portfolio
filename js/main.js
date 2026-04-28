@@ -211,8 +211,8 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     '237 passed in 0.84s',
     'python3 -m outreach',
     '✓ 12 emails discovered, 8 drafts created',
-    'cat .local/analytics.db | wc -l',
-    '6,120 jobs across 12 dimensions'
+    'echo $CODEBASE_STATS',
+    '27,500 lines | 237 tests | 15 modules'
   ];
 
   var cmdIdx = 0;
