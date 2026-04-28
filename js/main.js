@@ -278,3 +278,66 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     }
   });
 })();
+
+
+// ============================================
+// Floating Particles
+// ============================================
+(function () {
+  var container = document.getElementById('particles');
+  if (!container) return;
+  for (var i = 0; i < 25; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    p.style.width = (2 + Math.random() * 3) + 'px';
+    p.style.height = p.style.width;
+    container.appendChild(p);
+  }
+})();
+
+// ============================================
+// Clickable Project Cards
+// ============================================
+(function () {
+  document.querySelectorAll('.proj-card[data-url]').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      window.open(card.dataset.url, '_blank');
+    });
+  });
+})();
+
+// ============================================
+// Now Building — Rotating Projects
+// ============================================
+(function () {
+  var el = document.getElementById('now-project');
+  if (!el) return;
+  var projects = [
+    'Thyroid Disease Prediction with RAG + LLM Explainability',
+    'DSA Problem Solving — 400+ Problems in Java',
+    'Job Hunt Pipeline — 27,500 Lines, 237 Tests'
+  ];
+  var idx = 0;
+  setInterval(function () {
+    el.style.opacity = '0';
+    setTimeout(function () {
+      idx = (idx + 1) % projects.length;
+      el.textContent = projects[idx];
+      el.style.opacity = '1';
+    }, 400);
+  }, 4000);
+})();
+
+// ============================================
+// Theme Persistence Across Pages
+// ============================================
+(function () {
+  // Apply saved theme immediately (before DOM renders)
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+})();

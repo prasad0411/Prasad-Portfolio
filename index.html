@@ -37,6 +37,7 @@
       <!-- ===== HERO ===== -->
       <section class="hero">
         <div class="hero-mesh"></div>
+        <div class="particles" id="particles"></div>
         <div class="container">
           <div class="hero-grid">
             <div>
@@ -77,12 +78,24 @@
               <div class="now-building hero-line">
                 <span class="now-dot"></span>
                 <span class="now-label">Now building:</span>
-                <span class="now-project">Thyroid Disease Prediction with RAG + LLM Explainability</span>
+                <span class="now-project" id="now-project">Thyroid Disease Prediction with RAG + LLM Explainability</span>
               </div>
             </div>
             <div class="hero-photo" style="opacity: 1">
               <img src="images/profile.jpg" alt="Prasad Kanade" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ===== GITHUB ACTIVITY ===== -->
+      <section id="github-activity">
+        <div class="container">
+          <div class="github-stats reveal">
+            <img src="https://github-readme-stats.vercel.app/api?username=prasad0411&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=5b9cf6&icon_color=5b9cf6&text_color=c4c7d0" alt="GitHub Stats" />
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=prasad0411&theme=tokyonight&hide_border=true&background=00000000&ring=5b9cf6&fire=8b7cf6&currStreakLabel=5b9cf6" alt="GitHub Streak" />
           </div>
         </div>
       </section>
@@ -193,7 +206,7 @@
           </div>
 
           <div class="proj-grid stagger">
-            <div class="proj-card reveal">
+            <div class="proj-card reveal featured" data-url="https://github.com/prasad0411/JobsScrapingAutomation">
               <div class="proj-top">
                 <div class="proj-icon">🔍</div>
                 <a
@@ -232,7 +245,7 @@
               </div>
             </div>
 
-            <div class="proj-card reveal">
+            <div class="proj-card reveal" data-url="https://github.com/prasad0411/Thyroid-Disease-Classification">
               <div class="proj-top">
                 <div class="proj-icon">🧬</div>
                 <a
@@ -247,6 +260,11 @@
                 ></a>
               </div>
               <p class="proj-title">Thyroid Disease Classification</p>
+              <div class="proj-stats-row">
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">97.6%</span><span class="proj-stat-label">Accuracy</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">7,200</span><span class="proj-stat-label">Patients</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num">Springer</span><span class="proj-stat-label">Published</span></div>
+              </div>
               <p class="proj-desc">
                 XGBoost model achieving 97.6% accuracy across 7,200 patients for 3 thyroid
                 conditions. SHAP explainability for clinical interpretability. SMOTE oversampling
@@ -259,7 +277,7 @@
               </div>
             </div>
 
-            <div class="proj-card reveal">
+            <div class="proj-card reveal" data-url="https://github.com/prasad0411/AllMyQuestions">
               <div class="proj-top">
                 <div class="proj-icon">💻</div>
                 <a
@@ -274,6 +292,11 @@
                 ></a>
               </div>
               <p class="proj-title">DSA Solutions Repository</p>
+              <div class="proj-stats-row">
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">400</span><span class="proj-stat-label">Problems</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">15</span><span class="proj-stat-label">Topics</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num">Java</span><span class="proj-stat-label">Language</span></div>
+              </div>
               <p class="proj-desc">
                 Active DSA preparation in Java organized by data structures and algorithms. Covers
                 arrays, trees, graphs, dynamic programming, and more with optimized solutions.
@@ -284,7 +307,7 @@
               </div>
             </div>
 
-            <div class="proj-card reveal">
+            <div class="proj-card reveal" data-url="https://github.com/prasad0411/Blockchain-Crowdfunding-Platform">
               <div class="proj-top">
                 <div class="proj-icon">⛓</div>
                 <a
@@ -299,6 +322,11 @@
                 ></a>
               </div>
               <p class="proj-title">Blockchain Crowdfunding Platform</p>
+              <div class="proj-stats-row">
+                <div class="proj-stat-item"><span class="proj-stat-num">0%</span><span class="proj-stat-label">Fees</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num">100%</span><span class="proj-stat-label">On-Chain</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num">ETH</span><span class="proj-stat-label">Network</span></div>
+              </div>
               <p class="proj-desc">
                 Blockchain-based crowdfunding merging private and community projects with secure,
                 transparent transactions. Smart contracts govern fund flows for campaign management.
@@ -429,6 +457,8 @@
                 ><span class="skill-tag">Agile/Scrum</span
                 ><span class="skill-tag">System Design</span><span class="skill-tag">SOLID</span
                 ><span class="skill-tag">Design Patterns</span><span class="skill-tag">OOP</span>
+                <span class="skill-tag">pytest</span>
+                <span class="skill-tag">GitHub Actions</span>
               </div>
             </div>
           </div>
@@ -535,6 +565,12 @@
 
     <footer class="footer">
       <div class="container">
+        <div class="footer-links">
+          <a href="https://github.com/prasad0411" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/prasad-kanade" target="_blank">LinkedIn</a>
+          <a href="mailto:kanade.pra@northeastern.edu">Email</a>
+          <a href="https://job-scraping-analytics.streamlit.app/" target="_blank">Dashboard</a>
+        </div>
         <p>Designed & Built by Prasad Kanade · 2026</p>
       </div>
     </footer>
