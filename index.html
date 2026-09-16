@@ -88,7 +88,7 @@
                     <span class="now-emoji">💻</span> DSA Problem Solving — 400+ Problems in Java
                   </div>
                   <div class="now-item">
-                    <span class="now-emoji">🔍</span> Job Hunt Pipeline — 27,500 Lines, 237 Tests, CI/CD
+                    <span class="now-emoji">🔍</span> Job Market Intelligence — PySpark Lakehouse, dbt, Airflow
                   </div>
                 </div>
               </div>
@@ -222,17 +222,17 @@
               </div>
               <p class="proj-title">Automated Job Hunt Pipeline</p>
               <p class="proj-desc">
-                Production-grade data pipeline processing 8,000+ weekly postings across 6 sources.
+                Production data platform processing 15,000+ weekly postings across 21 sources.
                 Star-schema analytics, TF-IDF fuzzy dedup, anomaly detection with SPC bounds,
                 crash-safe WAL, circuit breakers, 8-layer email discovery, and pluggable
                 validation pipeline.
               </p>
               <!-- Live Stats Counter -->
               <div class="proj-live-stats">
-                <div class="proj-stat"><span class="proj-stat-val pub-val">237</span><span class="proj-stat-lbl">Tests</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">261</span><span class="proj-stat-lbl">Tests</span></div>
                 <div class="proj-stat"><span class="proj-stat-val pub-val">27,500</span><span class="proj-stat-lbl">Lines</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">219</span><span class="proj-stat-lbl">Domains</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">12</span><span class="proj-stat-lbl">Sources</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">294</span><span class="proj-stat-lbl">Domains</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">21</span><span class="proj-stat-lbl">Sources</span></div>
               </div>
               
               <div class="proj-tags tag-anim">
@@ -260,14 +260,14 @@
               <p class="proj-title">Thyroid Disease Classification</p>
               <a href="https://thyroid-disease-classification.streamlit.app/" target="_blank" style="font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;">Live Demo →</a>
               <div class="proj-stats-row">
-                <div class="proj-stat-item"><span class="proj-stat-num pub-val">97.6%</span><span class="proj-stat-label">Accuracy</span></div>
-                <div class="proj-stat-item"><span class="proj-stat-num pub-val">7,200</span><span class="proj-stat-label">Patients</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">85.1%</span><span class="proj-stat-label">Accuracy</span></div>
+                <div class="proj-stat-item"><span class="proj-stat-num pub-val">150K</span><span class="proj-stat-label">Records</span></div>
                 <div class="proj-stat-item"><span class="proj-stat-num">Springer</span><span class="proj-stat-label">Published</span></div>
               </div>
               <p class="proj-desc">
-                XGBoost model achieving 97.6% accuracy across 7,200 patients for 3 thyroid
+                XGBoost model reaching 85.1% accuracy and macro F1 0.72 over 150,000 synthetic records for 3 thyroid
                 conditions. SHAP explainability for clinical interpretability. SMOTE oversampling
-                improved minority class recall from 68% to 93%. Published in Springer.
+                was applied inside cross-validation folds. Per-class recall is published in full (0.44 hyperthyroid, 0.55 hypothyroid) because overall accuracy is carried by the majority class. Published in Springer.
               </p>
               <div class="proj-tags tag-anim">
                 <span class="tag">Python</span><span class="tag">XGBoost</span
@@ -406,12 +406,12 @@
             <p class="pub-desc">
               XGBoost classification model for 3 thyroid conditions with SHAP-based explainability.
               Identified TSH, T3, and T4 as primary diagnostic indicators (65% combined importance).
-              Applied SMOTE to address 3:1 class imbalance, improving minority class recall from 68%
-              to 93%.
+              Applied SMOTE inside cross-validation folds to address 3:1 class imbalance. A leakage audit
+              established a 72.97% majority baseline, so the reported 85.1% reflects signal learned from hormone panels rather than from label-derived features.
             </p>
             <div class="pub-stats">
-              <div><span class="pub-val">97.6%</span><span class="pub-lbl">Accuracy</span></div>
-              <div><span class="pub-val">7,200</span><span class="pub-lbl">Patients</span></div>
+              <div><span class="pub-val">85.1%</span><span class="pub-lbl">Accuracy</span></div>
+              <div><span class="pub-val">0.72</span><span class="pub-lbl">Macro F1</span></div>
             </div>
             <a
               href="https://link.springer.com/chapter/10.1007/978-981-97-6106-7_9"
@@ -529,7 +529,7 @@
                 <span class="edu-date">September 2025 – May 2027</span>
               </div>
               <p class="edu-school">Northeastern University — Boston, MA</p>
-              <p class="edu-gpa">CGPA: 3.83 / 4.0</p>
+              <p class="edu-gpa">CGPA: 3.73 / 4.0</p>
               <p class="edu-courses-label">Relevant Coursework</p>
               <div class="edu-courses">
                 <span class="edu-course">Distributed Systems</span>
