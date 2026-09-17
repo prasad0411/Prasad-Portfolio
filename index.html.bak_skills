@@ -262,11 +262,11 @@
           </div>
 
           <div class="proj-grid stagger">
-            <div class="proj-card reveal featured" data-url="https://github.com/prasad0411/job-market-intelligence">
+            <div class="proj-card reveal featured" data-url="https://github.com/prasad0411/JobsScrapingAutomation">
               <div class="proj-top">
                 <div class="proj-icon">🔍</div>
                 <a
-                  href="https://github.com/prasad0411/job-market-intelligence"
+                  href="https://github.com/prasad0411/JobsScrapingAutomation"
                   target="_blank"
                   class="proj-ghlink"
                   >GitHub
@@ -276,28 +276,26 @@
                     /></svg
                 ></a>
               </div>
-              <p class="proj-title">Job Market Intelligence Platform</p>
+              <p class="proj-title">Automated Job Hunt Pipeline</p>
               <p class="proj-desc">
-                A PySpark medallion lakehouse over 25 source schemas, landing Bronze, Silver and
-                Gold Parquet layers partitioned by source and ISO week, with dbt staging and mart
-                models orchestrated through Airflow and gated by 35 data tests in CI. Crash-safe
-                concurrent persistence via file locking and write-ahead journaling; entity
-                resolution that self-corrects company-name collisions.
+                Production data platform processing 15,000+ weekly postings across 21 sources.
+                Star-schema analytics, TF-IDF fuzzy dedup, anomaly detection with SPC bounds,
+                crash-safe WAL, circuit breakers, 8-layer email discovery, and pluggable
+                validation pipeline.
               </p>
               <!-- Live Stats Counter -->
               <div class="proj-live-stats">
                 <div class="proj-stat"><span class="proj-stat-val pub-val">261</span><span class="proj-stat-lbl">Tests</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">86%</span><span class="proj-stat-lbl">Scan Cut</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">27,500</span><span class="proj-stat-lbl">Lines</span></div>
                 <div class="proj-stat"><span class="proj-stat-val pub-val">294</span><span class="proj-stat-lbl">Domains</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">25</span><span class="proj-stat-lbl">Sources</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">21</span><span class="proj-stat-lbl">Sources</span></div>
               </div>
               
               <div class="proj-tags tag-anim">
-                <span class="tag">PySpark</span><span class="tag">dbt</span
-                ><span class="tag">Airflow</span><span class="tag">Parquet</span
-                ><span class="tag">Python</span><span class="tag">DuckDB</span
-                ><span class="tag">SQLite</span><span class="tag">Docker</span
-                ><span class="tag">CI/CD</span>
+                <span class="tag">Python</span><span class="tag">SQLite</span
+                ><span class="tag">TF-IDF</span><span class="tag">pytest</span
+                ><span class="tag">CI/CD</span><span class="tag">WAL</span
+                ><span class="tag">Selenium</span>
               </div>
             </div>
 

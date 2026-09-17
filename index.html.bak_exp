@@ -150,45 +150,33 @@
           <div class="exp-timeline stagger">
             <div class="exp-card reveal">
               <div class="exp-top">
-                <span class="exp-role">Software Engineer</span>
+                <span class="exp-role">Software Engineering Associate</span>
                 <span class="exp-date">December 2023 – May 2025</span>
               </div>
-              <p class="exp-company">Amdocs — Pune, India</p>
+              <p class="exp-company">Amdocs Corporation — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Owned 8 Spring Boot microservices serving 10M+ subscribers and consuming 2M+ Kafka
-                  events daily, partitioning topics across consumer groups and containing failures
-                  behind circuit breakers and bulkhead isolation to hold 99.5% uptime
+                  Engineered 8+ production microservices using Spring Boot and Oracle for JCOM's CRM
+                  and telecom billing platform serving 10M+ subscribers, delivering 25+ features and
+                  maintaining 99.5% uptime across distributed service architecture
                 </li>
                 <li>
-                  Engineered event-driven pipelines processing 730M+ events annually, with Airflow
-                  DAGs orchestrating validation, transformation and analytical workloads, and
-                  backfills for historical reprocessing
+                  Optimized Oracle database queries, achieving 60% performance improvement through
+                  composite indexing and query refactoring, eliminating 15 hours/week of processing
+                  delays and enhancing system responsiveness for critical operations
                 </li>
                 <li>
-                  Cut Oracle query latency 60% by profiling AWR execution plans to isolate access
-                  paths, introducing composite indexes and adding Redis caching for high-frequency
-                  lookups — removing 15+ hours/week of batch delay
+                  Built automated test suites with JUnit and Mockito covering unit, integration, and
+                  API contract testing, achieving 80% code coverage and reducing production defects
+                  by 30%
                 </li>
                 <li>
-                  Built 22 dbt models across staging and mart layers with 38 tests on uniqueness,
-                  nullability, referential integrity and schema consistency; delete-and-insert
-                  materialization cut runtime 65%
+                  Developed 5 SOAP-based web services integrating Amdocs CRM with external BSS/OSS
+                  systems, processing 50K+ daily transactions with 99.7% uptime
                 </li>
                 <li>
-                  Integrated Snowflake for a ~750 GB dataset alongside Oracle, moving analytical
-                  workloads to Delta Lake Bronze/Silver/Gold on PySpark and Databricks — cutting
-                  transformation work 50%
-                </li>
-                <li>
-                  Enforced schema contracts and statistical anomaly detection across 80% of the
-                  pipeline, quarantining malformed records and detecting distribution shift before
-                  downstream consumers — cutting production data incidents 30%
-                </li>
-                <li>
-                  Standardized API contracts in OpenAPI across REST and gRPC services and
-                  introduced team-wide review conventions, cutting integration defects 40% and
-                  shortening the release cycle from two weeks to four days
+                  Containerized microservices using Docker and deployed on AWS EC2, reducing
+                  deployment time from 45 minutes to 8 minutes per release cycle
                 </li>
               </ul>
             </div>
@@ -198,27 +186,20 @@
                 <span class="exp-role">Software Engineer Intern</span>
                 <span class="exp-date">July 2022 – December 2022</span>
               </div>
-              <p class="exp-company">ISKCON — Pune, India</p>
+              <p class="exp-company">ISKCON Organization — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Automated collection, validation and reconciliation across 50,000+ participant
-                  records spanning five departments through scheduled Python and SQL workflows,
-                  replacing manual entry and producing analysis-ready datasets
+                  Automated infrastructure monitoring with Bash scripts and cron jobs, implementing
+                  alerting systems for CPU, memory, disk usage, and service availability that saved
+                  4 hours weekly while reducing unplanned downtime by 25%
                 </li>
                 <li>
-                  Instrumented Unix infrastructure with Prometheus, Grafana, Node Exporter and
-                  Alertmanager, threshold-alerting on time-series metrics for CPU, memory and disk —
-                  cutting mean-time-to-detection 4+ hours/week and unplanned downtime 25%
+                  Deployed cloud-native applications on AWS EC2 with ECR/ECS, reducing deployment
+                  time by 78% and achieving 93% uptime
                 </li>
                 <li>
-                  Containerized and deployed workloads to AWS EC2 via Docker, ECR and ECS on
-                  Terraform-managed infrastructure, building CI/CD pipelines that reduced deployment
-                  time 78% and eliminated manual release steps
-                </li>
-                <li>
-                  Built reporting workflows over survey and operational data collected through
-                  Qualtrics and Google Forms across 3,000+ respondents, standardizing inconsistent
-                  inputs into consistent schemas for downstream analysis
+                  Designed normalized MySQL database schema (3NF) managing 100K+ records across
+                  devotee profiles, events, and financial transactions
                 </li>
               </ul>
             </div>
@@ -228,22 +209,22 @@
                 <span class="exp-role">Software Developer Intern</span>
                 <span class="exp-date">March 2021 – October 2021</span>
               </div>
-              <p class="exp-company">Simba Developers — Pune, India</p>
+              <p class="exp-company">Simba Developers Organization — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Built fault-tolerant Node.js and Express services backed by PostgreSQL and Redis,
-                  using WebSockets for real-time payment notifications and isolating dependencies
-                  behind retry policies and resource partitioning to reduce cascade failures 65%
+                  Architected distributed microservices using Node.js and Express for authentication
+                  and payment modules, enabling independent scaling and reducing cascade failures by
+                  65% through fault-tolerant design patterns
                 </li>
                 <li>
-                  Built ML-driven irregularity detection over transaction data to flag anomalous
-                  payment behavior, owning data preparation, feature selection, model evaluation and
-                  inference integration into the Node.js request path
+                  Integrated WebSocket modules for real-time bidirectional communication, achieving
+                  sub-50ms latency for live chat and push notifications across 10K+ concurrent
+                  connections
                 </li>
                 <li>
-                  Improved data-intensive application response time 44% (3.2s → 1.8s) by profiling
-                  hot paths to isolate bottlenecks, caching repeated lookups in Redis and deferring
-                  non-critical computation off the request path
+                  Reduced app load time by 44% (3.2s → 1.8s) by optimizing Flutter state management
+                  with Riverpod and Bloc, implementing lazy loading, caching strategies, and widget
+                  tree restructuring
                 </li>
               </ul>
             </div>
@@ -262,11 +243,11 @@
           </div>
 
           <div class="proj-grid stagger">
-            <div class="proj-card reveal featured" data-url="https://github.com/prasad0411/job-market-intelligence">
+            <div class="proj-card reveal featured" data-url="https://github.com/prasad0411/JobsScrapingAutomation">
               <div class="proj-top">
                 <div class="proj-icon">🔍</div>
                 <a
-                  href="https://github.com/prasad0411/job-market-intelligence"
+                  href="https://github.com/prasad0411/JobsScrapingAutomation"
                   target="_blank"
                   class="proj-ghlink"
                   >GitHub
@@ -276,28 +257,26 @@
                     /></svg
                 ></a>
               </div>
-              <p class="proj-title">Job Market Intelligence Platform</p>
+              <p class="proj-title">Automated Job Hunt Pipeline</p>
               <p class="proj-desc">
-                A PySpark medallion lakehouse over 25 source schemas, landing Bronze, Silver and
-                Gold Parquet layers partitioned by source and ISO week, with dbt staging and mart
-                models orchestrated through Airflow and gated by 35 data tests in CI. Crash-safe
-                concurrent persistence via file locking and write-ahead journaling; entity
-                resolution that self-corrects company-name collisions.
+                Production data platform processing 15,000+ weekly postings across 21 sources.
+                Star-schema analytics, TF-IDF fuzzy dedup, anomaly detection with SPC bounds,
+                crash-safe WAL, circuit breakers, 8-layer email discovery, and pluggable
+                validation pipeline.
               </p>
               <!-- Live Stats Counter -->
               <div class="proj-live-stats">
                 <div class="proj-stat"><span class="proj-stat-val pub-val">261</span><span class="proj-stat-lbl">Tests</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">86%</span><span class="proj-stat-lbl">Scan Cut</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">27,500</span><span class="proj-stat-lbl">Lines</span></div>
                 <div class="proj-stat"><span class="proj-stat-val pub-val">294</span><span class="proj-stat-lbl">Domains</span></div>
-                <div class="proj-stat"><span class="proj-stat-val pub-val">25</span><span class="proj-stat-lbl">Sources</span></div>
+                <div class="proj-stat"><span class="proj-stat-val pub-val">21</span><span class="proj-stat-lbl">Sources</span></div>
               </div>
               
               <div class="proj-tags tag-anim">
-                <span class="tag">PySpark</span><span class="tag">dbt</span
-                ><span class="tag">Airflow</span><span class="tag">Parquet</span
-                ><span class="tag">Python</span><span class="tag">DuckDB</span
-                ><span class="tag">SQLite</span><span class="tag">Docker</span
-                ><span class="tag">CI/CD</span>
+                <span class="tag">Python</span><span class="tag">SQLite</span
+                ><span class="tag">TF-IDF</span><span class="tag">pytest</span
+                ><span class="tag">CI/CD</span><span class="tag">WAL</span
+                ><span class="tag">Selenium</span>
               </div>
             </div>
 
