@@ -4,10 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Prasad Kanade" />
-    <meta
-      name="description"
-      content="Software Engineer — distributed systems, database optimization, scalable microservices."
-    />
+    <meta name="description" content="Prasad Kanade - software engineer working on distributed systems, data platforms, and applied ML. MS Computer Science at Northeastern; previously 18 months building production microservices at 10M+ subscriber scale." />
+    <link rel="canonical" href="https://prasad0411.github.io/Prasad-Portfolio/" />
+    <link rel="icon" href="images/favicon.ico" />
+
+    <!-- Open Graph. Without these a shared link renders as a bare URL, which
+         is how it reaches most recruiters. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prasad0411.github.io/Prasad-Portfolio/" />
+    <meta property="og:title" content="Prasad Kanade - Software Engineer" />
+    <meta property="og:description" content="Distributed systems, data platforms, and applied ML. Production microservices at 10M+ subscriber scale, a PySpark lakehouse with dbt and Airflow, and a published clinical ML system." />
+    <meta property="og:image" content="https://prasad0411.github.io/Prasad-Portfolio/images/profile.jpg" />
+    <meta property="og:image:alt" content="Prasad Kanade" />
+    <meta property="og:site_name" content="Prasad Kanade" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prasad Kanade - Software Engineer" />
+    <meta name="twitter:description" content="Distributed systems, data platforms, and applied ML. Production microservices at 10M+ subscriber scale." />
+    <meta name="twitter:image" content="https://prasad0411.github.io/Prasad-Portfolio/images/profile.jpg" />
+
+    <!-- Structured data, so search results can show role and affiliation. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Prasad Chandrashekhar Kanade",
+      "url": "https://prasad0411.github.io/Prasad-Portfolio/",
+      "email": "kanade.pra@northeastern.edu",
+      "jobTitle": "Software Engineer",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Northeastern University" },
+        { "@type": "CollegeOrUniversity", "name": "MIT World Peace University" }
+      ],
+      "knowsAbout": ["Distributed Systems", "Data Engineering", "Machine Learning",
+                     "Apache Spark", "dbt", "Apache Airflow", "Kafka", "Spring Boot"],
+      "sameAs": [
+        "https://github.com/prasad0411",
+        "https://linkedin.com/in/prasad-kanade"
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +55,8 @@
   </head>
   <body>
     <script>if(localStorage.getItem("theme")==="light")document.body.classList.add("light-mode");</script>
-    <nav class="nav">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="nav" aria-label="Main navigation">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Prasad Kanade</a>
         <ul class="nav-links">
@@ -34,7 +71,7 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main">
       <!-- ===== HERO ===== -->
       <section class="hero">
         <div class="hero-mesh"></div>
@@ -113,33 +150,45 @@
           <div class="exp-timeline stagger">
             <div class="exp-card reveal">
               <div class="exp-top">
-                <span class="exp-role">Software Engineering Associate</span>
+                <span class="exp-role">Software Engineer</span>
                 <span class="exp-date">December 2023 – May 2025</span>
               </div>
-              <p class="exp-company">Amdocs Corporation — Pune, India</p>
+              <p class="exp-company">Amdocs — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Engineered 8+ production microservices using Spring Boot and Oracle for JCOM's CRM
-                  and telecom billing platform serving 10M+ subscribers, delivering 25+ features and
-                  maintaining 99.5% uptime across distributed service architecture
+                  Owned 8 Spring Boot microservices serving 10M+ subscribers and consuming 2M+ Kafka
+                  events daily, partitioning topics across consumer groups and containing failures
+                  behind circuit breakers and bulkhead isolation to hold 99.5% uptime
                 </li>
                 <li>
-                  Optimized Oracle database queries, achieving 60% performance improvement through
-                  composite indexing and query refactoring, eliminating 15 hours/week of processing
-                  delays and enhancing system responsiveness for critical operations
+                  Engineered event-driven pipelines processing 730M+ events annually, with Airflow
+                  DAGs orchestrating validation, transformation and analytical workloads, and
+                  backfills for historical reprocessing
                 </li>
                 <li>
-                  Built automated test suites with JUnit and Mockito covering unit, integration, and
-                  API contract testing, achieving 80% code coverage and reducing production defects
-                  by 30%
+                  Cut Oracle query latency 60% by profiling AWR execution plans to isolate access
+                  paths, introducing composite indexes and adding Redis caching for high-frequency
+                  lookups — removing 15+ hours/week of batch delay
                 </li>
                 <li>
-                  Developed 5 SOAP-based web services integrating Amdocs CRM with external BSS/OSS
-                  systems, processing 50K+ daily transactions with 99.7% uptime
+                  Built 22 dbt models across staging and mart layers with 38 tests on uniqueness,
+                  nullability, referential integrity and schema consistency; delete-and-insert
+                  materialization cut runtime 65%
                 </li>
                 <li>
-                  Containerized microservices using Docker and deployed on AWS EC2, reducing
-                  deployment time from 45 minutes to 8 minutes per release cycle
+                  Integrated Snowflake for a ~750 GB dataset alongside Oracle, moving analytical
+                  workloads to Delta Lake Bronze/Silver/Gold on PySpark and Databricks — cutting
+                  transformation work 50%
+                </li>
+                <li>
+                  Enforced schema contracts and statistical anomaly detection across 80% of the
+                  pipeline, quarantining malformed records and detecting distribution shift before
+                  downstream consumers — cutting production data incidents 30%
+                </li>
+                <li>
+                  Standardized API contracts in OpenAPI across REST and gRPC services and
+                  introduced team-wide review conventions, cutting integration defects 40% and
+                  shortening the release cycle from two weeks to four days
                 </li>
               </ul>
             </div>
@@ -149,20 +198,27 @@
                 <span class="exp-role">Software Engineer Intern</span>
                 <span class="exp-date">July 2022 – December 2022</span>
               </div>
-              <p class="exp-company">ISKCON Organization — Pune, India</p>
+              <p class="exp-company">ISKCON — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Automated infrastructure monitoring with Bash scripts and cron jobs, implementing
-                  alerting systems for CPU, memory, disk usage, and service availability that saved
-                  4 hours weekly while reducing unplanned downtime by 25%
+                  Automated collection, validation and reconciliation across 50,000+ participant
+                  records spanning five departments through scheduled Python and SQL workflows,
+                  replacing manual entry and producing analysis-ready datasets
                 </li>
                 <li>
-                  Deployed cloud-native applications on AWS EC2 with ECR/ECS, reducing deployment
-                  time by 78% and achieving 93% uptime
+                  Instrumented Unix infrastructure with Prometheus, Grafana, Node Exporter and
+                  Alertmanager, threshold-alerting on time-series metrics for CPU, memory and disk —
+                  cutting mean-time-to-detection 4+ hours/week and unplanned downtime 25%
                 </li>
                 <li>
-                  Designed normalized MySQL database schema (3NF) managing 100K+ records across
-                  devotee profiles, events, and financial transactions
+                  Containerized and deployed workloads to AWS EC2 via Docker, ECR and ECS on
+                  Terraform-managed infrastructure, building CI/CD pipelines that reduced deployment
+                  time 78% and eliminated manual release steps
+                </li>
+                <li>
+                  Built reporting workflows over survey and operational data collected through
+                  Qualtrics and Google Forms across 3,000+ respondents, standardizing inconsistent
+                  inputs into consistent schemas for downstream analysis
                 </li>
               </ul>
             </div>
@@ -172,22 +228,22 @@
                 <span class="exp-role">Software Developer Intern</span>
                 <span class="exp-date">March 2021 – October 2021</span>
               </div>
-              <p class="exp-company">Simba Developers Organization — Pune, India</p>
+              <p class="exp-company">Simba Developers — Pune, India</p>
               <ul class="exp-bullets">
                 <li>
-                  Architected distributed microservices using Node.js and Express for authentication
-                  and payment modules, enabling independent scaling and reducing cascade failures by
-                  65% through fault-tolerant design patterns
+                  Built fault-tolerant Node.js and Express services backed by PostgreSQL and Redis,
+                  using WebSockets for real-time payment notifications and isolating dependencies
+                  behind retry policies and resource partitioning to reduce cascade failures 65%
                 </li>
                 <li>
-                  Integrated WebSocket modules for real-time bidirectional communication, achieving
-                  sub-50ms latency for live chat and push notifications across 10K+ concurrent
-                  connections
+                  Built ML-driven irregularity detection over transaction data to flag anomalous
+                  payment behavior, owning data preparation, feature selection, model evaluation and
+                  inference integration into the Node.js request path
                 </li>
                 <li>
-                  Reduced app load time by 44% (3.2s → 1.8s) by optimizing Flutter state management
-                  with Riverpod and Bloc, implementing lazy loading, caching strategies, and widget
-                  tree restructuring
+                  Improved data-intensive application response time 44% (3.2s → 1.8s) by profiling
+                  hot paths to isolate bottlenecks, caching repeated lookups in Redis and deferring
+                  non-critical computation off the request path
                 </li>
               </ul>
             </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prasad0411.github.io/Prasad-Portfolio/sitemap.xml
