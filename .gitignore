@@ -1,2 +1,6 @@
 .DS_Store
 .DS_Store
+
+# local editing backups
+*.bak
+*.bak_*
